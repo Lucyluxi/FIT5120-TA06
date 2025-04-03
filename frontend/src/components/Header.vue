@@ -19,9 +19,9 @@
 </template>
 
 <style scoped>
-/* Full-width header background */
+/* Full-width header background with transparency */
 .custom-header {
-  background-color: #fcebd5; /* soft warm beige/orange */
+  background-color: rgba(252, 235, 213, 0.8); /* soft warm beige/orange with 80% opacity */
   padding: 0.5rem 2rem;
   border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -40,8 +40,8 @@
 
 /* Hover effect */
 .nav-link:hover {
-  background-color: #f4d4b5; /* soft orange */
-  color: #000;
+  background-color: #e08f55; /* Darker orange to ensure better contrast */
+  color: #fff; /* Ensure text stays white */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -53,7 +53,5 @@
   font-weight: 600;
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.05);
 }
-
-
-
 </style>
+
