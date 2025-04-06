@@ -15,6 +15,12 @@
       </video>
       <!-- Optional dark overlay to make the text on top more readable -->
       <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.4);"></div>
+
+      <!-- Overlay Text (Theme: Strengthening Community, Especially for Seniors in Australia) -->
+      <div class="position-absolute top-50 start-50 translate-middle text-center text-white z-index-2">
+        <h1 class="display-4 fw-bold">Strengthening Communities for Seniors</h1>
+        <p class="lead">Bringing Together Culturally Diverse Communities and Enhancing Social Connectivity in Australia</p>
+      </div>
     </section>
 
     <!-- 📷 Image Cards Section with Custom Light Background -->
@@ -61,3 +67,34 @@
 
   </div>
 </template>
+
+<style scoped>
+/* Video overlay text styling */
+.position-absolute {
+  position: absolute;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+/* Overlay text */
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+</style>
