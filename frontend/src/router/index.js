@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ActivityView from '@/views/ActivityView.vue'
 import TestView from '@/views/TestView.vue'
+import EventDetail from '@/views/EventDetail.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/test', // TO be delete
     name: 'Test',
     component: TestView
+  },
+  {
+    path: '/event/:id',
+    name: 'EventDetail',
+    component: EventDetail
   }
 ]
 

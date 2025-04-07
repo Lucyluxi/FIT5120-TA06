@@ -17,7 +17,7 @@ conn = psycopg2.connect(
 @app.route('/api/events')
 def get_events():
     cur = conn.cursor()
-    cur.execute('SELECT "ID", "Title", "Date", "Location", "Description", "Image" FROM public."Activity"')
+    cur.execute('SELECT "id", "title", "date", "location", "description", "image", "category" FROM public."Events"')
     rows = cur.fetchall()
     cur.close()
     events = []
@@ -28,9 +28,36 @@ def get_events():
             "date": row[2].strftime('%B %d, %Y'),
             "location": row[3],
             "description": row[4],
-            "image": row[5]
+            "image": row[5],
+            "category": row[6]
         })
     return jsonify(events)
+
+@app.route('/api/events/<int:event_id>')
+def get_event_by_id(event_id):
+    cur = conn.cursor()
+    cur.execute(
+        'SELECT "id", "title", "date", "location", "description", "image", "category" '
+        'FROM public."Events" WHERE "id" = %s',
+        (event_id,)
+    )
+    row = cur.fetchone()
+    cur.close()
+
+    if row:
+        event = {
+            "id": row[0],
+            "title": row[1],
+            "date": row[2].strftime('%B %d, %Y'),
+            "location": row[3],
+            "description": row[4],
+            "image": row[5],
+            "category": row[6]
+        }
+        return jsonify(event)
+    else:
+        return jsonify({"error": "Event not found"}), 404
+
 
 if __name__ == '__main__':
     app.run(debug=True)
