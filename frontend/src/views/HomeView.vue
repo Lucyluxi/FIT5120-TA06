@@ -50,16 +50,18 @@
             </div>
           </div>
 
-          <!-- Card 3: Social Activities -->
-          <div class="col-md-4">
-            <div class="position-relative rounded overflow-hidden shadow">
-              <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <!-- Card title overlaying the image -->
-              <h5 class="position-absolute bottom-0 start-0 m-3 text-white bg-dark bg-opacity-50 px-3 py-2 rounded">
-                Social Activities
-              </h5>
-            </div>
+          <!-- Card 3: Social Activities with link -->
+           <div class="col-md-4">
+            <router-link to="/activity" class="text-decoration-none">
+              <div class="position-relative rounded overflow-hidden shadow">
+                <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+                <h5 class="position-absolute bottom-0 start-0 m-3 text-white bg-dark bg-opacity-50 px-3 py-2 rounded">Social Activities</h5>
+              </div>
+            </router-link>
           </div>
+
+
+
 
         </div>
       </div>
