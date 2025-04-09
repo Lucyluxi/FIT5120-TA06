@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Enable CORS to allow front-end requests from localhost:5173 (Vue dev server)
-CORS(app, origins=["http://localhost:5173", "http://13.236.186.198"])
+CORS(app, origins=["http://localhost:5173", "http://13.236.186.198", "https://unitee.website"])
 
 # Establish connection to the PostgreSQL database
 conn = psycopg2.connect(
