@@ -1,54 +1,65 @@
 <script setup>
+import { ref } from 'vue'
 import Header from './components/Header.vue'
+
+// Toggle large cursor
+const isLargeCursor = ref(false)
+function toggleCursor() {
+  isLargeCursor.value = !isLargeCursor.value
+  document.body.classList.toggle('large-cursor', isLargeCursor.value)
+}
 </script>
 
 <template>
   <div class="main-container">
     <Header />
     <main class="main-box">
-      <router-view></router-view>
+      <router-view />
     </main>
+
+    <!-- 🖱️ Accessibility: Toggle large cursor -->
+    <button class="accessibility-btn" @click="toggleCursor">
+      🖱️ Toggle Large Cursor
+    </button>
   </div>
 </template>
 
-<style scoped>
-/* Remove default margin and padding for body and html */
+<style>
+/* === RESET / BASE === */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Full-width main container */
+/* === MAIN LAYOUT === */
 .main-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   box-sizing: border-box;
   margin: 0;
 }
 
-/* Remove any extra margin for the header and ensure it spans full width */
 .container-fluid {
-  margin: 0;  /* Remove margin */
-  padding: 0;  /* Optional: If there's any padding */
-  width: 100%; /* Ensure the container spans full width */
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-/* Main content area */
 .main-box {
   flex: 1;
   padding: 1rem;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Ensure header takes full width and doesn’t leave any gaps */
 .custom-header {
-  background-color: rgba(252, 235, 213, 0.8); /* Transparent background */
+  background-color: rgba(252, 235, 213, 0.8);
   padding: 0.5rem 2rem;
   border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -62,6 +73,26 @@ html, body {
   width: 100%;
   z-index: 1000;
 }
+
+/* === LARGE CURSOR STYLING === */
+body.large-cursor {
+  cursor: url('/images/cursor.png') 8 8, auto;
+}
+
+/* === ACCESSIBILITY TOGGLE BUTTON === */
+.accessibility-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #fff;
+  color: #4b3832;
+  border: 2px solid #e08f55;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
 </style>
-
-
