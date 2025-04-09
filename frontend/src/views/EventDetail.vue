@@ -80,7 +80,7 @@ const mapUrl = computed(() => {
 
 onMounted(async () => {
   try {
-    const res = await fetch(`/api/events/${eventId}`) //http://localhost:5000/api/events/${eventId}
+    const res = await fetch(`/api/events/${eventId}`)
     const data = await res.json()
     event.value = data
   } catch (error) {
