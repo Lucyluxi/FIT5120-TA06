@@ -19,7 +19,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = localStorage.getItem('authenticated') === 'true'
+  const isAuthenticated = sessionStorage.getItem('authenticated') === 'true'
 
   if (!isAuthenticated && to.path !== '/auth') {
     next('/auth')
