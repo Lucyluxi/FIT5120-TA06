@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
 import ActivityView from '@/views/ActivityView.vue'
-import TestView from '@/views/TestView.vue'
 import EventDetail from '@/views/EventDetail.vue'
+import DiscoveryView from '../views/DiscoveryView.vue'
 
 const routes = [
   {
@@ -12,19 +11,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'About',
-    component: AboutView
+    path: '/discover',
+    name: 'Discover',
+    component: DiscoveryView
   },
   {
     path: '/activity',
     name: 'Activity',
     component: ActivityView
-  },
-  {
-    path: '/test', // TO be delete
-    name: 'Test',
-    component: TestView
   },
   {
     path: '/event/:id',
