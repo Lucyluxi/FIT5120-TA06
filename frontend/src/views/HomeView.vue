@@ -12,7 +12,7 @@
     </section>
 
     <!-- 📷 Image Cards Section -->
-    <section class="py-5" style="background-color: #F4C1A1;">
+    <section class="py-5" style="background-color: rgba(252, 235, 213, 0.8);">
       <div class="container">
         <div class="row g-4">
 
