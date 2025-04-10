@@ -4,9 +4,9 @@
     <section class="hero-image d-flex align-items-center justify-content-center text-center text-white">
       <!-- Text content inside soft translucent background box -->
       <div class="z-index-2 position-relative text-box p-4">
-        <h1 class="display-4 fw-bold fade-in-up">Strengthening Communities for Seniors</h1>
+        <h1 class="display-4 fw-bold fade-in-up">Bringing Comfort, Care, and Connection!</h1>
         <p class="lead fade-in-up">
-          Bringing Together Culturally Diverse Communities and Enhancing Social Connectivity in Australia
+          Because everyone deserves to feel at home, no matter where they’re from.
         </p>
       </div>
     </section>
