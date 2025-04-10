@@ -53,7 +53,7 @@
    Hero Section with Background Image
 ------------------------------------ */
 .hero-image {
-  background-image: url('/images/home.jpg');
+  background-image: url('/images/home.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
