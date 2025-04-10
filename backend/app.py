@@ -71,6 +71,34 @@ def get_event_by_id(event_id):
         # If not found, return 404 error
         return jsonify({"error": "Event not found"}), 404
 
-# Entry point for running Flask in development mode (not used in production)
+# Route to return all service data from the database
+@app.route('/api/services')
+def get_services():
+    cur = conn.cursor()
+    # Query to select all services from the Service table
+    cur.execute('SELECT "Service Name", "Service Description", "Full Address", "contact", "email", "website", "Opening Hours", "Tram Routes", "Train Station", "latitude", "longitude" FROM public."service"')
+    rows = cur.fetchall()
+    cur.close()
+
+    # Convert each row to a dictionary
+    services = []
+    for row in rows:
+        services.append({
+            "Service Name": row[0],
+            "Service Description": row[1],
+            "Full Address": row[2],
+            "Contact": row[3],
+            "Email": row[4],
+            "Website": row[5],
+            "Opening Hours": row[6],
+            "Tram Routes": row[7],
+            "Train Station": row[8],
+            "Latitude": row[9],
+            "Longitude": row[10]
+        })
+
+    # Return all services as a JSON array
+    return jsonify(services)
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)

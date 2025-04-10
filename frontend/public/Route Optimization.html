@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Community Support Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Mapbox -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet" />
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- PapaParse for CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  
+  <!-- Mapbox Geocoder -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" rel="stylesheet" />
+
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+    #map { height: 100vh; }
+    .controls {
+      position: absolute;
+      background: white;
+      padding: 10px;
+      z-index: 999;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .controls.top-center {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+    }
+    .controls.top-left {
+      top: 10px;
+      left: 20px;
+      width: 200px;
+    }
+    #legend {
+      position: absolute; bottom: 20px; left: 20px; z-index: 999;
+      background: black; color: white; padding: 10px; border-radius: 8px;
+    }
+    #error-message {
+      position: absolute; top: 70px; left: 50%; transform: translateX(-50%);
+      z-index: 1000; background-color: #dc3545; color: white; padding: 8px 16px;
+      border-radius: 6px; display: none; font-weight: bold;
+    }
+    select { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div id="error-message"></div>
+
+  <!-- Top-center controls -->
+  <div class="controls top-center">
+    <div id="geocoder" class="mb-2"></div>
+    <select id="end-select" class="form-select">
+      <option disabled selected>Select service</option>
+    </select>
+  </div>
+
+  <!-- Top-left event filters -->
+  <div class="controls top-left">
+    <select id="event-date" class="form-select mb-2">
+      <option value="">Select Date</option>
+      <option value="today">Today</option>
+      <option value="7">Next 7 Days</option>
+      <option value="30">Next 30 Days</option>
+    </select>
+
+    <select id="event-category" class="form-select">
+      <option value="">All Categories</option>
+      <option value="concerts">Concerts</option>
+      <option value="festivals">Festivals</option>
+      <option value="community">Community</option>
+      <option value="sports">Sports</option>
+      <option value="performing-arts">Performing Arts</option>
+      <option value="expos">Expos</option>
+    </select>
+  </div>
+
+  <div id="legend">Distance: -- km<br>Travel Time: -- mins</div>
+  <div id="map"></div>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicHJhbmVldGhrdW1hcjk5IiwiYSI6ImNtMnQ2MTgxbDAwazUya3BzcDlzbnVrYTcifQ.2RmHZoNBD8IJbcEiL_kQcg';
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/dark-v11',
+      center: [144.9631, -37.8136],
+      zoom: 17,
+      pitch: 60,
+      bearing: -60,
+      antialias: true
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    const walkingIcon = 'https://cdn-icons-png.flaticon.com/512/854/854878.png';
+    const eventIcon = 'https://cdn-icons-png.flaticon.com/512/684/684908.png';
+    const endSelect = document.getElementById('end-select');
+    const legend = document.getElementById('legend');
+    const errorMessage = document.getElementById('error-message');
+    let services = [], startCoords = null, popup, activeMarkers = [], eventMarkers = [];
+
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      marker: false,
+      placeholder: "Enter your starting address"
+    });
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+    function showError(msg) {
+      errorMessage.textContent = msg;
+      errorMessage.style.display = 'block';
+      setTimeout(() => errorMessage.style.display = 'none', 4000);
+    }
+
+    geocoder.on('result', e => {
+      const coords = e.result.geometry.coordinates;
+      const region = (e.result.context || []).find(c => c.id.startsWith('region'));
+      if (!region || !region.text.includes('Victoria')) {
+        showError("Please enter an address in Victoria.");
+        startCoords = null;
+        return;
+      }
+      startCoords = coords;
+    });
+
+    fetch("cleaned_support_services.csv")
+      .then(res => res.text())
+      .then(csv => {
+        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
+        services = parsed.data;
+        services.forEach((service, i) => {
+          if (service.Latitude && service.Longitude) {
+            endSelect.add(new Option(service["Service Name"], i));
+            addServiceMarker(service, i);
+          }
+        });
+      });
+
+  //   fetch("/api/services")
+  // .then(res => res.json())
+  // .then(data => {
+  //   services = data;
+  //   services.forEach((service, i) => {
+  //     if (service.Latitude && service.Longitude) {
+  //       endSelect.add(new Option(service["Service Name"], i));
+  //       addServiceMarker(service, i);
+  //     }
+  //   });
+  // })
+  // .catch(error => {
+  //   console.error("Failed to load services from API:", error);
+  //   showError("Failed to load service data.");
+  // });
+
+    function createMarkerIcon(url, size = 32) {
+      const el = document.createElement('div');
+      el.style.backgroundImage = `url(${url})`;
+      el.style.width = `${size}px`;
+      el.style.height = `${size}px`;
+      el.style.backgroundSize = 'contain';
+      return el;
+    }
+
+    function addServiceMarker(service, index) {
+      const coords = [parseFloat(service.Longitude), parseFloat(service.Latitude)];
+      const marker = new mapboxgl.Marker({ element: createMarkerIcon(walkingIcon) })
+        .setLngLat(coords)
+        .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`
+          <strong>${service["Service Name"]}</strong><br>
+          ${service["Service Description"]}<br>
+          📍 ${service["Full Address"]}<br>
+          📞 ${service.Contact || ''}<br>
+          ${service.Website ? `<a href="https://${service.Website}" target="_blank">Website</a><br>` : ''}
+          <button class="btn btn-sm btn-primary mt-2" onclick="handleShowRoute(${index})">Show Route</button>
+        `))
+        .addTo(map);
+    }
+
+    function handleShowRoute(index) {
+      if (!startCoords) {
+        showError("Please enter a valid starting address first.");
+        return;
+      }
+      const service = services[index];
+      const endCoords = [parseFloat(service.Longitude), parseFloat(service.Latitude)];
+      drawRoute(startCoords, endCoords, service);
+    }
+
+    function handleEventRoute(lng, lat, title) {
+      if (!startCoords) {
+        showError("Please enter a valid starting address first.");
+        return;
+      }
+      const endCoords = [lng, lat];
+      drawRoute(startCoords, endCoords, { "Service Name": title });
+    }
+    window.handleShowRoute = handleShowRoute;
+    window.handleEventRoute = handleEventRoute;
+
+    async function drawRoute(startCoord, endCoord, service) {
+      const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${startCoord.join(',')};${endCoord.join(',')}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      const route = data.routes[0].geometry;
+      const duration = Math.round(data.routes[0].duration / 60);
+      const distance = (data.routes[0].distance / 1000).toFixed(2);
+
+      legend.innerHTML = `<strong>Distance:</strong> ${distance} km<br><strong>Travel Time:</strong> ${duration} mins`;
+
+      if (map.getSource('route')) {
+        map.getSource('route').setData({ type: 'Feature', geometry: route });
+      } else {
+        map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: route } });
+        map.addLayer({
+          id: 'route-line',
+          type: 'line',
+          source: 'route',
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: { 'line-color': '#ff6666', 'line-width': 5 }
+        });
+      }
+
+      activeMarkers.forEach(m => m.remove());
+      if (popup) popup.remove();
+
+      const startMarker = new mapboxgl.Marker({ element: createMarkerIcon(walkingIcon) }).setLngLat(startCoord).addTo(map);
+      const endMarker = new mapboxgl.Marker({ element: createMarkerIcon(walkingIcon) }).setLngLat(endCoord).addTo(map);
+      activeMarkers = [startMarker, endMarker];
+
+      map.flyTo({ center: startCoord, zoom: 18, pitch: 70, bearing: -50 });
+      setTimeout(() => {
+        map.flyTo({ center: endCoord, zoom: 18, pitch: 70, bearing: -50 });
+      }, 2000);
+    }
+
+    function clearEventMarkers() {
+      eventMarkers.forEach(marker => marker.remove());
+      eventMarkers = [];
+    }
+
+    function addEventMarkersToMap(events) {
+      clearEventMarkers();
+      events.forEach(event => {
+        if (!event.location) return;
+        const marker = new mapboxgl.Marker({ element: createMarkerIcon(eventIcon, 28) })
+          .setLngLat(event.location)
+          .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`
+            <strong>${event.title}</strong><br>
+            🗓️ ${new Date(event.start).toLocaleString()}<br>
+            📍 ${event.entities?.find(e => e.type === 'venue')?.name || 'Unknown venue'}<br>
+            🏷️ Category: ${event.category}<br>
+            <button class="btn btn-sm btn-primary mt-2" onclick="handleEventRoute(${event.location[0]}, ${event.location[1]}, '${event.title.replace(/'/g, "\\'")}')">Show Route</button>
+          `))
+          .addTo(map);
+        eventMarkers.push(marker);
+      });
+    }
+
+    async function fetchPredictHQEvents(dateRange = '', category = '') {
+      const PREDICTHQ_TOKEN = '1nhZCk1EpJLZYapSikySMW9LLt3BlEP4Dpz4Y3tO';
+      const today = new Date();
+      let startDate = today.toISOString().split('T')[0];
+      let endDate = '';
+
+      if (dateRange === 'today') {
+        endDate = startDate;
+      } else if (dateRange === '7' || dateRange === '30') {
+        const future = new Date(today);
+        future.setDate(today.getDate() + parseInt(dateRange));
+        endDate = future.toISOString().split('T')[0];
+      }
+
+      let url = `https://api.predicthq.com/v1/events/?within=100km@-37.8136,144.9631&start.gte=${startDate}`;
+      if (endDate) url += `&end.lte=${endDate}`;
+      if (category) url += `&category=${category}`;
+      url += '&limit=50';
+
+      const res = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${PREDICTHQ_TOKEN}`,
+          Accept: 'application/json'
+        }
+      });
+
+      const data = await res.json();
+      return data.results || [];
+    }
+
+    async function handleEventFilterChange() {
+      const selectedDate = document.getElementById('event-date').value;
+      const selectedCategory = document.getElementById('event-category').value;
+      const events = await fetchPredictHQEvents(selectedDate, selectedCategory);
+      addEventMarkersToMap(events);
+    }
+
+    map.on('load', async () => {
+      map.addLayer({
+        id: '3d-buildings',
+        source: 'composite',
+        'source-layer': 'building',
+        filter: ['==', 'extrude', 'true'],
+        type: 'fill-extrusion',
+        minzoom: 16,
+        paint: {
+          'fill-extrusion-color': '#aaa',
+          'fill-extrusion-height': ['get', 'height'],
+          'fill-extrusion-base': ['get', 'min_height'],
+          'fill-extrusion-opacity': 0.6
+        }
+      });
+
+      const events = await fetchPredictHQEvents();
+      addEventMarkersToMap(events);
+
+      document.getElementById('event-date').addEventListener('change', handleEventFilterChange);
+      document.getElementById('event-category').addEventListener('change', handleEventFilterChange);
+
+      endSelect.addEventListener('change', () => {
+        const index = endSelect.value;
+        handleShowRoute(index);
+      });
+    });
+  </script>
+</body>
+</html>
