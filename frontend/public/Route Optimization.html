@@ -134,34 +134,34 @@
       startCoords = coords;
     });
 
-    fetch("cleaned_support_services.csv")
-      .then(res => res.text())
-      .then(csv => {
-        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
-        services = parsed.data;
-        services.forEach((service, i) => {
-          if (service.Latitude && service.Longitude) {
-            endSelect.add(new Option(service["Service Name"], i));
-            addServiceMarker(service, i);
-          }
-        });
-      });
+    // fetch("cleaned_support_services.csv")
+    //   .then(res => res.text())
+    //   .then(csv => {
+    //     const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
+    //     services = parsed.data;
+    //     services.forEach((service, i) => {
+    //       if (service.Latitude && service.Longitude) {
+    //         endSelect.add(new Option(service["Service Name"], i));
+    //         addServiceMarker(service, i);
+    //       }
+    //     });
+    //   });
 
-  //   fetch("/api/services")
-  // .then(res => res.json())
-  // .then(data => {
-  //   services = data;
-  //   services.forEach((service, i) => {
-  //     if (service.Latitude && service.Longitude) {
-  //       endSelect.add(new Option(service["Service Name"], i));
-  //       addServiceMarker(service, i);
-  //     }
-  //   });
-  // })
-  // .catch(error => {
-  //   console.error("Failed to load services from API:", error);
-  //   showError("Failed to load service data.");
-  // });
+    fetch("/api/services")
+  .then(res => res.json())
+  .then(data => {
+    services = data;
+    services.forEach((service, i) => {
+      if (service.Latitude && service.Longitude) {
+        endSelect.add(new Option(service["Service Name"], i));
+        addServiceMarker(service, i);
+      }
+    });
+  })
+  .catch(error => {
+    console.error("Failed to load services from API:", error);
+    showError("Failed to load service data.");
+  });
 
     function createMarkerIcon(url, size = 32) {
       const el = document.createElement('div');
