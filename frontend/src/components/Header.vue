@@ -8,12 +8,15 @@
         to="/"
         class="brand d-flex align-items-center me-md-auto link-body-emphasis text-decoration-none"
       >
-        <!-- Optional brand icon -->
-        <svg class="me-2 d-none d-md-inline" width="48" height="48" fill="currentColor">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-        
-        <!-- Styled brand name -->
+        <!-- Brand icon (orange version) -->
+        <img
+          src="/images/header.png"
+          alt="Unitee Logo"
+          class="me-2 d-none d-md-inline"
+          style="width: 48px; height: 48px;"
+        />
+
+        <!-- Brand name -->
         <span class="brand-name">
           Unit<span class="highlight">e</span>e
         </span>
@@ -34,6 +37,7 @@
     </header>
   </div>
 </template>
+
 
 <script setup>
 // No additional logic needed here
