@@ -2,7 +2,6 @@
   <div>
     <!-- 🖼️ Hero Section with background image -->
     <section class="hero-image d-flex align-items-center justify-content-center text-center text-white">
-      <!-- Text content inside soft translucent background box -->
       <div class="z-index-2 position-relative text-box p-4">
         <h1 class="display-4 fw-bold fade-in-up">Strengthening Communities for Seniors</h1>
         <p class="lead fade-in-up">
@@ -12,7 +11,7 @@
     </section>
 
     <!-- 📷 Image Cards Section -->
-    <section class="py-5" style="background-color: #F4C1A1;">
+    <section class="py-5" style="background-color: #EAF3EA;">
       <div class="container">
         <div class="row g-4">
 
@@ -49,9 +48,6 @@
 </template>
 
 <style scoped>
-/* -----------------------------------
-   Hero Section with Background Image
------------------------------------- */
 .hero-image {
   background-image: url('/images/home.jpg');
   background-size: cover;
@@ -62,7 +58,6 @@
 }
 
 .hero-image::before {
-  /* Gradient overlay */
   content: '';
   position: absolute;
   top: 0;
@@ -73,9 +68,8 @@
   z-index: 1;
 }
 
-/* Text container: translucent box for white text */
 .text-box {
-  background-color: rgba(0, 0, 0, 0.4); /* translucent dark to boost white contrast */
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
@@ -85,7 +79,6 @@
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Animation: fade-in and slide-up */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -100,9 +93,6 @@
   }
 }
 
-/* -----------------------------------
-   Card Styling + Animation
------------------------------------- */
 .card-wrapper {
   position: relative;
   border-radius: 0.5rem;
@@ -116,15 +106,14 @@
   box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
-/* Card overlay title */
 .card-title-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 1rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(0,0,0,0.5);
-  color: white;
+  background-color: #BFD8B8; /* replaced warm apricot with herbal green */
+  color: #2E2E2E;
   border-radius: 0.5rem;
   font-weight: 600;
 }
