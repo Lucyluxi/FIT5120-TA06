@@ -28,6 +28,7 @@ def get_events():
         cur.execute('SELECT "id", "title", "date", "location", "description", "image", "category" FROM public."Events"')
         rows = cur.fetchall()
         cur.close()
+        conn.close()
 
         # Convert each row to a dictionary
         events = []
@@ -62,6 +63,7 @@ def get_event_by_id(event_id):
         )
         row = cur.fetchone()
         cur.close()
+        conn.close()
 
         # If found, return event details as JSON
         if row:
@@ -92,6 +94,7 @@ def get_services():
         cur.execute('SELECT "Service Name", "Service Description", "Full Address", "contact", "email", "website", "Opening Hours", "Tram Routes", "Train Station", "latitude", "longitude" FROM public."service"')
         rows = cur.fetchall()
         cur.close()
+        conn.close()
 
         # Convert each row to a dictionary
         services = []
