@@ -191,6 +191,7 @@ onMounted(async () => {
   } else {
     try {
       const res = await fetch('/api/events') //http://localhost:5000/api/events
+      
       const data = await res.json()
       allEvents.value = data
       events.value = data
@@ -202,21 +203,6 @@ onMounted(async () => {
     }
   }
 })
-
-// localStorage.removeItem('cachedEvents')
-// localStorage.removeItem('cachedEventsTimestamp')
-
-// onMounted(async () => {
-//   try {
-//     const res = await fetch('http://localhost:5000/api/events')
-//     const data = await res.json()
-//     allEvents.value = data
-//     events.value = data
-//     console.log('Fetched from API')
-//   } catch (err) {
-//     console.error('Fetch failed:', err)
-//   }
-// })
 
 
 // === FILTERING LOGIC ===
