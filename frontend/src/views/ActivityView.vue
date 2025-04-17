@@ -190,7 +190,7 @@ onMounted(async () => {
     console.log('Loaded from localStorage')
   } else {
     try {
-      const res = await fetch('/api/events') //http://localhost:5000/api/events
+      const res = await fetch('/api/events')
       
       const data = await res.json()
       allEvents.value = data
