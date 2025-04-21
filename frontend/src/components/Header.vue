@@ -33,6 +33,9 @@
         <li class="nav-item">
           <router-link to="/discover" class="nav-link" :class="{ active: $route.path === '/discover' }">Discover</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/game" class="nav-link" :class="{ active: $route.path === '/game' }">Game</router-link>
+        </li>
       </ul>
     </header>
   </div>

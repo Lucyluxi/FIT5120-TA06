@@ -2,7 +2,6 @@
   <div>
     <!-- 🖼️ Hero Section with background image -->
     <section class="hero-image d-flex align-items-center justify-content-center text-center text-white">
-      <!-- Text content inside soft translucent background box -->
       <div class="z-index-2 position-relative text-box p-4">
         <h1 class="display-4 fw-bold fade-in-up">Bringing Comfort, Care, and Connection!</h1>
         <p class="lead fade-in-up">
@@ -11,42 +10,49 @@
       </div>
     </section>
 
-    <!-- 📷 Image Cards Section -->
-    <section class="py-5" style="background-color: rgba(252, 235, 213, 0.8);">
-      <div class="container">
-        <div class="row g-4">
+    <!-- 📷 Cards Section wrapped in reusable background -->
+    <BackgroundSection>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card-wrapper">
+            <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+            <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
+          </div>
+        </div>
 
-          <!-- Card 1 -->
-          <div class="col-md-4">
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card-wrapper">
+            <img src="/images/education.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+            <h5 class="card-title-overlay">Educational Communities</h5>
+          </div>
+        </div>
+
+        <!-- Card 3 with router-link -->
+        <div class="col-md-4">
+          <router-link to="/activity" class="text-decoration-none">
             <div class="card-wrapper">
-              <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
+              <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <h5 class="card-title-overlay">Social Activities</h5>
             </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="col-md-4">
-            <div class="card-wrapper">
-              <img src="/images/education.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">Educational Communities</h5>
-            </div>
-          </div>
-
-          <!-- Card 3 with router-link -->
-          <div class="col-md-4">
-            <router-link to="/activity" class="text-decoration-none">
-              <div class="card-wrapper">
-                <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-                <h5 class="card-title-overlay">Social Activities</h5>
-              </div>
-            </router-link>
-          </div>
-
+          </router-link>
         </div>
       </div>
-    </section>
+    </BackgroundSection>
   </div>
 </template>
+
+<script>
+import BackgroundSection from "@/components/BackgroundSection.vue";
+
+export default {
+  name: "HomePage",
+  components: {
+    BackgroundSection,
+  },
+};
+</script>
 
 <style scoped>
 /* -----------------------------------
