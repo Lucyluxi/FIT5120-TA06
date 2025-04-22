@@ -6,6 +6,7 @@ import DiscoveryView from '../views/DiscoveryView.vue'
 import AuthView from '@/views/AuthView.vue'
 import DiscoverSuburbs from '@/views/DiscoverSuburbs.vue'
 import ChatbotView from '@/views/ChatbotView.vue'
+import GameView from '@/views/GameView.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
@@ -14,7 +15,8 @@ const routes = [
   { path: '/event/:id', name: 'EventDetail', component: EventDetail },
   { path: '/auth', name: 'Auth', component: AuthView },
   {path: '/suburb', name: 'DiscoverSuburbs', component: DiscoverSuburbs},
-  {path: '/chatbot', name: 'Chatbot', component: ChatbotView}
+  {path: '/chatbot', name: 'Chatbot', component: ChatbotView},
+  {path: '/game', name: 'Game', component: GameView}
 ]
 
 const router = createRouter({

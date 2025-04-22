@@ -39,6 +39,9 @@
         <li class="nav-item">
           <router-link to="/chatbot" class="nav-link" :class="{ active: $route.path === '/chatbot' }">Chatbot</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/game" class="nav-link" :class="{ active: $route.path === '/game' }">Chatbot</router-link>
+        </li>
       </ul>
     </header>
   </div>
