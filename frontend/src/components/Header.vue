@@ -33,6 +33,12 @@
         <li class="nav-item">
           <router-link to="/discover" class="nav-link" :class="{ active: $route.path === '/discover' }">Discover</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">Discover Suburbs</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/chatbot" class="nav-link" :class="{ active: $route.path === '/chatbot' }">Chatbot</router-link>
+        </li>
       </ul>
     </header>
   </div>

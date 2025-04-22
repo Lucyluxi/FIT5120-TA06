@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import psycopg2
 from flask_cors import CORS
+import psycopg2.extras
 
 # Create the Flask application instance
 app = Flask(__name__)
@@ -118,6 +119,42 @@ def get_services():
     except Exception as e:
         print("Error:", e)
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/api/suburbs', methods=['GET'])
+def get_suburbs():
+    conn = get_db_connection()
+
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    query = """
+    SELECT
+        pl.postcode,
+        pl.locality,
+        cd.chinese_high,
+        cd.indian_high,
+        cd.vietnamese_high,
+        cd.greek_high
+    FROM public."Postcode" pl
+    JOIN public."Culture" cd ON pl.postcode = cd.postcode_state
+    """
+
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    conn.close()
+
+    result = []
+    for row in rows:
+        result.append({
+            'postcode': row['postcode'],
+            'locality': row['locality'],
+            'Chinese_high': row['chinese_high'],
+            'Indian_high': row['indian_high'],
+            'Vietnamese_high': row['vietnamese_high'],
+            'Greek_high': row['greek_high']
+        })
+
+    return jsonify(result)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
