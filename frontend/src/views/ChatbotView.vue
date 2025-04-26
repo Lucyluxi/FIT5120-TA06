@@ -1,63 +1,102 @@
 <template>
-    <div class="chatbot-page d-flex flex-column align-items-center justify-content-center py-5">
-      <div class="chatbot-container d-flex flex-wrap bg-white rounded shadow p-4" style="max-width: 1000px;">
-        <!-- Left: Text & Buttons -->
-        <div class="left-panel p-4 flex-grow-1">
-          <h1 class="fw-bold text-primary mb-3" style="font-size: 36px;">Culture Chatbot</h1>
-          <p class="mb-4" style="font-size: 20px;">Choose what you want to do</p>
-          <div class="d-flex flex-column gap-3">
-            <button class="btn chatbot-btn" @click="goToFaq">FAQ</button>
-            <button class="btn chatbot-btn" @click="goToQuiz">Quiz</button>
+  <div class="chatbot-wrapper d-flex align-items-center justify-content-center">
+    <div class="chatbot-container card shadow rounded" style="width: 600px; font-size: 18px;">
+      <div class="card-header custom-header text-dark fw-bold">
+        Cultural Info Chatbot
+      </div>
+      <div class="card-body" style="height: 400px; overflow-y: auto; overflow-x: hidden; padding-right: 8px;">
+        <div v-for="(msg, index) in messages" :key="index" class="mb-3">
+          <div v-if="msg.sender === 'user'" class="text-end">
+            <span class="badge bg-secondary p-3 text-wrap">{{ msg.text }}</span>
+          </div>
+          <div v-else class="text-start">
+            <span class="badge bg-light text-dark p-3 text-wrap">{{ msg.text }}</span>
           </div>
         </div>
-  
-        <!-- Right: Image -->
-        <div class="right-panel text-center p-3">
-          <!-- <img
-            src="@/assets/culture-chatbot-illustration.png"
-            alt="Chatbot Illustration"
-            class="img-fluid chatbot-img"
-          /> -->
+      </div>
+      <div class="card-footer bg-white border-top">
+        <p class="fw-semibold mb-2">Ask about:</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button
+            v-for="preset in presets"
+            :key="preset.label"
+            class="btn btn-outline-primary btn-sm"
+            @click="handlePreset(preset)"
+          >
+            {{ preset.label }}
+          </button>
         </div>
       </div>
     </div>
-  </template>
-  
-  <script setup>
-  import { useRouter } from 'vue-router'
-  const router = useRouter()
-  
-  const goToFaq = () => {
-    router.push('/faq')
-  }
-  
-  const goToQuiz = () => {
-    router.push('/quiz')
-  }
-  </script>
-  
-  <style scoped>
-  .chatbot-page {
-    background-color: #f0936c;
-    min-height: 100vh;
-  }
-  
-  .chatbot-btn {
-    background-color: #d95f2b;
-    color: white;
-    font-size: 18px;
-    padding: 12px 24px;
-    border-radius: 30px;
-    border: none;
-    transition: all 0.2s ease-in-out;
-  }
-  .chatbot-btn:hover {
-    background-color: #c84f1f;
-  }
-  
-  .chatbot-img {
-    max-width: 300px;
-    border-radius: 10px;
-  }
-  </style>
-  
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const messages = ref([]);
+
+const presets = [
+  {
+    label: 'Traditions and Greetings',
+    response: 'In many cultures, greetings involve bows, handshakes, or cheek kisses. Traditional customs vary, such as Chinese New Year celebrations or Japanese tea ceremonies.',
+  },
+  {
+    label: 'Festivals and Events',
+    response: 'Melbourne hosts diverse cultural festivals like the Moomba Festival, Lunar New Year, Diwali, and Greek Antipodes Festival.',
+  },
+  {
+    label: 'Cuisines',
+    response: 'You can find authentic foods from Vietnamese pho and Indian curry to Italian pasta and Chinese dumplings across Melbourne suburbs.',
+  },
+  {
+    label: 'Landmarks in Melbourne',
+    response: 'Famous cultural landmarks include the Chinese Museum, Greek Centre, Islamic Museum of Australia, and St. Paul’s Cathedral.',
+  },
+];
+
+function handlePreset(preset) {
+  messages.value.push({ sender: 'user', text: preset.label });
+  setTimeout(() => {
+    messages.value.push({ sender: 'bot', text: preset.response });
+  }, 500);
+}
+</script>
+
+<style scoped>
+.chatbot-wrapper {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.chatbot-container {
+  pointer-events: auto;
+}
+
+.card-body::-webkit-scrollbar {
+  width: 6px;
+}
+.card-body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.badge {
+  white-space: normal;
+  word-break: break-word;
+  max-width: 80%;
+  font-size: 16px;
+}
+.custom-header {
+  background-color: rgba(252, 235, 213, 0.8);
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+}
+</style>

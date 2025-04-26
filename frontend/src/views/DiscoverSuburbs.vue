@@ -54,10 +54,11 @@
             v-for="(suburb, index) in paginatedSuburbs"
             :key="index"
           >
-            <div
-              class="border rounded bg-light p-5 text-center h-100"
-              style="font-size: 22px; cursor: pointer;"
-            >
+          <div
+            class="border rounded bg-light p-5 text-center h-100"
+            style="font-size: 22px; cursor: pointer;"
+            @click="goToSuburbDetail(suburb)"
+          >
               <strong>{{ suburb }}</strong>
               <p class="text-muted mt-2" style="font-size: 18px;">
                 Click to learn more
@@ -115,6 +116,13 @@
 <script setup>
 
 import { ref, computed, watch, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goToSuburbDetail = (suburbName) => {
+  router.push({ name: 'SuburbDetail', params: { name: suburbName } })
+}
 
 const selectedCulture = ref(null)
 const currentPage = ref(1)

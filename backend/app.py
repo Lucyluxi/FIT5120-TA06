@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import psycopg2
 from flask_cors import CORS
 import psycopg2.extras
@@ -155,6 +155,30 @@ def get_suburbs():
 
     return jsonify(result)
 
+@app.route('/api/features')
+def get_features():
+    suburb = request.args.get('suburb', '').strip()
+    
+    if not suburb:
+        return jsonify({"error": "Suburb parameter is required."}), 400
+
+    print(f"Querying features for suburb: {suburb}")
+    
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute('SELECT name, type FROM public."Feature" WHERE suburb_name ILIKE %s', (suburb,))
+
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+
+        features = [{"name": row[0], "type": row[1]} for row in rows]
+        return jsonify(features)
+    
+    except Exception as e:
+        print("Error fetching features:", e)
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -7,6 +7,7 @@ import AuthView from '@/views/AuthView.vue'
 import DiscoverSuburbs from '@/views/DiscoverSuburbs.vue'
 import ChatbotView from '@/views/ChatbotView.vue'
 import GameView from '@/views/GameView.vue'
+import SuburbDetail from '@/views/SuburbDetail.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
@@ -16,7 +17,12 @@ const routes = [
   { path: '/auth', name: 'Auth', component: AuthView },
   {path: '/suburb', name: 'DiscoverSuburbs', component: DiscoverSuburbs},
   {path: '/chatbot', name: 'Chatbot', component: ChatbotView},
-  {path: '/game', name: 'Game', component: GameView}
+  {path: '/game', name: 'Game', component: GameView},
+  {
+    path: '/suburb/:name',
+    name: 'SuburbDetail',
+    component: SuburbDetail
+  }
 ]
 
 const router = createRouter({
