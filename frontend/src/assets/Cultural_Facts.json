@@ -1,0 +1,90 @@
+{
+  "Vietnamese": {
+    "History": [
+      "Vietnam was under Chinese rule for over a thousand years, shaping much of its language, governance, and culture.",
+      "The country gained independence from France in 1954 after the decisive Battle of Điện Biên Phủ.",
+      "The Vietnam War ended in 1975, leading to the reunification of North and South Vietnam under communist rule."
+    ],
+    "Food": [
+      "Phở, a noodle soup with beef or chicken, is Vietnam’s most iconic dish and is eaten at any time of day.",
+      "Vietnamese cuisine emphasizes fresh herbs like mint and coriander, balancing sweet, sour, salty, and spicy flavors.",
+      "Fish sauce (nước mắm) is a staple condiment used in cooking and as a dip across the country."
+    ],
+    "People": [
+      "Vietnam has 54 recognized ethnic groups, with the Kinh (Viet) people making up over 85% of the population.",
+      "Respect for elders and strong family ties are central to Vietnamese social values.",
+      "Many Vietnamese names follow the structure: family name, middle name, then given name, with 'Nguyễn' being the most common surname."
+    ],
+    "Festivals": [
+      "Tết (Lunar New Year) is the most important holiday, marking the arrival of spring with family reunions and ancestral worship.",
+      "The Mid-Autumn Festival celebrates the harvest with lanterns, mooncakes, and children’s parades.",
+      "Hùng Kings’ Temple Festival honors the mythical founders of Vietnam with ceremonies and cultural performances every April."
+    ]
+  },
+  "Chinese": {
+    "History": [
+      "China is one of the world's oldest continuous civilizations, with a history spanning over 3,000 years.",
+      "The Great Wall of China was built over centuries to protect against northern invasions.",
+      "The 1911 Xinhai Revolution ended imperial rule, leading to the formation of the Republic of China."
+    ],
+    "Food": [
+      "Chinese cuisine varies greatly by region, with notable styles including Cantonese, Sichuan, and Northern cuisine.",
+      "Staple ingredients include rice, noodles, soy sauce, ginger, and garlic.",
+      "Dim sum, a style of bite-sized dishes served with tea, is a traditional Cantonese practice."
+    ],
+    "People": [
+      "China is the world's most populous country, with over 1.4 billion people and 56 recognized ethnic groups.",
+      "Family and filial piety are core Confucian values deeply embedded in Chinese society.",
+      "Mandarin is the official language, though many regional dialects like Cantonese, Shanghainese, and Hokkien are widely spoken."
+    ],
+    "Festivals": [
+      "Chinese New Year (Spring Festival) is the most important holiday, celebrated with fireworks, red envelopes, and family gatherings.",
+      "The Dragon Boat Festival commemorates the poet Qu Yuan with boat races and sticky rice dumplings.",
+      "The Mid-Autumn Festival celebrates the harvest and moon with lanterns and mooncakes."
+    ]
+  },
+  "Greek": {
+    "History": [
+      "Ancient Greece is considered the cradle of Western civilization, giving rise to democracy, philosophy, and the Olympics.",
+      "Greece was part of the Byzantine Empire for over a thousand years after the fall of Ancient Greece.",
+      "Modern Greece gained independence from the Ottoman Empire in 1830 after a long revolutionary war."
+    ],
+    "Food": [
+      "Greek cuisine features olive oil, herbs, and fresh vegetables, with dishes like moussaka and souvlaki being iconic.",
+      "Feta cheese and olives are staples in many Greek meals, especially in traditional Greek salads.",
+      "Meze, a selection of small dishes served with drinks, is central to Greek social dining culture."
+    ],
+    "People": [
+      "Greeks are known for their strong family bonds and warm hospitality, often expressed through generous food and conversation.",
+      "Greek names often carry religious or historical significance, and name days are celebrated like birthdays.",
+      "The Greek language has one of the longest documented histories, with roots dating back to the 9th century BCE."
+    ],
+    "Festivals": [
+      "Easter is the most important religious holiday in Greece, celebrated with midnight church services, fireworks, and roasted lamb.",
+      "The Athens Epidaurus Festival features performances of ancient dramas in historic amphitheaters during the summer.",
+      "Carnival (Apokries) is a festive season before Lent, filled with costumes, parades, and street parties."
+    ]
+  },
+  "Indian": {
+    "History": [
+      "India is home to one of the world's oldest civilizations, the Indus Valley Civilization, dating back to 2500 BCE.",
+      "India gained independence from British colonial rule in 1947 after a non-violent movement led by Mahatma Gandhi.",
+      "The country has a rich history of empires, including the Maurya, Gupta, Mughal, and Maratha dynasties."
+    ],
+    "Food": [
+      "Indian cuisine is known for its bold spices and regional diversity, with dishes like biryani, dosa, and butter chicken.",
+      "Vegetarianism is widespread due to religious influences, especially among Hindus, Jains, and Buddhists.",
+      "Chai (spiced tea) is a daily staple and a symbol of hospitality across the country."
+    ],
+    "People": [
+      "India is one of the most culturally diverse nations, with over 1.4 billion people and more than 2,000 ethnic groups.",
+      "It has 22 officially recognized languages, with Hindi and English being the most widely used for communication.",
+      "Family and community play central roles in Indian life, often with multiple generations living together."
+    ],
+    "Festivals": [
+      "Diwali, the Festival of Lights, is celebrated across religions with fireworks, sweets, and oil lamps.",
+      "Holi, the Festival of Colors, marks the arrival of spring with joyful throwing of colored powders and water.",
+      "Eid, Christmas, Navratri, and Pongal are also widely celebrated, reflecting India's religious and regional diversity."
+    ]
+  }
+}

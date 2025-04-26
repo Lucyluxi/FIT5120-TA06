@@ -211,67 +211,97 @@ const selectCulture = (culture) => {
 
   
   <style scoped>
-  .background-wrapper {
-    background-color: rgba(252, 235, 213, 0.8);
-    min-height: 100vh;
-    padding-top: 0;
-    margin-top: 0;
-    font-size: 22px;
-    line-height: 1.6;
-    font-family: Arial, sans-serif;
-  }
-  
-  img.img-fluid {
-    margin-top: 0;
-    padding-top: 0;
-    display: block;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  
+  ..background-wrapper {
+  background-color: rgba(252, 235, 213, 0.8);
+  min-height: 100vh;
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 22px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+}
 
-  .flag-icon {
-    width: 60px;
-    height: 40px;
-    border-radius: 4px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  }
-  
+img.img-fluid {
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-  button.btn {
-    font-size: 22px;
-  }
-  
+.flag-icon {
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
 
-  .border.rounded.bg-light {
-    font-size: 24px;
-  }
-  
+button.btn {
+  font-size: 22px;
+}
 
-  .border.rounded.bg-light p {
-    font-size: 20px;
-  }
-  
+/* Default button color to orange */
+button.btn-outline-primary {
+  color: #fd7e14;
+  border-color: #fd7e14;
+}
 
-  .page-link {
-    font-size: 20px;
-  }
-  
-  .page-item.active .page-link {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-    color: white;
-    font-weight: bold;
-  }
+button.btn-outline-primary:hover,
+button.btn-outline-primary:active,
+button.btn-outline-primary:focus {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+  color: white;
+}
 
-  .banner-image {
+/* Selected culture button (active) */
+button.btn-primary {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+button.btn-primary:hover,
+button.btn-primary:active,
+button.btn-primary:focus {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.border.rounded.bg-light {
+  font-size: 24px;
+}
+
+.border.rounded.bg-light p {
+  font-size: 20px;
+}
+
+.page-link {
+  font-size: 20px;
+  color: #fd7e14;
+  border: 1px solid #fd7e14;
+}
+
+.page-link:hover {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.page-item.active .page-link {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+  color: white;
+  font-weight: bold;
+}
+
+.banner-image {
   max-width: 100%;
   width: 1200px; /* adjust as needed */
   height: auto;
   display: block;
   margin: 0 auto 32px auto; /* center and add space below */
 }
+
   </style>
   
   
