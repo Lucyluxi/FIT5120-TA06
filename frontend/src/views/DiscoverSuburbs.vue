@@ -211,7 +211,7 @@ const selectCulture = (culture) => {
 
   
   <style scoped>
-  ..background-wrapper {
+  .background-wrapper {
   background-color: rgba(252, 235, 213, 0.8);
   min-height: 100vh;
   padding-top: 0;
