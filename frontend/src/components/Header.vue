@@ -30,9 +30,9 @@
         <li class="nav-item">
           <router-link to="/activity" class="nav-link" :class="{ active: $route.path.startsWith('/activity') }">Activities</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/discover" class="nav-link" :class="{ active: $route.path === '/discover' }">Discover</router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
           <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">Discover Suburbs</router-link>
         </li>

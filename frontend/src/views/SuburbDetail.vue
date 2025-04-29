@@ -179,7 +179,7 @@ iframe.w-100 {
 
 .page-link:hover {
   background-color: #ee825f;
-  color: white;
+  color: rgba(252, 235, 213, 0.8);
 }
 
 .page-item.active .page-link {

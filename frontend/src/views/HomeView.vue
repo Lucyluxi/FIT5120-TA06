@@ -5,7 +5,7 @@
       <div class="z-index-2 position-relative text-box p-4">
         <h1 class="display-4 fw-bold fade-in-up">Bringing Comfort, Care, and Connection!</h1>
         <p class="lead fade-in-up">
-          Because everyone deserves to feel at home, no matter where they’re from.
+          Because everyone deserves to feel at home, no matter where they're from.
         </p>
       </div>
     </section>
@@ -15,10 +15,12 @@
       <div class="row g-4">
         <!-- Card 1 -->
         <div class="col-md-4">
+          <router-link to="/suburb" class="text-decoration-none">
           <div class="card-wrapper">
             <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
             <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
           </div>
+        </router-link>
         </div>
 
         <!-- Card 2 -->
