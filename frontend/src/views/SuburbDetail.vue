@@ -12,12 +12,12 @@
 
         <!-- Features List -->
         <div class="mt-3 bg-light p-4 rounded shadow-sm">
-          <h5 class="fw-bold mb-3">Places to visit:</h5>
+          <h5 class="fw-bold mb-3">Places to visit(click to see the map location):</h5>
           <ul v-if="features && features.length > 0" class="list-unstyled">
             <li
               v-for="(item, index) in features"
               :key="index"
-              class="mb-3 p-3 bg-white rounded shadow-sm border d-flex align-items-center"
+              class="mb-3 p-3 rounded shadow-sm border d-flex align-items-center"
               style="font-size: 1.25rem; cursor: pointer;"
               @click="showLocation(item.name)"
             >
@@ -30,11 +30,12 @@
 
         <!-- Return Button -->
         <router-link
-          to="/suburb"
+          :to="{ path: '/suburb', query: { culture: $route.query.culture, page: $route.query.page } }"
           class="btn btn-warm mt-4 px-5 py-3 fs-5 fw-semibold"
         >
           ← Back
         </router-link>
+
       </div>
 
       <!-- Right Column: Map -->
@@ -134,13 +135,18 @@ iframe.w-100 {
 
 /* Features list styling */
 .list-unstyled li {
-  transition: background 0.3s ease, transform 0.3s ease;
+  background-color: rgba(252, 235, 213, 0.8) !important;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none !important;
+  box-shadow: none !important;
 }
+
 .list-unstyled li:hover {
-  background: rgba(252, 235, 213, 0.8);
+  background-color: rgba(255, 223, 197, 1);
   transform: translateY(-2px);
   cursor: pointer;
 }
+
 
 /* Warm muted text color */
 .text-warm-muted {
