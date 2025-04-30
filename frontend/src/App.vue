@@ -6,23 +6,21 @@ import Header from './components/Header.vue'
 const isLargeCursor = ref(false)
 const isLargeFont = ref(false)
 
-// Toggle large cursor class
+// Toggle cursor
 function toggleCursor() {
   isLargeCursor.value = !isLargeCursor.value
   document.body.classList.toggle('large-cursor', isLargeCursor.value)
 }
 
-// Toggle large font class
+// Toggle font scaling (via CSS variable)
 function toggleFontSize() {
   isLargeFont.value = !isLargeFont.value
-  document.body.classList.toggle('large-font', isLargeFont.value)
+  const scale = isLargeFont.value ? 1.25 : 1
+  document.documentElement.style.setProperty('--font-scale', scale)
 }
 
-// Restore on page refresh (optional)
+// Optional: restore previous state
 onMounted(() => {
-  if (document.body.classList.contains('large-font')) {
-    isLargeFont.value = true
-  }
   if (document.body.classList.contains('large-cursor')) {
     isLargeCursor.value = true
   }
@@ -33,7 +31,7 @@ onMounted(() => {
   <div class="main-container">
     <Header />
 
-    <!-- Main router view -->
+    <!-- Main content -->
     <main class="main-box">
       <router-view />
     </main>
@@ -49,12 +47,16 @@ onMounted(() => {
 </template>
 
 <style>
-/* === GLOBAL FONT SCALING === */
-body.large-font {
-  font-size: 1.25rem !important;
+/* === CSS Variable Font Scale === */
+:root {
+  --font-scale: 1;
 }
 
-/* === CURSOR ENLARGEMENT === */
+html {
+  font-size: calc(16px * var(--font-scale));
+}
+
+/* === Large Cursor === */
 body.large-cursor {
   cursor: url('/images/cursor.png') 8 8, auto;
 }
