@@ -1,42 +1,47 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Header from './components/Header.vue'
 
-// Toggle state for large cursor
+// State refs
 const isLargeCursor = ref(false)
-
-// Toggle state for large font
 const isLargeFont = ref(false)
 
-// Toggle large cursor class on <body>
+// Toggle large cursor class
 function toggleCursor() {
   isLargeCursor.value = !isLargeCursor.value
   document.body.classList.toggle('large-cursor', isLargeCursor.value)
 }
 
-// Toggle large font class on <body>
+// Toggle large font class
 function toggleFontSize() {
   isLargeFont.value = !isLargeFont.value
   document.body.classList.toggle('large-font', isLargeFont.value)
 }
+
+// Restore on page refresh (optional)
+onMounted(() => {
+  if (document.body.classList.contains('large-font')) {
+    isLargeFont.value = true
+  }
+  if (document.body.classList.contains('large-cursor')) {
+    isLargeCursor.value = true
+  }
+})
 </script>
 
 <template>
   <div class="main-container">
-    <!-- Global Header -->
     <Header />
 
-    <!-- Main content area -->
+    <!-- Main router view -->
     <main class="main-box">
       <router-view />
     </main>
 
-    <!-- Accessibility: Toggle large cursor -->
+    <!-- Accessibility buttons -->
     <button class="accessibility-btn cursor-btn" @click="toggleCursor">
       🖱️ Toggle Large Cursor
     </button>
-
-    <!-- Accessibility: Toggle large font -->
     <button class="accessibility-btn font-btn" @click="toggleFontSize">
       🔠 Toggle Large Font
     </button>
@@ -44,7 +49,17 @@ function toggleFontSize() {
 </template>
 
 <style>
-/* === RESET / BASE === */
+/* === GLOBAL FONT SCALING === */
+body.large-font {
+  font-size: 1.25rem !important;
+}
+
+/* === CURSOR ENLARGEMENT === */
+body.large-cursor {
+  cursor: url('/images/cursor.png') 8 8, auto;
+}
+
+/* === BASE RESET === */
 html, body {
   margin: 0;
   padding: 0;
@@ -54,7 +69,7 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* === MAIN LAYOUT === */
+/* === LAYOUT === */
 .main-container {
   min-height: 100vh;
   display: flex;
@@ -74,33 +89,6 @@ html, body {
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
-}
-
-.custom-header {
-  background-color: rgba(252, 235, 213, 0.8);
-  padding: 0.5rem 2rem;
-  border-radius: 0 0 0.5rem 0.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* === FIXED HEADER (optional if used) === */
-.fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-/* === ACCESSIBILITY: Large Cursor === */
-body.large-cursor {
-  cursor: url('/images/cursor.png') 8 8, auto; /* Ensure this image exists */
-}
-
-/* === ACCESSIBILITY: Large Font === */
-body.large-font {
-  font-size: 1.25rem; /* Global font scaling */
 }
 
 /* === ACCESSIBILITY BUTTONS === */
@@ -124,12 +112,11 @@ body.large-font {
   background-color: #fae4cf;
 }
 
-/* === Positioning for the cursor and font buttons === */
 .cursor-btn {
   bottom: 20px;
 }
 
 .font-btn {
-  bottom: 80px; /* offset to not overlap cursor button */
+  bottom: 80px;
 }
 </style>
