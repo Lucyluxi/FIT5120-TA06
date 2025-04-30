@@ -8,6 +8,10 @@ import DiscoverSuburbs from '@/views/DiscoverSuburbs.vue'
 import ChatbotView from '@/views/ChatbotView.vue'
 import GameView from '@/views/GameView.vue'
 import SuburbDetail from '@/views/SuburbDetail.vue'
+import SudokuPage from '@/views/SudokuPage.vue';
+import MemoryPage from '@/views/MemoryPage.vue';
+import PuzzlePage from '@/views/PuzzlePage.vue';
+
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
@@ -22,7 +26,10 @@ const routes = [
     path: '/suburb/:name',
     name: 'SuburbDetail',
     component: SuburbDetail
-  }
+  },
+  { path: '/game/sudoku', component: SudokuPage },
+  { path: '/game/memory', component: MemoryPage },
+  { path: '/game/puzzle', component: PuzzlePage }
 ]
 
 const router = createRouter({
