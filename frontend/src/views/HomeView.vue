@@ -3,8 +3,8 @@
     <!-- 🖼️ Hero Section with background image -->
     <section class="hero-image d-flex align-items-center justify-content-center text-center text-white">
       <div class="z-index-2 position-relative text-box p-4">
-        <h1 class="display-4 fw-bold fade-in-up">Bringing Comfort, Care, and Connection!</h1>
-        <p class="lead fade-in-up">
+        <h1 class="fade-in-up hero-title">Bringing Comfort, Care, and Connection!</h1>
+        <p class="fade-in-up hero-subtitle">
           Because everyone deserves to feel at home, no matter where they're from.
         </p>
       </div>
@@ -16,11 +16,11 @@
         <!-- Card 1 -->
         <div class="col-md-4">
           <router-link to="/suburb" class="text-decoration-none">
-          <div class="card-wrapper">
-            <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-            <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
-          </div>
-        </router-link>
+            <div class="card-wrapper">
+              <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
+            </div>
+          </router-link>
         </div>
 
         <!-- Card 2 -->
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <!-- Card 3 with router-link -->
+        <!-- Card 3 -->
         <div class="col-md-4">
           <router-link to="/activity" class="text-decoration-none">
             <div class="card-wrapper">
@@ -70,7 +70,6 @@ export default {
 }
 
 .hero-image::before {
-  /* Gradient overlay */
   content: '';
   position: absolute;
   top: 0;
@@ -81,9 +80,8 @@ export default {
   z-index: 1;
 }
 
-/* Text container: translucent box for white text */
 .text-box {
-  background-color: rgba(0, 0, 0, 0.4); /* translucent dark to boost white contrast */
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
@@ -93,7 +91,18 @@ export default {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Animation: fade-in and slide-up */
+/* 🆕 Font scaling enabled titles and paragraphs */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Animation */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -109,7 +118,7 @@ export default {
 }
 
 /* -----------------------------------
-   Card Styling + Animation
+   Card Styling
 ------------------------------------ */
 .card-wrapper {
   position: relative;
@@ -124,7 +133,6 @@ export default {
   box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
-/* Card overlay title */
 .card-title-overlay {
   position: absolute;
   bottom: 0;
@@ -134,6 +142,7 @@ export default {
   background-color: rgba(0,0,0,0.5);
   color: white;
   border-radius: 0.5rem;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 </style>

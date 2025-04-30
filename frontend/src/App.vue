@@ -2,24 +2,43 @@
 import { ref } from 'vue'
 import Header from './components/Header.vue'
 
-// Toggle large cursor
+// Toggle state for large cursor
 const isLargeCursor = ref(false)
+
+// Toggle state for large font
+const isLargeFont = ref(false)
+
+// Toggle large cursor class on <body>
 function toggleCursor() {
   isLargeCursor.value = !isLargeCursor.value
   document.body.classList.toggle('large-cursor', isLargeCursor.value)
+}
+
+// Toggle large font class on <body>
+function toggleFontSize() {
+  isLargeFont.value = !isLargeFont.value
+  document.body.classList.toggle('large-font', isLargeFont.value)
 }
 </script>
 
 <template>
   <div class="main-container">
+    <!-- Global Header -->
     <Header />
+
+    <!-- Main content area -->
     <main class="main-box">
       <router-view />
     </main>
 
-    <!-- 🖱️ Accessibility: Toggle large cursor -->
-    <button class="accessibility-btn" @click="toggleCursor">
+    <!-- Accessibility: Toggle large cursor -->
+    <button class="accessibility-btn cursor-btn" @click="toggleCursor">
       🖱️ Toggle Large Cursor
+    </button>
+
+    <!-- Accessibility: Toggle large font -->
+    <button class="accessibility-btn font-btn" @click="toggleFontSize">
+      🔠 Toggle Large Font
     </button>
   </div>
 </template>
@@ -42,7 +61,6 @@ html, body {
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
-  margin: 0;
 }
 
 .container-fluid {
@@ -65,6 +83,7 @@ html, body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* === FIXED HEADER (optional if used) === */
 .fixed-header {
   position: fixed;
   top: 0;
@@ -74,15 +93,19 @@ html, body {
   z-index: 1000;
 }
 
-/* === LARGE CURSOR STYLING === */
+/* === ACCESSIBILITY: Large Cursor === */
 body.large-cursor {
-  cursor: url('/images/cursor.png') 8 8, auto;
+  cursor: url('/images/cursor.png') 8 8, auto; /* Ensure this image exists */
 }
 
-/* === ACCESSIBILITY TOGGLE BUTTON === */
+/* === ACCESSIBILITY: Large Font === */
+body.large-font {
+  font-size: 1.25rem; /* Global font scaling */
+}
+
+/* === ACCESSIBILITY BUTTONS === */
 .accessibility-btn {
   position: fixed;
-  bottom: 20px;
   right: 20px;
   z-index: 9999;
   background-color: #fff;
@@ -94,5 +117,19 @@ body.large-cursor {
   font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-btn:hover {
+  background-color: #fae4cf;
+}
+
+/* === Positioning for the cursor and font buttons === */
+.cursor-btn {
+  bottom: 20px;
+}
+
+.font-btn {
+  bottom: 80px; /* offset to not overlap cursor button */
 }
 </style>

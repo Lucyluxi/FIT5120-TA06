@@ -1,7 +1,8 @@
 <template>
   <BackgroundSection>
-    <div class="text-center py-4">
+    <div class="page-wrapper text-center py-4">
       <h2 class="mb-4">🎮 Choose a Game</h2>
+
       <div class="row justify-content-center g-4">
         <!-- Card 1: Sudoku -->
         <div class="col-md-4">
@@ -49,6 +50,15 @@ export default {
 </script>
 
 <style scoped>
+/* Outer wrapper to stretch at least to full viewport height */
+.page-wrapper {
+  min-height: calc(100vh - 100px); /* Adjust if your header height is different */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Game card styling */
 .game-card {
   position: relative;
   overflow: hidden;
