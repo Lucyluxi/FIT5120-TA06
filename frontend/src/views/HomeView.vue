@@ -13,30 +13,58 @@
     <!-- 📷 Cards Section wrapped in reusable background -->
     <BackgroundSection>
       <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-4">
+        <!-- Card 1 - Activities -->
+        <div class="col-md-3">
+          <router-link to="/activity" class="text-decoration-none">
+            <div class="card-wrapper">
+              <img
+                src="/images/social.jpg"
+                class="img-fluid w-100"
+                style="height: 300px; object-fit: cover;"
+              />
+              <h5 class="card-title-overlay">Social Activities</h5>
+            </div>
+          </router-link>
+        </div>
+
+        <!-- Card 2 - Discover Suburbs -->
+        <div class="col-md-3">
           <router-link to="/suburb" class="text-decoration-none">
             <div class="card-wrapper">
-              <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <img
+                src="/images/suburb.jpg"
+                class="img-fluid w-100"
+                style="height: 300px; object-fit: cover;"
+              />
               <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
             </div>
           </router-link>
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-md-4">
-          <div class="card-wrapper">
-            <img src="/images/education.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-            <h5 class="card-title-overlay">Educational Communities</h5>
-          </div>
+        <!-- Card 3 - Chatbot -->
+        <div class="col-md-3">
+          <router-link to="/chatbot" class="text-decoration-none">
+            <div class="card-wrapper">
+              <img
+                src="/images/chatbot.png"
+                class="img-fluid w-100"
+                style="height: 300px; object-fit: cover;"
+              />
+              <h5 class="card-title-overlay">Cultural Info Chatbot</h5>
+            </div>
+          </router-link>
         </div>
 
-        <!-- Card 3 -->
-        <div class="col-md-4">
-          <router-link to="/activity" class="text-decoration-none">
+        <!-- Card 4 - Game -->
+        <div class="col-md-3">
+          <router-link to="/game" class="text-decoration-none">
             <div class="card-wrapper">
-              <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">Social Activities</h5>
+              <img
+                src="/images/education.jpg"
+                class="img-fluid w-100"
+                style="height: 300px; object-fit: cover;"
+              />
+              <h5 class="card-title-overlay">Games</h5>
             </div>
           </router-link>
         </div>
@@ -91,7 +119,6 @@ export default {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* 🆕 Font scaling enabled titles and paragraphs */
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
