@@ -1,29 +1,30 @@
 <template>
-    <BackgroundSection>
-      <div class="text-center py-4">
-        <h2 class="mb-4">🧩 Jigsaw Puzzle</h2>
-        <p class="mb-3">Click and swap tiles to complete the picture!</p>
-  
-        <div class="puzzle-grid mx-auto">
-          <div
-            v-for="(tile, index) in tiles"
-            :key="index"
-            class="puzzle-tile"
-            :style="tileStyle(tile)"
-            @click="handleTileClick(index)"
-          ></div>
-        </div>
-  
-        <p v-if="isCompleted" class="mt-4 complete-message">
-          🎉 Puzzle completed!
-        </p>
-  
-        <div class="mt-4">
-          <ActionButton label="Shuffle" @click="shuffleTiles" />
-        </div>
+  <BackgroundSection>
+    <div class="text-center py-4">
+      <h2 class="mb-4">{{ $t("puzzleTitle") }}</h2>
+      <p class="mb-3">{{ $t("puzzleInstructions") }}</p>
+
+      <div class="puzzle-grid mx-auto">
+        <div
+          v-for="(tile, index) in tiles"
+          :key="index"
+          class="puzzle-tile"
+          :style="tileStyle(tile)"
+          @click="handleTileClick(index)"
+        ></div>
       </div>
-    </BackgroundSection>
-  </template>
+
+      <p v-if="isCompleted" class="mt-4 complete-message">
+        🎉 {{ $t("puzzleCompleted") }}
+      </p>
+
+      <div class="mt-4">
+        <ActionButton :label="$t('shuffle')" @click="shuffleTiles" />
+      </div>
+    </div>
+  </BackgroundSection>
+</template>
+
   
   <script>
   import BackgroundSection from '@/components/BackgroundSection.vue';
@@ -35,7 +36,7 @@
     data() {
       return {
         gridSize: 3,
-        imageUrl: '/images/puzzleImage.jpg', // 你需要添加这张图
+        imageUrl: '/images/puzzleImage.jpg',
         tiles: [],
         selectedIndex: null,
         isCompleted: false,

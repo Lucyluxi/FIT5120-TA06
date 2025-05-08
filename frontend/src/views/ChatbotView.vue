@@ -4,7 +4,7 @@
 
       <!-- Header -->
       <div class="card-header custom-header text-white fw-bold text-center">
-        Cultural Info Chatbot
+        {{ $t("chatbotTitle") }}
       </div>
 
       <!-- Avatar -->
@@ -36,7 +36,7 @@
         <div v-if="step === 1">
           <div class="d-flex flex-wrap gap-3 justify-content-center">
             <button v-for="culture in cultures" :key="culture.label" class="btn btn-warm btn-lg" @click="selectCulture(culture)">
-              {{ culture.label }}
+              {{ $t(culture.label) }}
             </button>
           </div>
         </div>
@@ -44,7 +44,7 @@
         <div v-else-if="step === 2">
           <div class="d-flex flex-wrap gap-3 justify-content-center">
             <button v-for="topic in topics" :key="topic.label" class="btn btn-warm btn-lg" @click="selectTopic(topic)">
-              {{ topic.label }}
+              {{ $t(topic.label) }}
             </button>
           </div>
         </div>
@@ -52,16 +52,16 @@
         <div v-else-if="step === 4">
           <div class="d-flex flex-wrap gap-3 justify-content-center">
             <button class="btn btn-warm btn-lg" @click="showAnotherFact">
-              🔁 Show another fact
+              🔁 {{ $t("anotherFact") }}
             </button>
             <button class="btn btn-warm btn-lg" @click="goToTopicSelection">
-              🔄 Change topic
+              🔄 {{ $t("changeTopic") }}
             </button>
             <button class="btn btn-warm btn-lg" @click="goToCultureSelection">
-              🌏 Change culture
+              🌏 {{ $t("changeCulture") }}
             </button>
             <button class="btn btn-danger btn-lg" @click="exitChat">
-              ❌ Exit
+              ❌ {{ $t("exit") }}
             </button>
           </div>
         </div>
@@ -73,43 +73,33 @@
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue';
+import { useI18n } from 'vue-i18n';
 import cultureData from '@/assets/Cultural_Facts.json';
 
-// Messages for the chat window
+const { t: $t, locale } = useI18n();
+
 const messages = ref([]);
-
-// Chatbot state step
-const step = ref(1); // 1: culture, 2: topic, 4: follow-up
-
-// Selected values
+const step = ref(1);
 const selectedCulture = ref('');
 const selectedTopic = ref('');
-
-// Scroll reference
 const chatBody = ref(null);
-
-// Track used fact indices for current topic
 const usedFactIndices = ref([]);
-
-// Is bot currently "typing"
 const isBotTyping = ref(false);
 
-// Culture and topic lists
 const cultures = [
-  { label: 'Vietnamese 🇻🇳', value: 'Vietnamese' },
-  { label: 'Chinese 🇨🇳', value: 'Chinese' },
-  { label: 'Greek 🇬🇷', value: 'Greek' },
-  { label: 'Indian 🇮🇳', value: 'Indian' }
+  { label: 'vietnamese', value: 'Vietnamese' },
+  { label: 'chinese', value: 'Chinese' },
+  { label: 'greek', value: 'Greek' },
+  { label: 'indian', value: 'Indian' }
 ];
 
 const topics = [
-  { label: 'History 📜', value: 'History' },
-  { label: 'Food 🍛', value: 'Food' },
-  { label: 'People 👥', value: 'People' },
-  { label: 'Festivals 🎉', value: 'Festivals' }
+  { label: 'history', value: 'History' },
+  { label: 'food', value: 'Food' },
+  { label: 'people', value: 'People' },
+  { label: 'festivals', value: 'Festivals' }
 ];
 
-// Scroll to bottom when new messages appear
 function scrollToBottom() {
   nextTick(() => {
     if (chatBody.value) {
@@ -118,19 +108,16 @@ function scrollToBottom() {
   });
 }
 
-// Add user message
 function addUserMessage(text) {
   messages.value.push({ sender: 'user', text });
   scrollToBottom();
 }
 
-// Add bot message instantly
 function addBotMessage(text) {
   messages.value.push({ sender: 'bot', text });
   scrollToBottom();
 }
 
-// Add bot message with typing animation
 function addBotMessageWithTyping(text) {
   isBotTyping.value = true;
   setTimeout(() => {
@@ -139,39 +126,37 @@ function addBotMessageWithTyping(text) {
   }, 800);
 }
 
-// When culture is selected
 function selectCulture(culture) {
-  addUserMessage(culture.label);
+  addUserMessage($t(culture.label));
   selectedCulture.value = culture.value;
   setTimeout(() => {
-    addBotMessageWithTyping('Great choice! What topic are you interested in?');
+    addBotMessageWithTyping($t('chooseTopic'));
     step.value = 2;
   }, 500);
 }
 
-// When topic is selected
 function selectTopic(topic) {
-  addUserMessage(topic.label);
+  addUserMessage($t(topic.label));
   selectedTopic.value = topic.value;
-  usedFactIndices.value = []; // Reset shown facts for this topic
+  usedFactIndices.value = [];
   setTimeout(() => {
     showRandomFact();
   }, 500);
 }
 
-// Show a unique random fact (no repeats until all shown)
 function showRandomFact() {
-  const facts = cultureData[selectedCulture.value]?.[selectedTopic.value] || [];
-
+  const currentLang = locale.value;
+  const facts = cultureData[selectedCulture.value]?.[selectedTopic.value]?.[currentLang] || [];
+  
   if (facts.length === 0) {
-    addBotMessageWithTyping('Sorry, no facts available for this topic.');
+    addBotMessageWithTyping($t('noFacts'));
     return;
   }
 
   if (usedFactIndices.value.length >= facts.length) {
-    addBotMessageWithTyping('No more facts available for this topic. Please choose another topic or culture.');
+    addBotMessageWithTyping($t('allFactsShown'));
     setTimeout(() => {
-      addBotMessageWithTyping('What would you like to do next?');
+      addBotMessageWithTyping($t('whatNext'));
       step.value = 4;
     }, 500);
     return;
@@ -183,45 +168,38 @@ function showRandomFact() {
 
   const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
   const fact = facts[randomIndex];
-
   usedFactIndices.value.push(randomIndex);
 
-  addBotMessageWithTyping(`Here’s a fact about ${selectedTopic.value} in ${selectedCulture.value}:`);
+  addBotMessageWithTyping($t('factIntro', { topic: $t(selectedTopic.value), culture: $t(selectedCulture.value) }));
   setTimeout(() => {
     addBotMessageWithTyping(`👉 ${fact}`);
     setTimeout(() => {
-      addBotMessageWithTyping('What would you like to do next?');
+      addBotMessageWithTyping($t('whatNext'));
       step.value = 4;
     }, 1000);
   }, 800);
 }
 
-// When "Show another fact" is clicked
+
+
 function showAnotherFact() {
   showRandomFact();
 }
-
-// Return to topic selection
 function goToTopicSelection() {
   step.value = 2;
-  addBotMessageWithTyping('Sure! What topic are you interested in now?');
+  addBotMessageWithTyping($t('chooseTopic'));
 }
-
-// Return to culture selection
 function goToCultureSelection() {
   step.value = 1;
-  addBotMessageWithTyping('No problem! Which culture would you like to learn about?');
+  addBotMessageWithTyping($t('chooseCulture'));
 }
-
-// Exit the chat
 function exitChat() {
   step.value = 0;
-  addBotMessageWithTyping('Thank you for using the chatbot! Have a great day! 😊');
+  addBotMessageWithTyping($t('exitMessage'));
 }
 
-// Show welcome message on mount
 onMounted(() => {
-  addBotMessageWithTyping('Hi! I can share interesting cultural facts. Which culture would you like to learn about?');
+  addBotMessageWithTyping($t('welcome'));
 });
 </script>
 

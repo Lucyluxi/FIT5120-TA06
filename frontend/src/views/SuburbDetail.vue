@@ -26,6 +26,11 @@
             </li>
           </ul>
           <p v-else class="text-warm-muted">No cultural features found in this suburb.</p>
+
+          <!-- Add data source statement here -->
+          <p class="mt-4" style="font-size: 0.9rem; color: black;">
+            Data source: © OpenStreetMap contributors
+          </p>
         </div>
 
         <!-- Return Button -->

@@ -1,90 +1,233 @@
 {
   "Vietnamese": {
-    "History": [
+  "History": {
+    "en": [
       "Vietnam was under Chinese rule for over a thousand years, shaping much of its language, governance, and culture.",
       "The country gained independence from France in 1954 after the decisive Battle of Điện Biên Phủ.",
       "The Vietnam War ended in 1975, leading to the reunification of North and South Vietnam under communist rule."
     ],
-    "Food": [
+    "zh": [
+      "越南曾被中国统治一千多年，其语言、治理和文化深受影响。",
+      "1954年奠边府战役胜利后，越南摆脱法国殖民统治获得独立。",
+      "1975年越南战争结束，南北统一为社会主义国家。"
+    ],
+    "vi": [
+      "Việt Nam từng bị Trung Quốc đô hộ hơn một nghìn năm, ảnh hưởng đến ngôn ngữ, chính quyền và văn hóa.",
+      "Việt Nam giành độc lập khỏi Pháp năm 1954 sau chiến thắng quyết định tại trận Điện Biên Phủ.",
+      "Chiến tranh Việt Nam kết thúc năm 1975, thống nhất Bắc và Nam dưới chính quyền cộng sản."
+    ]
+  },
+  "Food": {
+    "en": [
       "Phở, a noodle soup with beef or chicken, is Vietnam’s most iconic dish and is eaten at any time of day.",
       "Vietnamese cuisine emphasizes fresh herbs like mint and coriander, balancing sweet, sour, salty, and spicy flavors.",
       "Fish sauce (nước mắm) is a staple condiment used in cooking and as a dip across the country."
     ],
-    "People": [
+    "zh": [
+      "越南粉（Phở）是越南最具代表性的美食，任何时间都可以吃。",
+      "越南菜讲究使用新鲜香草，如薄荷和香菜，味道在甜、酸、咸、辣之间取得平衡。",
+      "鱼露（nước mắm）是越南常用的调味品，广泛用于烹饪和蘸食。"
+    ],
+    "vi": [
+      "Phở, món súp phở với thịt bò hoặc gà, là món ăn đặc trưng nhất của Việt Nam và có thể ăn bất kỳ lúc nào.",
+      "Ẩm thực Việt Nam nhấn mạnh vào rau thơm tươi như bạc hà và ngò rí, kết hợp vị ngọt, chua, mặn, cay.",
+      "Nước mắm là gia vị chủ đạo trong nấu ăn và ăn kèm trên khắp đất nước."
+    ]
+  },
+  "People": {
+    "en": [
       "Vietnam has 54 recognized ethnic groups, with the Kinh (Viet) people making up over 85% of the population.",
       "Respect for elders and strong family ties are central to Vietnamese social values.",
       "Many Vietnamese names follow the structure: family name, middle name, then given name, with 'Nguyễn' being the most common surname."
     ],
-    "Festivals": [
+    "zh": [
+      "越南有54个官方认定的民族，京族（越族）占总人口的85%以上。",
+      "尊重长辈与重视家庭关系是越南社会的重要价值观。",
+      "越南人名一般顺序是姓、次名、名，“Nguyễn（阮）”是最常见的姓氏。"
+    ],
+    "vi": [
+      "Việt Nam có 54 dân tộc được công nhận, trong đó người Kinh chiếm hơn 85% dân số.",
+      "Tôn trọng người lớn tuổi và quan hệ gia đình bền chặt là giá trị cốt lõi của xã hội Việt Nam.",
+      "Tên người Việt thường theo thứ tự: họ - tên đệm - tên gọi, với 'Nguyễn' là họ phổ biến nhất."
+    ]
+  },
+  "Festivals": {
+    "en": [
       "Tết (Lunar New Year) is the most important holiday, marking the arrival of spring with family reunions and ancestral worship.",
       "The Mid-Autumn Festival celebrates the harvest with lanterns, mooncakes, and children’s parades.",
       "Hùng Kings’ Temple Festival honors the mythical founders of Vietnam with ceremonies and cultural performances every April."
+    ],
+    "zh": [
+      "春节（Tết）是越南最重要的节日，象征春天到来，家人团聚，祭拜祖先。",
+      "中秋节通过灯笼、月饼和儿童游行庆祝丰收。",
+      "雄王庙会是为了纪念越南传说中的祖先，每年四月举行仪式与文化表演。"
+    ],
+    "vi": [
+      "Tết (Tết Nguyên Đán) là lễ hội quan trọng nhất, đánh dấu mùa xuân với sự đoàn tụ gia đình và cúng tổ tiên.",
+      "Tết Trung Thu mừng mùa vụ với lồng đèn, bánh trung thu và diễu hành trẻ em.",
+      "Lễ hội Đền Hùng tưởng nhớ các vua Hùng - những người lập quốc - bằng nghi lễ và biểu diễn truyền thống vào tháng 4 hàng năm."
     ]
-  },
+  }
+},
   "Chinese": {
-    "History": [
+  "History": {
+    "en": [
       "China is one of the world's oldest continuous civilizations, with a history spanning over 3,000 years.",
       "The Great Wall of China was built over centuries to protect against northern invasions.",
       "The 1911 Xinhai Revolution ended imperial rule, leading to the formation of the Republic of China."
     ],
-    "Food": [
+    "zh": [
+      "中国是世界上最古老的连续文明之一，拥有超过3000年的历史。",
+      "中国的长城历经多个朝代修建，用以抵御北方入侵。",
+      "1911年辛亥革命推翻了君主制，建立中华民国。"
+    ],
+    "vi": [
+      "Trung Quốc là một trong những nền văn minh lâu đời nhất thế giới, với lịch sử hơn 3.000 năm.",
+      "Vạn Lý Trường Thành được xây dựng qua nhiều thế kỷ để ngăn chặn xâm lược từ phương Bắc.",
+      "Cách mạng Tân Hợi năm 1911 đã kết thúc chế độ phong kiến và thành lập nước Cộng hòa Trung Hoa."
+    ]
+  },
+  "Food": {
+    "en": [
       "Chinese cuisine varies greatly by region, with notable styles including Cantonese, Sichuan, and Northern cuisine.",
       "Staple ingredients include rice, noodles, soy sauce, ginger, and garlic.",
       "Dim sum, a style of bite-sized dishes served with tea, is a traditional Cantonese practice."
     ],
-    "People": [
+    "zh": [
+      "中国菜系因地区而异，著名的有粤菜、川菜和北方菜。",
+      "常用食材包括米饭、面条、酱油、生姜和大蒜。",
+      "点心是粤菜中与茶一起食用的小份餐点的传统文化。"
+    ],
+    "vi": [
+      "Ẩm thực Trung Quốc rất đa dạng theo vùng, nổi bật là Quảng Đông, Tứ Xuyên và miền Bắc.",
+      "Thành phần chính gồm có cơm, mì, nước tương, gừng và tỏi.",
+      "Dimsum, món ăn nhỏ dùng kèm trà, là nét đặc trưng của ẩm thực Quảng Đông."
+    ]
+  },
+  "People": {
+    "en": [
       "China is the world's most populous country, with over 1.4 billion people and 56 recognized ethnic groups.",
       "Family and filial piety are core Confucian values deeply embedded in Chinese society.",
       "Mandarin is the official language, though many regional dialects like Cantonese, Shanghainese, and Hokkien are widely spoken."
     ],
-    "Festivals": [
+    "zh": [
+      "中国是世界上人口最多的国家，拥有超过14亿人口和56个官方民族。",
+      "家庭观念和孝道是儒家文化的重要组成部分，深植社会之中。",
+      "普通话是官方语言，但粤语、上海话、闽南语等方言也被广泛使用。"
+    ],
+    "vi": [
+      "Trung Quốc là quốc gia đông dân nhất thế giới với hơn 1,4 tỷ người và 56 dân tộc được công nhận.",
+      "Gia đình và lòng hiếu thảo là giá trị cốt lõi của Nho giáo, thấm sâu trong xã hội Trung Quốc.",
+      "Tiếng phổ thông là ngôn ngữ chính thức, nhưng nhiều phương ngữ như Quảng Đông, Thượng Hải và Phúc Kiến vẫn phổ biến."
+    ]
+  },
+  "Festivals": {
+    "en": [
       "Chinese New Year (Spring Festival) is the most important holiday, celebrated with fireworks, red envelopes, and family gatherings.",
       "The Dragon Boat Festival commemorates the poet Qu Yuan with boat races and sticky rice dumplings.",
       "The Mid-Autumn Festival celebrates the harvest and moon with lanterns and mooncakes."
-    ]
-  },
-  "Greek": {
-    "History": [
-      "Ancient Greece is considered the cradle of Western civilization, giving rise to democracy, philosophy, and the Olympics.",
-      "Greece was part of the Byzantine Empire for over a thousand years after the fall of Ancient Greece.",
-      "Modern Greece gained independence from the Ottoman Empire in 1830 after a long revolutionary war."
     ],
-    "Food": [
-      "Greek cuisine features olive oil, herbs, and fresh vegetables, with dishes like moussaka and souvlaki being iconic.",
-      "Feta cheese and olives are staples in many Greek meals, especially in traditional Greek salads.",
-      "Meze, a selection of small dishes served with drinks, is central to Greek social dining culture."
+    "zh": [
+      "春节是最重要的节日，人们通过烟花、红包和家庭团聚来庆祝。",
+      "端午节纪念诗人屈原，以赛龙舟和吃粽子为特色。",
+      "中秋节庆祝丰收与月亮，活动包括挂灯笼与吃月饼。"
     ],
-    "People": [
-      "Greeks are known for their strong family bonds and warm hospitality, often expressed through generous food and conversation.",
-      "Greek names often carry religious or historical significance, and name days are celebrated like birthdays.",
-      "The Greek language has one of the longest documented histories, with roots dating back to the 9th century BCE."
-    ],
-    "Festivals": [
-      "Easter is the most important religious holiday in Greece, celebrated with midnight church services, fireworks, and roasted lamb.",
-      "The Athens Epidaurus Festival features performances of ancient dramas in historic amphitheaters during the summer.",
-      "Carnival (Apokries) is a festive season before Lent, filled with costumes, parades, and street parties."
-    ]
-  },
-  "Indian": {
-    "History": [
-      "India is home to one of the world's oldest civilizations, the Indus Valley Civilization, dating back to 2500 BCE.",
-      "India gained independence from British colonial rule in 1947 after a non-violent movement led by Mahatma Gandhi.",
-      "The country has a rich history of empires, including the Maurya, Gupta, Mughal, and Maratha dynasties."
-    ],
-    "Food": [
-      "Indian cuisine is known for its bold spices and regional diversity, with dishes like biryani, dosa, and butter chicken.",
-      "Vegetarianism is widespread due to religious influences, especially among Hindus, Jains, and Buddhists.",
-      "Chai (spiced tea) is a daily staple and a symbol of hospitality across the country."
-    ],
-    "People": [
-      "India is one of the most culturally diverse nations, with over 1.4 billion people and more than 2,000 ethnic groups.",
-      "It has 22 officially recognized languages, with Hindi and English being the most widely used for communication.",
-      "Family and community play central roles in Indian life, often with multiple generations living together."
-    ],
-    "Festivals": [
-      "Diwali, the Festival of Lights, is celebrated across religions with fireworks, sweets, and oil lamps.",
-      "Holi, the Festival of Colors, marks the arrival of spring with joyful throwing of colored powders and water.",
-      "Eid, Christmas, Navratri, and Pongal are also widely celebrated, reflecting India's religious and regional diversity."
+    "vi": [
+      "Tết Nguyên Đán là lễ hội quan trọng nhất, được tổ chức với pháo hoa, lì xì và tụ họp gia đình.",
+      "Lễ hội Thuyền Rồng tưởng nhớ thi sĩ Khuất Nguyên bằng đua thuyền và ăn bánh chưng.",
+      "Tết Trung Thu mừng mùa gặt và mặt trăng với lồng đèn và bánh trung thu."
     ]
   }
+},
+  "Greek": {
+    "History": {
+      "en": [
+        "Ancient Greece is considered the cradle of Western civilization, giving rise to democracy, philosophy, and the Olympics.",
+        "Greece was part of the Byzantine Empire for over a thousand years after the fall of Ancient Greece.",
+        "Modern Greece gained independence from the Ottoman Empire in 1830 after a long revolutionary war."
+      ],
+      "zh": [
+        "古希腊被认为是西方文明的发源地，孕育了民主、哲学和奥林匹克运动会。",
+        "在古希腊衰落后，希腊成为拜占庭帝国的一部分超过千年。",
+        "现代希腊于1830年从奥斯曼帝国独立，经历了长时间的革命战争。"
+      ],
+      "vi": [
+        "Hy Lạp cổ đại được xem là cái nôi của nền văn minh phương Tây, sản sinh ra dân chủ, triết học và Thế vận hội Olympic.",
+        "Hy Lạp là một phần của Đế chế Byzantine hơn một nghìn năm sau sự suy tàn của Hy Lạp cổ đại.",
+        "Hy Lạp hiện đại giành độc lập khỏi Đế chế Ottoman vào năm 1830 sau một cuộc chiến tranh cách mạng kéo dài."
+      ]
+    },
+    "Food": {
+      "en": [
+        "Greek cuisine features olive oil, herbs, and fresh vegetables, with dishes like moussaka and souvlaki being iconic.",
+        "Feta cheese and olives are staples in many Greek meals, especially in traditional Greek salads.",
+        "Meze, a selection of small dishes served with drinks, is central to Greek social dining culture."
+      ],
+      "zh": [
+        "希腊美食以橄榄油、香草和新鲜蔬菜为特色，代表菜肴包括慕萨卡和烤肉串。",
+        "羊奶酪和橄榄是希腊饮食中的常见食材，尤其在传统沙拉中经常出现。",
+        "Meze 是一系列搭配酒类饮用的小菜，是希腊社交饮食文化的核心。"
+      ],
+      "vi": [
+        "Ẩm thực Hy Lạp sử dụng nhiều dầu ô liu, thảo mộc và rau tươi, với các món đặc trưng như moussaka và souvlaki.",
+        "Phô mai feta và ô liu là những nguyên liệu cơ bản trong nhiều bữa ăn của Hy Lạp, đặc biệt là trong món salad truyền thống.",
+        "Meze, bộ sưu tập các món ăn nhỏ dùng kèm đồ uống, là trung tâm của văn hóa ăn uống xã hội ở Hy Lạp."
+      ]
+    },
+    "People": {
+      "en": [
+        "Greeks are known for their strong family bonds and warm hospitality, often expressed through generous food and conversation.",
+        "Greek names often carry religious or historical significance, and name days are celebrated like birthdays.",
+        "The Greek language has one of the longest documented histories, with roots dating back to the 9th century BCE."
+      ],
+      "zh": [
+        "希腊人以紧密的家庭关系和热情好客著称，常通过丰盛的食物和交流表达。",
+        "希腊名字通常具有宗教或历史意义，姓名日如同生日一样庆祝。",
+        "希腊语是历史最悠久的语言之一，起源可追溯至公元前9世纪。"
+      ],
+      "vi": [
+        "Người Hy Lạp nổi tiếng với mối quan hệ gia đình bền chặt và lòng hiếu khách, thể hiện qua đồ ăn phong phú và trò chuyện.",
+        "Tên Hy Lạp thường mang ý nghĩa tôn giáo hoặc lịch sử, và ngày tên được tổ chức như sinh nhật.",
+        "Tiếng Hy Lạp là một trong những ngôn ngữ được ghi chép lâu đời nhất, có nguồn gốc từ thế kỷ 9 TCN."
+      ]
+    },
+    "Festivals": {
+      "en": [
+        "Easter is the most important religious holiday in Greece, celebrated with midnight church services, fireworks, and roasted lamb.",
+        "The Athens Epidaurus Festival features performances of ancient dramas in historic amphitheaters during the summer.",
+        "Carnival (Apokries) is a festive season before Lent, filled with costumes, parades, and street parties."
+      ],
+      "zh": [
+        "复活节是希腊最重要的宗教节日，人们会参加午夜弥撒、放烟花并吃烤羊肉庆祝。",
+        "雅典-埃皮达鲁斯艺术节在夏季举行，在历史悠久的露天剧场演出古希腊戏剧。",
+        "狂欢节（Apokries）是斋戒期前的庆典，活动包括化妆游行和街头派对。"
+      ],
+      "vi": [
+        "Lễ Phục Sinh là ngày lễ tôn giáo quan trọng nhất ở Hy Lạp, được tổ chức với lễ nhà thờ nửa đêm, pháo hoa và thịt cừu quay.",
+        "Lễ hội Athens Epidaurus trình diễn các vở kịch cổ đại tại các nhà hát vòng cổ kính vào mùa hè.",
+        "Lễ hội hóa trang (Apokries) là mùa lễ hội trước Mùa Chay, với hóa trang, diễu hành và tiệc tùng trên phố."
+      ]
+    }
+  },
+  "Indian": {
+    "History": {
+      "en": ["India is home to one of the world's oldest civilizations, the Indus Valley Civilization, dating back to 2500 BCE.", "India gained independence from British colonial rule in 1947 after a non-violent movement led by Mahatma Gandhi.", "The country has a rich history of empires, including the Maurya, Gupta, Mughal, and Maratha dynasties."],
+      "zh": ["印度是世界上最古老的文明之一——印度河流域文明的发源地，历史可追溯到公元前2500年。", "1947年，印度在圣雄甘地领导的不合作运动后摆脱了英国殖民统治，获得独立。", "印度有丰富的帝国历史，包括孔雀王朝、笈多王朝、莫卧儿帝国和马拉塔帝国。"],
+      "vi": ["Ấn Độ là nơi sinh ra một trong những nền văn minh cổ đại nhất thế giới - nền văn minh sông Ấn, có niên đại từ năm 2500 TCN.", "Ấn Độ giành độc lập khỏi sự đô hộ của Anh năm 1947 sau phong trào bất bạo động do Mahatma Gandhi lãnh đạo.", "Đất nước này có lịch sử phong phú với nhiều đế chế như Maurya, Gupta, Mughal và Maratha."]
+    },
+    "Food": {
+      "en": ["Indian cuisine is known for its bold spices and regional diversity, with dishes like biryani, dosa, and butter chicken.", "Vegetarianism is widespread due to religious influences, especially among Hindus, Jains, and Buddhists.", "Chai (spiced tea) is a daily staple and a symbol of hospitality across the country."],
+      "zh": ["印度美食以其浓烈的香料和地区多样性著称，代表性菜肴包括香饭、米粉饼和奶油鸡。", "由于宗教影响，素食主义在印度广泛盛行，尤其是在印度教、耆那教和佛教徒中。", "印度奶茶（Chai）是日常饮品，也是待客的象征。"],
+      "vi": ["Ẩm thực Ấn Độ nổi tiếng với gia vị đậm đà và sự đa dạng vùng miền, với các món như biryani, dosa và gà bơ.", "Chế độ ăn chay phổ biến do ảnh hưởng tôn giáo, đặc biệt là ở người Hindu, Jain và Phật tử.", "Chai (trà sữa có gia vị) là thức uống hàng ngày và biểu tượng của lòng hiếu khách khắp Ấn Độ."]
+    },
+    "People": {
+      "en": ["India is one of the most culturally diverse nations, with over 1.4 billion people and more than 2,000 ethnic groups.", "It has 22 officially recognized languages, with Hindi and English being the most widely used for communication.", "Family and community play central roles in Indian life, often with multiple generations living together."],
+      "zh": ["印度是世界上文化最多样的国家之一，拥有超过14亿人口和2000多个族群。", "印度官方认可的语言有22种，其中印地语和英语最为普及。", "家庭和社区在印度人的生活中占据核心地位，常有多代同堂的家庭结构。"],
+      "vi": ["Ấn Độ là một trong những quốc gia đa dạng văn hóa nhất, với hơn 1,4 tỷ người và hơn 2.000 nhóm sắc tộc.", "Quốc gia này có 22 ngôn ngữ được công nhận chính thức, trong đó tiếng Hindi và tiếng Anh được sử dụng phổ biến nhất.", "Gia đình và cộng đồng đóng vai trò trung tâm trong cuộc sống người Ấn, thường sống nhiều thế hệ trong một nhà."]
+    },
+    "Festivals": {
+      "en": ["Diwali, the Festival of Lights, is celebrated across religions with fireworks, sweets, and oil lamps.", "Holi, the Festival of Colors, marks the arrival of spring with joyful throwing of colored powders and water.", "Eid, Christmas, Navratri, and Pongal are also widely celebrated, reflecting India's religious and regional diversity."],
+      "zh": ["排灯节是印度最重要的节日之一，各宗教都会庆祝，活动包括烟花、甜食和点灯。", "胡里节是色彩节，人们通过抛洒彩粉和彩水来迎接春天。", "开斋节、圣诞节、九夜节和丰收节也在印度广泛庆祝，体现了其宗教与地区多样性。"],
+      "vi": ["Diwali, lễ hội ánh sáng, được tổ chức trên toàn quốc với pháo hoa, đồ ngọt và đèn dầu.", "Holi, lễ hội màu sắc, đánh dấu mùa xuân với việc ném bột màu và nước trong niềm vui sướng.", "Eid, Giáng Sinh, Navratri và Pongal cũng được tổ chức rộng rãi, phản ánh sự đa dạng tôn giáo và vùng miền của Ấn Độ."]
+    }}
 }

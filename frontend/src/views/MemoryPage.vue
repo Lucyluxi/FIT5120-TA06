@@ -1,32 +1,33 @@
 <template>
-    <BackgroundSection>
-      <div class="text-center py-4">
-        <h2 class="mb-4">🧠 Memory Match</h2>
-        <p class="mb-3">Click two cards to find a match!</p>
-  
-        <!-- Game Grid -->
-        <div class="memory-grid mx-auto">
-          <div
-            v-for="(card, index) in cards"
-            :key="index"
-            class="memory-card"
-            :class="{ flipped: isFlipped(index), matched: matchedIndices.includes(index) }"
-            @click="handleCardClick(index)"
-          >
-            <div class="card-inner">
-              <div class="card-front">{{ card }}</div>
-              <div class="card-back">❓</div>
-            </div>
+  <BackgroundSection>
+    <div class="text-center py-4">
+      <h2 class="mb-4">{{ $t("memoryTitle") }}</h2>
+      <p class="mb-3">{{ $t("memoryInstructions") }}</p>
+
+      <!-- Game Grid -->
+      <div class="memory-grid mx-auto">
+        <div
+          v-for="(card, index) in cards"
+          :key="index"
+          class="memory-card"
+          :class="{ flipped: isFlipped(index), matched: matchedIndices.includes(index) }"
+          @click="handleCardClick(index)"
+        >
+          <div class="card-inner">
+            <div class="card-front">{{ card }}</div>
+            <div class="card-back">❓</div>
           </div>
         </div>
-  
-        <!-- Reset Button -->
-        <div class="mt-4">
-          <ActionButton label="Restart" @click="resetGame" />
-        </div>
       </div>
-    </BackgroundSection>
-  </template>
+
+      <!-- Reset Button -->
+      <div class="mt-4">
+        <ActionButton :label="$t('restart')" @click="resetGame" />
+      </div>
+    </div>
+  </BackgroundSection>
+</template>
+
   
   <script>
   import BackgroundSection from '@/components/BackgroundSection.vue';

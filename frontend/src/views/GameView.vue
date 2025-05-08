@@ -1,7 +1,7 @@
 <template>
   <BackgroundSection>
     <div class="page-wrapper text-center py-4">
-      <h2 class="mb-4">🎮 Choose a Game</h2>
+      <h2 class="mb-4">{{ $t("chooseGame") }}</h2>
 
       <div class="row justify-content-center g-4">
         <!-- Card 1: Sudoku -->
@@ -9,7 +9,7 @@
           <router-link to="/game/sudoku" class="text-decoration-none">
             <div class="game-card">
               <img src="/images/sudoku.jpg" class="img-fluid w-100" style="height: 220px; object-fit: cover;" />
-              <h5 class="card-title-overlay">Sudoku</h5>
+              <h5 class="card-title-overlay">{{ $t("sudoku") }}</h5>
             </div>
           </router-link>
         </div>
@@ -19,7 +19,7 @@
           <router-link to="/game/memory" class="text-decoration-none">
             <div class="game-card">
               <img src="/images/memory.jpg" class="img-fluid w-100" style="height: 220px; object-fit: cover;" />
-              <h5 class="card-title-overlay">Memory Match</h5>
+              <h5 class="card-title-overlay">{{ $t("memoryMatch") }}</h5>
             </div>
           </router-link>
         </div>
@@ -29,7 +29,7 @@
           <router-link to="/game/puzzle" class="text-decoration-none">
             <div class="game-card">
               <img src="/images/puzzle.jpg" class="img-fluid w-100" style="height: 220px; object-fit: cover;" />
-              <h5 class="card-title-overlay">Jigsaw Puzzle</h5>
+              <h5 class="card-title-overlay">{{ $t("jigsawPuzzle") }}</h5>
             </div>
           </router-link>
         </div>
@@ -37,6 +37,7 @@
     </div>
   </BackgroundSection>
 </template>
+
 
 <script>
 import BackgroundSection from '@/components/BackgroundSection.vue';

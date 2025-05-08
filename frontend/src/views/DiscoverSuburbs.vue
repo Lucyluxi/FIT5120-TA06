@@ -6,7 +6,9 @@
       </div>
 
       <div class="border rounded p-3 mb-2 bg-light text-center">
-        <p class="mb-4 fw-semibold" style="font-size: 22px;">Please choose a cultural background to explore</p>
+        <p class="mb-4 fw-semibold" style="font-size: 22px;">
+          {{ $t("chooseCulturePrompt") }}
+        </p>
         <div class="d-flex flex-wrap justify-content-center gap-2">
           <button
             v-for="(culture, index) in cultures"
@@ -19,7 +21,7 @@
             @click="selectCulture(culture.name)"
           >
             <img :src="culture.flag" :alt="culture.name" class="flag-icon" />
-            <span class="mt-2">{{ culture.name }}</span>
+            <span class="mt-2">{{ $t(culture.name) }}</span>
           </button>
         </div>
       </div>
@@ -36,7 +38,7 @@
             @click="goToSuburbDetail(suburb)"
           >
             <strong>{{ suburb }}</strong>
-            <p class="text-muted mt-2" style="font-size: 18px;">Click to learn more</p>
+            <p class="text-muted mt-2" style="font-size: 18px;">{{ $t("clickToLearnMore") }}</p>
           </div>
         </div>
       </div>
@@ -44,7 +46,7 @@
       <nav class="mt-4">
         <ul class="pagination justify-content-center">
           <li class="page-item" :class="{ disabled: currentPage === 1 }">
-            <button class="page-link" @click="currentPage--" :disabled="currentPage === 1">Previous</button>
+            <button class="page-link" @click="currentPage--" :disabled="currentPage === 1">{{ $t("previous") }}</button>
           </li>
 
           <li class="page-item" :class="{ active: currentPage === 1 }">
@@ -68,13 +70,14 @@
           </li>
 
           <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-            <button class="page-link" @click="currentPage++" :disabled="currentPage === totalPages">Next</button>
+            <button class="page-link" @click="currentPage++" :disabled="currentPage === totalPages">{{ $t("next") }}</button>
           </li>
         </ul>
       </nav>
     </div>
   </div>
 </template>
+
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';

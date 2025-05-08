@@ -28,7 +28,7 @@
           <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/activity" class="nav-link" :class="{ active: $route.path.startsWith('/activity') }">Activities</router-link>
+          <router-link to="/activityV2" class="nav-link" :class="{ active: $route.path.startsWith('/activityV2') }">Activities</router-link>
         </li>
         <!-- <li class="nav-item">
           <router-link to="/discover" class="nav-link" :class="{ active: $route.path === '/discover' }">Discover</router-link>

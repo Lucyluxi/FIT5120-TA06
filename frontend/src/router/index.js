@@ -11,12 +11,14 @@ import SuburbDetail from '@/views/SuburbDetail.vue'
 import SudokuPage from '@/views/SudokuPage.vue';
 import MemoryPage from '@/views/MemoryPage.vue';
 import PuzzlePage from '@/views/PuzzlePage.vue';
+import ActivityViewV2 from '@/views/ActivityViewV2.vue'
 
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
   { path: '/discover', name: 'Discover', component: DiscoveryView },
   { path: '/activity', name: 'Activity', component: ActivityView },
+  { path: '/activityV2', name: 'ActivityV2', component: ActivityViewV2 },
   { path: '/event/:id', name: 'EventDetail', component: EventDetail },
   { path: '/auth', name: 'Auth', component: AuthView },
   {path: '/suburb', name: 'DiscoverSuburbs', component: DiscoverSuburbs},

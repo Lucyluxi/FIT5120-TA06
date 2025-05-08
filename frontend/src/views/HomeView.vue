@@ -1,70 +1,48 @@
 <template>
   <div>
-    <!-- 🖼️ Hero Section with background image -->
+    <!-- 🖼️ Hero Section -->
     <section class="hero-image d-flex align-items-center justify-content-center text-center text-white">
       <div class="z-index-2 position-relative text-box p-4">
-        <h1 class="fade-in-up hero-title">Bringing Comfort, Care, and Connection!</h1>
-        <p class="fade-in-up hero-subtitle">
-          Because everyone deserves to feel at home, no matter where they're from.
-        </p>
+        <h1 class="fade-in-up hero-title">{{ $t("heroTitle") }}</h1>
+        <p class="fade-in-up hero-subtitle">{{ $t("heroSubtitle") }}</p>
       </div>
     </section>
 
-    <!-- 📷 Cards Section wrapped in reusable background -->
+    <!-- 📷 Cards Section -->
     <BackgroundSection>
       <div class="row g-4">
-        <!-- Card 1 - Activities -->
         <div class="col-md-3">
           <router-link to="/activity" class="text-decoration-none">
             <div class="card-wrapper">
-              <img
-                src="/images/social.jpg"
-                class="img-fluid w-100"
-                style="height: 300px; object-fit: cover;"
-              />
-              <h5 class="card-title-overlay">Social Activities</h5>
+              <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <h5 class="card-title-overlay">{{ $t("card1") }}</h5>
             </div>
           </router-link>
         </div>
 
-        <!-- Card 2 - Discover Suburbs -->
         <div class="col-md-3">
           <router-link to="/suburb" class="text-decoration-none">
             <div class="card-wrapper">
-              <img
-                src="/images/suburb.jpg"
-                class="img-fluid w-100"
-                style="height: 300px; object-fit: cover;"
-              />
-              <h5 class="card-title-overlay">Culturally Diverse Suburbs</h5>
+              <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <h5 class="card-title-overlay">{{ $t("card2") }}</h5>
             </div>
           </router-link>
         </div>
 
-        <!-- Card 3 - Chatbot -->
         <div class="col-md-3">
           <router-link to="/chatbot" class="text-decoration-none">
             <div class="card-wrapper">
-              <img
-                src="/images/chatbot.png"
-                class="img-fluid w-100"
-                style="height: 300px; object-fit: cover;"
-              />
-              <h5 class="card-title-overlay">Cultural Info Chatbot</h5>
+              <img src="/images/chatbot.png" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <h5 class="card-title-overlay">{{ $t("card3") }}</h5>
             </div>
           </router-link>
         </div>
 
-        <!-- Card 4 - Game -->
         <div class="col-md-3">
           <router-link to="/game" class="text-decoration-none">
             <div class="card-wrapper">
-              <img
-                src="/images/education.jpg"
-                class="img-fluid w-100"
-                style="height: 300px; object-fit: cover;"
-              />
-              <h5 class="card-title-overlay">Games</h5>
+              <img src="/images/education.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+              <h5 class="card-title-overlay">{{ $t("card4") }}</h5>
             </div>
           </router-link>
         </div>
@@ -75,19 +53,29 @@
 
 <script>
 import BackgroundSection from "@/components/BackgroundSection.vue";
+import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 
 export default {
   name: "HomePage",
   components: {
     BackgroundSection,
   },
+  setup() {
+    const { locale } = useI18n();
+    const changeLanguage = () => {
+      // locale already bound with <select>
+    };
+    return {
+      locale,
+      changeLanguage,
+    };
+  },
 };
 </script>
 
 <style scoped>
-/* -----------------------------------
-   Hero Section with Background Image
------------------------------------- */
+/* Hero Section */
 .hero-image {
   background-image: url('/images/home.png');
   background-size: cover;
@@ -96,7 +84,6 @@ export default {
   position: relative;
   overflow: hidden;
 }
-
 .hero-image::before {
   content: '';
   position: absolute;
@@ -107,36 +94,29 @@ export default {
   background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
   z-index: 1;
 }
-
 .text-box {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
   max-width: 800px;
   margin: 0 auto;
   color: #fff;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
 }
-
 .hero-subtitle {
   font-size: 1.25rem;
   margin-top: 1rem;
 }
-
-/* Animation */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1.2s ease-out forwards;
   animation-delay: 0.3s;
 }
-
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -144,9 +124,7 @@ export default {
   }
 }
 
-/* -----------------------------------
-   Card Styling
------------------------------------- */
+/* Card Styling */
 .card-wrapper {
   position: relative;
   border-radius: 0.5rem;
@@ -154,12 +132,10 @@ export default {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .card-wrapper:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
-
 .card-title-overlay {
   position: absolute;
   bottom: 0;
@@ -172,4 +148,21 @@ export default {
   font-size: 1.125rem;
   font-weight: 600;
 }
+
+.language-switcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: white;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.language-switcher select {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 </style>

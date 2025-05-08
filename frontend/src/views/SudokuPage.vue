@@ -1,39 +1,40 @@
 <template>
-    <BackgroundSection>
-      <div class="sudoku-container text-center">
-        <h2 class="mb-3">🧩 Sudoku Game</h2>
-        <p class="mb-4">⏱️ Time Elapsed: {{ elapsedTime }} seconds</p>
-  
-        <!-- Sudoku Grid -->
-        <div class="grid mx-auto mb-4">
-          <div v-for="(row, rowIndex) in userBoard" :key="rowIndex" class="row">
-            <input
-              v-for="(cell, colIndex) in row"
-              :key="colIndex"
-              type="text"
-              class="cell"
-              maxlength="1"
-              :value="getCellValue(rowIndex, colIndex)"
-              :readonly="isPreFilled(rowIndex, colIndex)"
-              :class="{ 'error-cell': isIncorrect(rowIndex, colIndex) }"
-              @input="handleInput($event, rowIndex, colIndex)"
-            />
-          </div>
+  <BackgroundSection>
+    <div class="sudoku-container text-center">
+      <h2 class="mb-3">{{ $t("sudokuTitle") }}</h2>
+      <p class="mb-4">⏱️ {{ $t("timeElapsed") }}: {{ elapsedTime }} {{ $t("seconds") }}</p>
+
+      <!-- Sudoku Grid -->
+      <div class="grid mx-auto mb-4">
+        <div v-for="(row, rowIndex) in userBoard" :key="rowIndex" class="row">
+          <input
+            v-for="(cell, colIndex) in row"
+            :key="colIndex"
+            type="text"
+            class="cell"
+            maxlength="1"
+            :value="getCellValue(rowIndex, colIndex)"
+            :readonly="isPreFilled(rowIndex, colIndex)"
+            :class="{ 'error-cell': isIncorrect(rowIndex, colIndex) }"
+            @input="handleInput($event, rowIndex, colIndex)"
+          />
         </div>
-  
-        <!-- Buttons -->
-        <div class="button-group d-flex justify-content-center gap-3">
-          <ActionButton label="Check Answers" @click="checkAnswers" />
-          <ActionButton label="New Puzzle" @click="resetGame" />
-        </div>
-  
-        <!-- Completion message -->
-        <p v-if="isCompleted" class="complete-message mt-4">
-          🎉 Congratulations! Puzzle completed in {{ elapsedTime }} seconds.
-        </p>
       </div>
-    </BackgroundSection>
-  </template>
+
+      <!-- Buttons -->
+      <div class="button-group d-flex justify-content-center gap-3">
+        <ActionButton :label="$t('checkAnswers')" @click="checkAnswers" />
+        <ActionButton :label="$t('newPuzzle')" @click="resetGame" />
+      </div>
+
+      <!-- Completion message -->
+      <p v-if="isCompleted" class="complete-message mt-4">
+        🎉 {{ $t("congratulations") }} {{ elapsedTime }} {{ $t("seconds") }}.
+      </p>
+    </div>
+  </BackgroundSection>
+</template>
+
   
   <script>
   import BackgroundSection from "@/components/BackgroundSection.vue";
