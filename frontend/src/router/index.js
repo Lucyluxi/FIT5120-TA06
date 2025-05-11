@@ -12,6 +12,7 @@ import SudokuPage from '@/views/SudokuPage.vue';
 import MemoryPage from '@/views/MemoryPage.vue';
 import PuzzlePage from '@/views/PuzzlePage.vue';
 import ActivityViewV2 from '@/views/ActivityViewV2.vue'
+import GuidelineView from '@/views/GuidelineView.vue'
 
 
 const routes = [
@@ -31,7 +32,8 @@ const routes = [
   },
   { path: '/game/sudoku', component: SudokuPage },
   { path: '/game/memory', component: MemoryPage },
-  { path: '/game/puzzle', component: PuzzlePage }
+  { path: '/game/puzzle', component: PuzzlePage },
+  { path: '/guideline', component: GuidelineView }
 ]
 
 const router = createRouter({

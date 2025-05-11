@@ -30,6 +30,7 @@ watch(
         <option value="en">English</option>
         <option value="zh">中文</option>
         <option value="vi">Tiếng Việt</option>
+        <option value="el">Ελληνικά</option>
       </select>
     </div>
   </div>

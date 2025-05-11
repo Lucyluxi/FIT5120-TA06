@@ -8,6 +8,8 @@
 
     "whatsOn": "Sự kiện sắp diễn ra",
     "date": "Ngày",
+    "location": "Địa điểm",
+    "category":"Thể loại",
     "search": "Tìm kiếm",
     "reset": "Đặt lại",
     "refine": "Lọc",
@@ -48,6 +50,13 @@
     "clickToLearnMore": "Nhấn để tìm hiểu thêm",
     "previous": "Trước",
     "next": "Tiếp theo",
+
+    "placesToVisit": "Địa điểm tham quan (bấm để xem vị trí trên bản đồ):",
+    "noFeatures": "Không tìm thấy đặc điểm văn hóa nào trong khu vực này.",
+    "dataSource": "Nguồn dữ liệu: © Các tác giả OpenStreetMap",
+    "back": "Quay lại",
+    "locationMap": "Bản đồ vị trí",
+    "mapNotAvailable": "Bản đồ không có sẵn",
 
     "chatbotTitle": "Trí tuện văn hoá",
     "vietnamese": "Việt Nam 🇻🇳",

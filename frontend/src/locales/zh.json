@@ -8,6 +8,8 @@
 
     "whatsOn": "活动预告",
     "date": "日期",
+    "location": "地点",
+    "category": "分类",
     "search": "搜索",
     "reset": "重置",
     "refine": "筛选",
@@ -48,6 +50,13 @@
     "clickToLearnMore": "点击了解更多",
     "previous": "上一页",
     "next": "下一页",
+
+    "placesToVisit": "参观的地方（点击查看地图位置）:",
+    "noFeatures": "此区域未找到文化特色。",
+    "dataSource": "数据来源: © OpenStreetMap 贡献者",
+    "back": "返回",
+    "locationMap": "位置地图",
+    "mapNotAvailable": "地图不可用",
 
     "chatbotTitle": "文化信息聊天机器人",
     "vietnamese": "越南 🇻🇳",

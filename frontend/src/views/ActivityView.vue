@@ -2,7 +2,7 @@
   <div class="container py-5 bg-white text-black">
     <!-- Page title -->
     <header class="text-center py-4 mb-4">
-      <h1 class="display-5 fw-bold">WHAT'S ON</h1>
+      <h1 class="display-5 fw-bold" style="color: #333333;">WHAT'S ON</h1>
     </header>
 
     <!-- Search bar -->

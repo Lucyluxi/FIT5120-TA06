@@ -28,6 +28,9 @@
           <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Home</router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/guideline" class="nav-link" :class="{ active: $route.path === '/guideline' }">Guideline</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/activityV2" class="nav-link" :class="{ active: $route.path.startsWith('/activityV2') }">Activities</router-link>
         </li>
         <!-- <li class="nav-item">
@@ -36,12 +39,12 @@
         <li class="nav-item">
           <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">Discover Suburbs</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/chatbot" class="nav-link" :class="{ active: $route.path === '/chatbot' }">Chatbot</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/game" class="nav-link" :class="{ active: $route.path === '/game' }">Game</router-link>
-        </li>
+        </li> -->
       </ul>
     </header>
   </div>
