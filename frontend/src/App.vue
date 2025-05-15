@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import Header from './components/Header.vue';
@@ -7,26 +7,40 @@ import Header from './components/Header.vue';
 const route = useRoute();
 const router = useRouter();
 const { locale } = useI18n();
+
+// Track login status
 const isAuthenticated = ref(false);
 
+// Detect if current route is /auth
+const isAuthPage = computed(() => route.path === '/auth');
+
+// Watch route changes to update auth and body class
 watch(
   () => route.path,
   () => {
     isAuthenticated.value = sessionStorage.getItem('authenticated') === 'true';
+
+    // Dynamically add/remove body class to hide Sienna or others
+    if (route.path === '/auth') {
+      document.body.classList.add('hide-sienna');
+    } else {
+      document.body.classList.remove('hide-sienna');
+    }
   },
   { immediate: true }
 );
 
+// Chatbot open/close state
 const chatbotOpen = ref(false);
 
+// Toggle chatbot window
 function toggleChatbot() {
   chatbotOpen.value = !chatbotOpen.value;
 }
 
+// Handle chatbot menu options
 function handleChatOption(option) {
-  console.log(`User selected: ${option}`);
   chatbotOpen.value = false;
-
   switch (option) {
     case 'Organising guideline':
       router.push('/guideline');
@@ -38,20 +52,23 @@ function handleChatOption(option) {
       router.push('/suburb');
       break;
     default:
-      console.log('Unknown option selected');
+      console.warn('Unknown chatbot option:', option);
   }
 }
 </script>
 
 <template>
   <div class="main-container">
+    <!-- Header always shows -->
     <Header />
+
+    <!-- Main router view -->
     <main class="main-box">
       <router-view />
     </main>
 
-    <!-- 🌐 Global Language Switcher -->
-    <div class="language-switcher">
+    <!-- ❌ Hide floating widgets on /auth -->
+    <div v-if="!isAuthPage" class="language-switcher">
       <select v-model="locale" class="form-select">
         <option value="en">English</option>
         <option value="zh">中文</option>
@@ -60,17 +77,13 @@ function handleChatOption(option) {
       </select>
     </div>
 
-    <!-- 💬 Chatbot Button -->
-    <div class="chatbot-container">
-      <button class="chatbot-toggle" @click="toggleChatbot">
-        💬 Chat
-      </button>
+    <div v-if="!isAuthPage" class="chatbot-container">
+      <button class="chatbot-toggle" @click="toggleChatbot">💬 Chat</button>
 
-      <!-- Chatbot Window -->
       <div v-if="chatbotOpen" class="chatbot-window">
         <div class="chatbot-header">
           <span>How can we help you?</span>
-          <button @click="toggleChatbot" class="close-btn">✖</button>
+          <button class="close-btn" @click="toggleChatbot">✖</button>
         </div>
         <div class="chatbot-body">
           <ul>
@@ -97,51 +110,47 @@ function handleChatOption(option) {
 </template>
 
 <style>
+/* Base layout */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* 🌐 Main Container */
+/* Container */
 .main-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
+  min-height: 100vh;
 }
 
-/* 📦 Main Box */
+/* Content box */
 .main-box {
   flex: 1;
   padding: 1rem;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* 🌐 Language Switcher */
+/* Language switcher (bottom right) */
 .language-switcher {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 9999;
-  background-color: white;
+  background: white;
   border-radius: 8px;
   padding: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-.language-switcher select {
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* 💬 Chatbot Styles */
+.language-switcher select {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+/* Chatbot */
 .chatbot-container {
   position: fixed;
   bottom: 90px;
@@ -158,19 +167,18 @@ html, body {
   cursor: pointer;
   font-size: 16px;
   box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s;
 }
 
 .chatbot-toggle:hover {
   background-color: #007bff;
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.3);
 }
 
 .chatbot-window {
   width: 320px;
-  background-color: #ffffff;
+  background: white;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   padding: 15px;
   margin-bottom: 10px;
   animation: fadeIn 0.3s ease-out;
@@ -180,8 +188,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
 
@@ -193,22 +200,28 @@ html, body {
 .chatbot-body button {
   width: 100%;
   margin-bottom: 10px;
-  padding: 12px;
-  background-color: #f8f9fa;
-  border: 1px solid #e0e0e0;
+  padding: 10px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
-  text-align: left;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .chatbot-body button:hover {
-  background-color: #007bff;
+  background: #007bff;
   color: #fff;
 }
 
+/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ✅ Corrected selector to hide Sienna button on /auth page */
+body.hide-sienna .asw-menu-btn {
+  display: none !important;
+}
+
+
 </style>
