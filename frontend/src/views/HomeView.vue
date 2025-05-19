@@ -64,7 +64,7 @@
       </div>
       <div class="info-video right-end">
         <video autoplay muted loop playsinline class="section-video">
-          <source src="@/assets/navigation.mp4" type="video/mp4" />
+          <source src="@/assets/Navigation.mp4" type="video/mp4" />
         </video>
       </div>
     </section>
