@@ -22,7 +22,7 @@
               @click="showLocation(item.name)"
             >
               <i class="bi bi-geo-alt-fill me-3 text-secondary" style="font-size: 1.5rem;"></i>
-              <span>{{ item.name }} <span class="text-warm-muted"></span></span>
+              <span>{{ item.name }} <span class="text-warm-muted">({{ item.type }})</span></span>
             </li>
           </ul>
           <p v-else class="text-warm-muted">{{ $t("noFeatures") }}</p>
