@@ -84,8 +84,8 @@
   "filters": {
     "whatsOn": "Sự kiện sắp diễn ra",
     "date": "Ngày",
-    "search": "Tìm kiếm",
-    "reset": "Đặt lại",
+    "Search": "Tìm kiếm",
+    "Reset": "Đặt lại",
     "refine": "Lọc",
     "hideRefine": "Ẩn lọc",
     "what": "Thể loại",

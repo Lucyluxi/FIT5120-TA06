@@ -15,8 +15,8 @@
         class="w-100"
         style="max-width: 300px;"
       />
-      <button class="btn btn-primary ms-3" @click="filterEvents">{{ $t('search') }}</button>
-      <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('reset') }}</button>
+      <button class="btn btn-primary ms-3" @click="filterEvents">{{ $t('Search') }}</button>
+      <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('Reset') }}</button>
     </div>
 
     <!-- Advanced Filter Toggle Button -->
@@ -31,7 +31,7 @@
       <div class="d-flex gap-3 w-100 flex-wrap" style="max-width: 800px;">
         <!-- Category Dropdown -->
         <select v-model="selectedCategory" class="form-select" style="flex: 1;">
-          <option value="">{{ $t("anything") }}</option>
+          <option value="">{{ $t("Any activity") }}</option>
           <option value="Education">{{ $t("education") }}</option>
           <option value="Exercise & Wellness">{{ $t("exercise") }}</option>
           <option value="Hobbies & Creativity">{{ $t("hobbies") }}</option>
@@ -43,7 +43,7 @@
         <input
           type="text"
           v-model="searchKeyword"
-          :placeholder="$t('keywords')"
+          :placeholder="$t('Keywords')"
           class="form-control"
           style="flex: 2;"
         />

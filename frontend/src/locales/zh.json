@@ -101,8 +101,8 @@
   "filters": {
     "whatsOn": "活动预告",
     "date": "日期",
-    "search": "搜索",
-    "reset": "重置",
+    "Search": "搜索",
+    "Reset": "重置",
     "refine": "筛选",
     "hideRefine": "隐藏筛选",
     "what": "类别",
