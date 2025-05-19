@@ -21,7 +21,7 @@
       <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('reset') }}</button>
     </div>
 
-    <!-- Advanced Filter Button (初始显示，点击后隐藏) -->
+    <!-- Advanced Filter Button -->
     <div class="d-flex justify-content-center mb-4" v-if="showAdvancedFilter">
       <button class="btn btn-outline-primary" @click="openAdvancedFilter">
         {{ $t('Advanced Filter') }}
@@ -99,8 +99,8 @@ const filteredEvents = ref([]);
 const selectedRange = ref([]);
 const currentPage = ref(1);
 const eventsPerPage = 8;
-const showAdvancedFilter = ref(true);  // 初始显示按钮
-const showFilterOptions = ref(false); // 高级筛选框默认隐藏
+const showAdvancedFilter = ref(true);     // ✅ 初始显示按钮
+const showFilterOptions = ref(false);     // ✅ 初始隐藏筛选区域
 const selectedCategory = ref("");
 const searchKeyword = ref("");
 
@@ -166,7 +166,6 @@ function prevPage() {
 function filterEvents() {
   if (!selectedRange.value || selectedRange.value.length !== 2) {
     filteredEvents.value = [...translatedEvents.value];
-    showFilterOptions.value = false;
     return;
   }
 
@@ -180,11 +179,10 @@ function filterEvents() {
     return eventDate >= start && eventDate <= end;
   });
 
-  showFilterOptions.value = false;
   currentPage.value = 1;
 }
 
-// ✅ 点击按钮后显示筛选框并隐藏按钮
+
 function openAdvancedFilter() {
   showFilterOptions.value = true;
   showAdvancedFilter.value = false;
@@ -204,13 +202,15 @@ function applyAdvancedFilters() {
 // 自动筛选
 watch([selectedCategory, searchKeyword], applyAdvancedFilters);
 
-// 重置筛选，但不恢复按钮
+// ✅ 点击 Reset：隐藏筛选区域，重新显示按钮
 function resetFilters() {
   selectedRange.value = [];
   filteredEvents.value = [...translatedEvents.value];
   selectedCategory.value = "";
   searchKeyword.value = "";
   currentPage.value = 1;
+  showFilterOptions.value = false;    // ✅ 隐藏高级筛选区域
+  showAdvancedFilter.value = true;    // ✅ 显示按钮
 }
 
 function isDateDisabled(date) {
