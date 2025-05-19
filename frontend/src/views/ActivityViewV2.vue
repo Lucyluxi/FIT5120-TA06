@@ -17,18 +17,18 @@
         class="w-100"
         style="max-width: 300px;"
       />
-      <button class="btn btn-outline-secondary ms-3" @click="filterEvents">{{ $t('search') }}</button>
+      <button class="btn btn-primary ms-3" @click="filterEvents">{{ $t('search') }}</button>
       <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('reset') }}</button>
     </div>
 
-    <!-- Advanced Filter Button -->
+    <!-- Advanced Filter Button (初始显示，点击后隐藏) -->
     <div class="d-flex justify-content-center mb-4" v-if="showAdvancedFilter">
       <button class="btn btn-outline-primary" @click="openAdvancedFilter">
         {{ $t('Advanced Filter') }}
       </button>
     </div>
 
-    <!-- Advanced Filter Options (Single Row) -->
+    <!-- Advanced Filter Options -->
     <div class="d-flex justify-content-center mb-4" v-if="showFilterOptions">
       <div class="d-flex gap-3 w-100 flex-wrap" style="max-width: 800px;">
         <!-- Category Filter -->
@@ -45,7 +45,7 @@
         <input
           type="text"
           v-model="searchKeyword"
-          placeholder="{{ $t('keywords') }}"
+          :placeholder="$t('keywords')"
           class="form-control"
           style="flex: 2;"
         />
@@ -84,7 +84,6 @@
   </div>
 </template>
 
-
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue';
 import Datepicker from '@vuepic/vue-datepicker';
@@ -100,8 +99,8 @@ const filteredEvents = ref([]);
 const selectedRange = ref([]);
 const currentPage = ref(1);
 const eventsPerPage = 8;
-const showAdvancedFilter = ref(false);
-const showFilterOptions = ref(false);
+const showAdvancedFilter = ref(true);  // 初始显示按钮
+const showFilterOptions = ref(false); // 高级筛选框默认隐藏
 const selectedCategory = ref("");
 const searchKeyword = ref("");
 
@@ -111,8 +110,6 @@ async function fetchEvents() {
     const res = await fetch('/api/events');
     const data = await res.json();
     events.value = data;
-
-    // Initial translation
     await translateEvents(data);
     filteredEvents.value = [...translatedEvents.value];
   } catch (err) {
@@ -169,53 +166,48 @@ function prevPage() {
 function filterEvents() {
   if (!selectedRange.value || selectedRange.value.length !== 2) {
     filteredEvents.value = [...translatedEvents.value];
-    showAdvancedFilter.value = false;
     showFilterOptions.value = false;
     return;
   }
 
   const [start, end] = selectedRange.value;
+  start.setHours(0, 0, 0, 0);
+  end.setHours(23, 59, 59, 999);
 
   filteredEvents.value = translatedEvents.value.filter(event => {
     const eventDate = new Date(event.date);
     eventDate.setHours(0, 0, 0, 0);
-    start.setHours(0, 0, 0, 0);
-    end.setHours(23, 59, 59, 999);
-
     return eventDate >= start && eventDate <= end;
   });
 
-  showAdvancedFilter.value = filteredEvents.value.length > 0;
   showFilterOptions.value = false;
   currentPage.value = 1;
 }
 
-// Advanced filter toggle
+// ✅ 点击按钮后显示筛选框并隐藏按钮
 function openAdvancedFilter() {
-  showAdvancedFilter.value = false;
   showFilterOptions.value = true;
+  showAdvancedFilter.value = false;
 }
 
-// Apply advanced filters
+// 高级筛选
 function applyAdvancedFilters() {
   filteredEvents.value = translatedEvents.value.filter(event => {
     const matchesCategory = selectedCategory.value === "" || event.translatedCategory === selectedCategory.value;
     const matchesKeyword = searchKeyword.value === "" || event.translatedTitle.toLowerCase().includes(searchKeyword.value.toLowerCase());
-
     return matchesCategory && matchesKeyword;
   });
 
   currentPage.value = 1;
 }
 
-// Automatically filter on input
+// 自动筛选
 watch([selectedCategory, searchKeyword], applyAdvancedFilters);
 
+// 重置筛选，但不恢复按钮
 function resetFilters() {
   selectedRange.value = [];
   filteredEvents.value = [...translatedEvents.value];
-  showAdvancedFilter.value = false;
-  showFilterOptions.value = false;
   selectedCategory.value = "";
   searchKeyword.value = "";
   currentPage.value = 1;
@@ -227,7 +219,6 @@ function isDateDisabled(date) {
   return date < today;
 }
 </script>
-
 
 <style scoped>
 .image-wrapper {
