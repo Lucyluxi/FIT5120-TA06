@@ -29,7 +29,7 @@
 
           <!-- Data source -->
           <p class="mt-4" style="font-size: 0.9rem; color: black;">
-            Data source: © OpenStreetMap contributors"
+            Data source: © OpenStreetMap contributors, Google Map Geocode"
           </p>
         </div>
 
