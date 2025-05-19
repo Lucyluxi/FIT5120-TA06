@@ -162,7 +162,8 @@
   "home": "Home",
   "travel": "Travel Guidelines",
   "social": "Social Activities",
-  "suburb": "Explore Suburbs"
+  "suburb": "Explore Suburbs",
+  "communityServices": "Community Services"
 },
 
 "home": {
@@ -180,7 +181,56 @@
   "chatTitle": "Need a Hand? Chat with Uni",
   "chatDesc": "Meet Uni, your friendly guide. If you're not sure where to go, just ask!",
   "chatBtn": "Let's Talk"
+},
+
+"services": {
+  "heroTitle": "Community Services for Older Adults",
+  "heroDesc": "Explore Australian Government programs designed to support wellbeing, social connection, health, and independent living for seniors.",
+  "buttonText": "Visit Official Site",
+  "items": [
+    {
+      "name": "My Aged Care",
+      "description": "The central portal for accessing government-funded aged care services including assessments, support at home, and service finders."
+    },
+    {
+      "name": "Commonwealth Home Support Programme (CHSP)",
+      "description": "Entry-level services to help older people stay at home and be active in their community. Includes transport, social support, and meal delivery."
+    },
+    {
+      "name": "Home Care Packages",
+      "description": "Coordinated support tailored to people with complex care needs to help them remain living safely at home."
+    },
+    {
+      "name": "Aged Care Volunteer Visitors Scheme (ACVVS)",
+      "description": "Supports social connections by pairing older people with volunteer visitors for regular companionship."
+    },
+    {
+      "name": "National Aged Care Advocacy Program (NACAP)",
+      "description": "Free advocacy to help older Australians understand and exercise their rights when using aged care services."
+    },
+    {
+      "name": "Disability Support for Older Australians (DSOA)",
+      "description": "Continued support for people over 65 who were previously receiving specialist disability services but are not eligible for the NDIS."
+    },
+    {
+      "name": "Positive Ageing Initiatives",
+      "description": "Programs that promote healthy and active ageing, lifelong learning, and social engagement for older adults."
+    },
+    {
+      "name": "Support at Home Program (from July 2025)",
+      "description": "A new program combining CHSP and Home Care Packages into one flexible in-home support service for seniors."
+    },
+    {
+      "name": "Services in Rural and Remote Areas",
+      "description": "Specialised aged care support and services tailored to the needs of rural and remote communities in Australia."
+    },
+    {
+      "name": "Aged Care Act 2024",
+      "description": "A major reform aiming to create a simpler, fairer, and more compassionate aged care system in Australia."
+    }
+  ]
 }
+
 
 
 }

@@ -3,80 +3,39 @@
     <!-- 🧓 Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1>Community Services for Older Adults</h1>
-        <p>
-          Explore Australian Government programs designed to support wellbeing, social connection, health, and independent living for seniors.
-        </p>
+        <h1>{{ t('services.heroTitle') }}</h1>
+        <p>{{ t('services.heroDesc') }}</p>
       </div>
     </section>
 
     <!-- ✅ Service Information Sections -->
     <section class="info-section" v-for="(service, index) in services" :key="index">
-      <h2>{{ service.name }}</h2>
-      <p>{{ service.description }}</p>
+      <h2>{{ t(`services.items.${index}.name`) }}</h2>
+      <p>{{ t(`services.items.${index}.description`) }}</p>
       <a :href="service.link" target="_blank" rel="noopener">
-        <button class="learn-more">Visit Official Site</button>
+        <button class="learn-more">{{ t('services.buttonText') }}</button>
       </a>
     </section>
   </div>
 </template>
 
-
 <script setup>
-const services = [
-  {
-    name: "My Aged Care",
-    description: "The central portal for accessing government-funded aged care services including assessments, support at home, and service finders.",
-    link: "https://www.myagedcare.gov.au/"
-  },
-  {
-    name: "Commonwealth Home Support Programme (CHSP)",
-    description: "Entry-level services to help older people stay at home and be active in their community. Includes transport, social support, and meal delivery.",
-    link: "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/types-of-services"
-  },
-  {
-    name: "Home Care Packages",
-    description: "Coordinated support tailored to people with complex care needs to help them remain living safely at home.",
-    link: "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/types-of-services"
-  },
-  {
-    name: "Aged Care Volunteer Visitors Scheme (ACVVS)",
-    description: "Supports social connections by pairing older people with volunteer visitors for regular companionship.",
-    link: "https://www.health.gov.au/our-work/aged-care-volunteer-visitors-scheme-acvvs/about"
-  },
-  {
-    name: "National Aged Care Advocacy Program (NACAP)",
-    description: "Free advocacy to help older Australians understand and exercise their rights when using aged care services.",
-    link: "https://www.health.gov.au/our-work/national-aged-care-advocacy-program-nacap"
-  },
-  {
-    name: "Disability Support for Older Australians (DSOA)",
-    description: "Continued support for people over 65 who were previously receiving specialist disability services but are not eligible for the NDIS.",
-    link: "https://www.health.gov.au/our-work/dsoa"
-  },
-  {
-    name: "Positive Ageing Initiatives",
-    description: "Programs that promote healthy and active ageing, lifelong learning, and social engagement for older adults.",
-    link: "https://www.health.gov.au/topics/positive-ageing-is-ageing-well"
-  },
-  {
-    name: "Support at Home Program (from July 2025)",
-    description: "A new program combining CHSP and Home Care Packages into one flexible in-home support service for seniors.",
-    link: "https://agedcareengagement.health.gov.au/reforms/home/"
-  },
-  {
-    name: "Services in Rural and Remote Areas",
-    description: "Specialised aged care support and services tailored to the needs of rural and remote communities in Australia.",
-    link: "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/support/rural-remote"
-  },
-  {
-    name: "Aged Care Act 2024",
-    description: "A major reform aiming to create a simpler, fairer, and more compassionate aged care system in Australia.",
-    link: "https://www.health.gov.au/our-work/aged-care-act"
-  }
-];
-</script>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
+const services = [
+  { link: "https://www.myagedcare.gov.au/" },
+  { link: "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/types-of-services" },
+  { link: "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/types-of-services" },
+  { link: "https://www.health.gov.au/our-work/aged-care-volunteer-visitors-scheme-acvvs/about" },
+  { link: "https://www.health.gov.au/our-work/national-aged-care-advocacy-program-nacap" },
+  { link: "https://www.health.gov.au/our-work/dsoa" },
+  { link: "https://www.health.gov.au/topics/positive-ageing-is-ageing-well" },
+  { link: "https://agedcareengagement.health.gov.au/reforms/home/" },
+  { link: "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/support/rural-remote" },
+  { link: "https://www.health.gov.au/our-work/aged-care-act" }
+]
+</script>
 
 <style scoped>
 .services-container {

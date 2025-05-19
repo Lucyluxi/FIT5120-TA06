@@ -160,7 +160,8 @@
   "home": "Trang chủ",
   "travel": "Hướng dẫn di chuyển",
   "social": "Hoạt động xã hội",
-  "suburb": "Khám phá vùng ngoại ô"
+  "suburb": "Khám phá vùng ngoại ô",
+  "communityServices": "Dịch vụ cộng đồng"
 },
 
 "home": {
@@ -178,7 +179,26 @@
   "chatTitle": "Cần giúp đỡ? Hãy trò chuyện với Uni",
   "chatDesc": "Gặp Uni, người bạn đồng hành thân thiện của bạn. Nếu bạn không biết đi đâu, cứ hỏi! Uni sẽ giúp bạn tìm dịch vụ, sự kiện, hoặc đưa bạn đến đúng nơi.",
   "chatBtn": "Bắt đầu trò chuyện"
+},
+
+"services": {
+  "heroTitle": "Dịch vụ cộng đồng cho người cao tuổi",
+  "heroDesc": "Khám phá các chương trình của Chính phủ Úc hỗ trợ phúc lợi, kết nối xã hội, sức khỏe và cuộc sống độc lập cho người cao tuổi.",
+  "buttonText": "Truy cập trang chính thức",
+  "items": [
+    { "name": "My Aged Care", "description": "Cổng thông tin chính để truy cập các dịch vụ chăm sóc người cao tuổi do chính phủ tài trợ bao gồm đánh giá, hỗ trợ tại nhà và công cụ tìm kiếm dịch vụ." },
+    { "name": "Chương trình Hỗ trợ tại nhà của Khối Thịnh vượng chung (CHSP)", "description": "Dịch vụ cấp đầu giúp người lớn tuổi sống tại nhà và tham gia vào cộng đồng. Bao gồm giao thông, hỗ trợ xã hội và giao bữa ăn." },
+    { "name": "Gói Chăm sóc tại nhà", "description": "Hỗ trợ được phối hợp dành cho những người có nhu cầu chăm sóc phức tạp để giúp họ sống an toàn tại nhà." },
+    { "name": "Chương trình Tình nguyện viên thăm hỏi người cao tuổi (ACVVS)", "description": "Kết nối người cao tuổi với tình nguyện viên để tạo mối quan hệ bạn bè và tương tác xã hội thường xuyên." },
+    { "name": "Chương trình Vận động chăm sóc người cao tuổi quốc gia (NACAP)", "description": "Cung cấp dịch vụ vận động miễn phí để giúp người cao tuổi hiểu và bảo vệ quyền lợi của họ trong quá trình sử dụng dịch vụ chăm sóc." },
+    { "name": "Hỗ trợ người khuyết tật lớn tuổi (DSOA)", "description": "Hỗ trợ tiếp tục cho người trên 65 tuổi từng nhận dịch vụ khuyết tật chuyên biệt nhưng không đủ điều kiện cho NDIS." },
+    { "name": "Sáng kiến lão hóa tích cực", "description": "Các chương trình thúc đẩy lối sống lành mạnh, học tập suốt đời và gắn kết xã hội cho người cao tuổi." },
+    { "name": "Chương trình Hỗ trợ tại nhà (từ tháng 7 năm 2025)", "description": "Chương trình mới kết hợp CHSP và Gói chăm sóc tại nhà thành một dịch vụ linh hoạt tại nhà cho người lớn tuổi." },
+    { "name": "Dịch vụ ở khu vực nông thôn và vùng sâu vùng xa", "description": "Hỗ trợ chăm sóc người cao tuổi chuyên biệt phù hợp với nhu cầu của các cộng đồng vùng sâu vùng xa." },
+    { "name": "Luật chăm sóc người cao tuổi 2024", "description": "Cải cách lớn nhằm tạo ra hệ thống chăm sóc người cao tuổi đơn giản, công bằng và đầy nhân ái hơn." }
+  ]
 }
+
 
 
 }
