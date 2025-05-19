@@ -18,7 +18,7 @@
       <div class="info-text">
         <h2>{{ t('home.section1Title') }}</h2>
         <p>{{ t('home.section1Desc') }}</p>
-        <button class="info-button">{{ t('home.section1Btn') }}</button>
+        <button class="info-button" @click="goToActivity">{{ t('home.section1Btn') }}</button>
       </div>
       <div class="info-video right-end">
         <video autoplay muted loop playsinline class="section-video">
@@ -37,7 +37,7 @@
       <div class="info-text">
         <h2>{{ t('home.section2Title') }}</h2>
         <p>{{ t('home.section2Desc') }}</p>
-        <button class="info-button">{{ t('home.section2Btn') }}</button>
+        <button class="info-button" @click="goToSuburb">{{ t('home.section2Btn') }}</button>
       </div>
     </section>
 
@@ -46,7 +46,7 @@
       <div class="info-text">
         <h2>{{ t('home.section3Title') }}</h2>
         <p>{{ t('home.section3Desc') }}</p>
-        <button class="info-button">{{ t('home.section3Btn') }}</button>
+        <button class="info-button" @click="goToGuide">{{ t('home.section3Btn') }}</button>
       </div>
       <div class="info-video right-end">
         <video autoplay muted loop playsinline class="section-video">
@@ -90,8 +90,21 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 function goToServices() {
-  window.location.href = '/services'
+  window.location.href = '/older-services'
 }
+
+function goToActivity() {
+  window.location.href = '/activityV2'
+}
+
+function goToSuburb() {
+  window.location.href = '/suburb'
+}
+
+function goToGuide() {
+  window.location.href = '/guideline'
+}
+
 </script>
 
 <style scoped>
