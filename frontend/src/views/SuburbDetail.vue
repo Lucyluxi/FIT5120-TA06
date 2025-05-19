@@ -29,7 +29,7 @@
 
           <!-- Data source -->
           <p class="mt-4" style="font-size: 0.9rem; color: black;">
-            {{ $t("dataSource") }}
+            Data source: © OpenStreetMap contributors"
           </p>
         </div>
 
