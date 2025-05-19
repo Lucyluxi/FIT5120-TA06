@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid">
-    <header class="custom-header d-flex justify-content-between align-items-center flex-wrap">
-      
+    <header class="custom-header d-flex justify-content-between align-items-center">
       <!-- Brand logo and name -->
       <router-link
         to="/"
@@ -18,7 +17,7 @@
       </router-link>
 
       <!-- Navigation links -->
-      <ul class="nav nav-fill flex-grow-1 justify-content-end nav-spread">
+      <ul class="nav nav-fill nav-spread align-items-center m-0">
         <li class="nav-item">
           <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">
             {{ t('nav.home') }}
@@ -39,42 +38,44 @@
             {{ t('nav.suburb') }}
           </router-link>
         </li>
-        <li class="nav-item"><router-link to="/older-services" class="nav-link" :class="{ active: $route.path === '/older-services' }">
-          {{ t('nav.communityServices') }}
-        </router-link>
-      </li>
-
+        <li class="nav-item">
+          <router-link to="/older-services" class="nav-link" :class="{ active: $route.path === '/older-services' }">
+            {{ t('nav.communityServices') }}
+          </router-link>
+        </li>
       </ul>
     </header>
   </div>
 </template>
 
 <script setup>
+// Import i18n translation hook
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 </script>
 
 <style scoped>
+/* Header container styling */
 .custom-header {
   background-color: #b3d6f0;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 0 0 0.75rem 0.75rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  flex-wrap: wrap;
+  white-space: nowrap; /* Prevent line wrapping */
+  overflow-x: auto;     /* Allow scroll if too many items */
 }
 
-/* Logo */
+/* Logo image */
 .logo {
   width: 64px;
   height: 64px;
 }
 
-/* Brand Name */
+/* Brand text */
 .brand-name {
   font-size: 2rem;
   font-weight: 700;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.5px;
   color: #1A237E;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -88,15 +89,16 @@ const { t } = useI18n()
   color: #0D47A1;
 }
 
-/* Navigation Layout */
+/* Navigation wrapper */
 .nav-spread {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 850px;
+  flex-wrap: nowrap;       /* Force single row */
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-left: auto;
 }
 
-/* Nav Link Styling */
+/* Nav link base style */
 .nav-link {
   font-weight: 600;
   font-size: 1.3rem;
@@ -105,6 +107,7 @@ const { t } = useI18n()
   border-radius: 0.5rem;
   padding: 0.6rem 1.4rem;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -114,6 +117,7 @@ const { t } = useI18n()
   box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
 }
 
+/* Active link style */
 .nav-link.active {
   background-color: #E3F2FD;
   color: #0D47A1;
@@ -121,19 +125,19 @@ const { t } = useI18n()
   box-shadow: inset 0 0 3px rgba(33, 150, 243, 0.1);
 }
 
-/* Responsive */
+/* Responsive tweaks for smaller screens */
 @media (max-width: 768px) {
   .custom-header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 
   .nav-spread {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
     width: 100%;
+    gap: 0.5rem;
     margin-top: 1rem;
   }
 
