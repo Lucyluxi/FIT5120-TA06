@@ -1,64 +1,145 @@
 {
+  "localeCode": "zh",
+
+  "nav": {
+    "home": "首页",
+    "travel": "出行指南",
+    "social": "社交活动",
+    "suburb": "探索社区",
+    "communityServices": "社区服务"
+  },
+
+  "home": {
     "heroTitle": "带来舒适、关怀与连接！",
     "heroSubtitle": "因为每个人都应该感受到家的温暖，无论他们来自哪里。",
-    "card1": "社交活动",
-    "card2": "多元文化社区",
-    "card3": "文化信息聊天机器人",
-    "card4": "游戏",
+    "section1Title": "社交活动",
+    "section1Desc": "参加为老年人设计的本地活动，包括兴趣小组、健康活动、讲座和友好聚会。",
+    "section1Btn": "了解更多",
+    "section2Title": "探索文化",
+    "section2Desc": "选择一个文化身份，探索该社区在澳大利亚的生活、联系和庆祝方式。",
+    "section2Btn": "按文化探索",
+    "section3Title": "出行指南",
+    "section3Desc": "逐步教你如何自信地使用公共交通工具。",
+    "section3Btn": "学习出行",
+    "section4Title": "寻找你的社区",
+    "section4Desc": "探索与你有相同背景的人们生活和联系的郊区。无论身在何处，都能感受到家的温暖。",
+    "section4Btn": "探索郊区",
+    "chatTitle": "需要帮助？与 Uni 聊聊",
+    "chatDesc": "认识 Uni，你的友好向导。如果你不确定去哪，就来问吧！",
+    "chatBtn": "开始对话"
+  },
 
+  "services": {
+    "heroTitle": "老年人社区服务",
+    "heroDesc": "探索澳大利亚政府为老年人提供的健康、社交联系、自主生活等支持计划。",
+    "buttonText": "访问官方网站",
+    "items": [
+      {
+        "name": "我的老年护理（My Aged Care）",
+        "description": "获取政府资助老年护理服务的主要入口，包括评估、居家支持和服务查询。"
+      },
+      {
+        "name": "联邦居家支持计划（CHSP）",
+        "description": "入门级服务，帮助老年人留在家中并活跃于社区。包括交通、社交支持和送餐服务。"
+      },
+      {
+        "name": "居家护理配套",
+        "description": "为有复杂护理需求的人士量身定制的协调支持，帮助他们安全地在家中生活。"
+      },
+      {
+        "name": "老年人志愿访问者计划（ACVVS）",
+        "description": "通过志愿者定期探访，促进老年人社交联系。"
+      },
+      {
+        "name": "全国老年护理倡导计划（NACAP）",
+        "description": "为老年人提供免费的倡导服务，帮助他们理解并维护使用老年护理服务时的权益。"
+      },
+      {
+        "name": "老年人残疾支持（DSOA）",
+        "description": "为65岁以上、曾接受残疾服务但不符合NDIS资格的人士提供持续支持。"
+      },
+      {
+        "name": "积极老龄化倡议",
+        "description": "促进健康、积极老龄化，推动终身学习和社交参与。"
+      },
+      {
+        "name": "居家支持计划（2025年7月起）",
+        "description": "一个新计划，将CHSP和居家护理结合为灵活的居家支持服务。"
+      },
+      {
+        "name": "偏远地区服务",
+        "description": "为澳大利亚偏远社区量身定制的老年护理支持与服务。"
+      },
+      {
+        "name": "2024年老年护理法",
+        "description": "旨在打造更简单、公平、有同理心的澳大利亚老年护理制度的重大改革。"
+      }
+    ]
+  },
+
+  "exploreActivitiesTitle": "探索社交活动！",
+
+  "chatbot": {
+    "button": "聊天",
+    "intro": "你好，我是 Uni，有需要帮助请点击我！",
+    "option1": "我想了解如何使用墨尔本的公共交通。",
+    "option2": "我想找一些可以社交的活动。",
+    "option3": "我想探索有文化特色的郊区。"
+  },
+
+  "eventDetails": {
+    "date": "📅 日期",
+    "location": "📍 地点",
+    "category": "🏷️ 分类",
+    "description": "描述",
+    "mapTitle": "活动位置地图",
+    "noImage": "暂无图片",
+    "loading": "加载活动详情...",
+    "backButton": "← 返回活动"
+  },
+
+  "filters": {
     "whatsOn": "活动预告",
     "date": "日期",
-    "location": "地点",
-    "category": "分类",
     "search": "搜索",
     "reset": "重置",
     "refine": "筛选",
     "hideRefine": "隐藏筛选",
     "what": "类别",
     "where": "地点",
+    "anything": "任何类别",
     "anywhere": "任何地点",
     "keywords": "关键字",
     "upcoming": "即将到来的活动",
-    "anything": "任何类别",
     "education": "教育",
     "exercise": "健身与健康",
     "hobbies": "爱好与创意",
     "social": "社交与社区",
     "entertainment": "娱乐与文化",
-    "noImage": "暂无图片",
+    "location": "地点",
+    "category": "分类",
     "previous": "上一页",
     "next": "下一页",
     "pageOf": "第 {current} 页，共 {total} 页",
-
-    "localeCode": "zh",
-    "eventDetails": {
-    "date": "📅 日期",
-    "location": "📍 位置",
-    "category": "🏷️ 分类",
-    "description": "描述",
-    "mapTitle": "活动位置地图",
-    "noImage": "没有可用图片",
-    "loading": "加载活动详情...",
-    "backButton": "← 返回活动"
+    "noImage": "暂无图片"
   },
 
+  "suburb": {
     "chooseCulturePrompt": "请选择要探索的文化背景",
     "Indian": "印度",
     "Chinese": "中国",
     "Greek": "希腊",
     "Vietnamese": "越南",
     "clickToLearnMore": "点击了解更多",
-    "previous": "上一页",
-    "next": "下一页",
-
-    "placesToVisit": "参观的地方（点击查看地图位置）:",
+    "placesToVisit": "参观的地方（点击查看地图位置）：",
     "noFeatures": "此区域未找到文化特色。",
     "dataSource": "数据来源: © OpenStreetMap 贡献者",
     "back": "返回",
     "locationMap": "位置地图",
-    "mapNotAvailable": "地图不可用",
+    "mapNotAvailable": "地图不可用"
+  },
 
-    "chatbotTitle": "文化信息聊天机器人",
+  "chat": {
     "vietnamese": "越南 🇻🇳",
     "chinese": "中国 🇨🇳",
     "greek": "希腊 🇬🇷",
@@ -78,129 +159,83 @@
     "noFacts": "抱歉，此主题暂无信息。",
     "allFactsShown": "此主题的内容已全部展示。请选择其他主题或文化。",
     "whatNext": "你接下来想做什么？",
-    "welcome": "你好！我可以分享有趣的文化知识。你想了解哪个文化？",
+    "welcome": "你好！我可以分享有趣的文化知识。你想了解哪个文化？"
+  },
 
+  "games": {
     "chooseGame": "🎮 选择一个游戏",
     "sudoku": "数独",
-    "memoryMatch": "记忆匹配",
+    "memoryMatch": "记忆配对",
     "jigsawPuzzle": "拼图",
-
     "sudokuTitle": "🧩 数独游戏",
     "timeElapsed": "已用时间",
     "seconds": "秒",
     "checkAnswers": "检查答案",
     "newPuzzle": "新谜题",
     "congratulations": "🎉 恭喜你！你在",
-
     "memoryTitle": "🧠 记忆配对",
     "memoryInstructions": "点击两张卡片来找出配对！",
     "restart": "重新开始",
-
     "puzzleTitle": "🧩 拼图游戏",
     "puzzleInstructions": "点击并交换拼块以完成图片！",
     "puzzleCompleted": "拼图完成！",
-    "shuffle": "打乱",
+    "shuffle": "打乱"
+  },
 
-  "intro_title": "欢迎来到老年移民交通指南",
-  "intro_text": "本指南旨在帮助老年移民自信地在墨尔本使用公共交通工具，包括人行横道、Myki 卡、路线规划和安全乘车。",
+  "guide": {
+    "intro_title": "欢迎来到老年移民交通指南",
+    "intro_text": "本指南旨在帮助老年移民自信地在墨尔本使用公共交通工具，包括人行横道、Myki 卡、路线规划和安全乘车。",
 
-  "basic_transportation_knowledge": "1. 基本交通知识",
-  "crosswalk_usage": "人行横道的使用",
-  "crosswalk_usage_text": "如何使用人行横道按钮：",
-  "crosswalk_instructions_1": "绿色行人标志：可以安全穿越。",
-  "crosswalk_instructions_2": "闪烁的红色行人标志：不要开始穿越，但如果已经在穿越，可以继续完成。",
-  "crosswalk_instructions_3": "稳定的红色行人标志：不要穿越。",
-  "walk_signals": "理解行人信号：",
-  "walk_signals_text_1": "找到交通灯杆上的按钮盒。",
-  "walk_signals_text_2": "按下按钮以激活人行横道信号。",
-  "walk_signals_text_3": "等待绿灯行人标志或提示音（哔哔声），表示可以安全穿越。",
+    "basic_transportation_knowledge": "1. 基本交通知识",
+    "crosswalk_usage": "人行横道的使用",
+    "crosswalk_usage_text": "如何使用人行横道按钮：",
+    "crosswalk_instructions_1": "绿色行人标志：可以安全穿越。",
+    "crosswalk_instructions_2": "闪烁的红色行人标志：不要开始穿越，但如果已在路上，可以完成穿越。",
+    "crosswalk_instructions_3": "红色行人标志：不要穿越。",
+    "walk_signals": "理解行人信号：",
+    "walk_signals_text_1": "找到交通灯柱上的按钮盒。",
+    "walk_signals_text_2": "按下按钮以启动人行信号。",
+    "walk_signals_text_3": "等待绿色行人标志或提示音表示可以安全穿越。",
 
-  "travel_preparation": "2. 出行准备",
-  "ticket_purchase_guide": "购票指南",
-  "ticket_purchase": "如何购买和充值 Myki 卡。",
-  "ticket_purchase_steps_1": "可以在火车站、便利店或网上购买 Myki 卡。",
-  "ticket_purchase_steps_2": "可以在 Myki 充值机、7-Eleven 便利店或网上为 Myki 卡充值。",
-  "ticket_purchase_steps_3": "保持 Myki 卡有足够的余额以确保顺畅出行。",
-  "card_types": "Myki 卡的类型",
-  "card_types_list_1": "Myki 现金卡：按次计费。",
-  "card_types_list_2": "Myki 月票：在设定时间内无限次乘车。",
-  "card_types_list_3": "优惠 Myki 卡：适用于符合条件的乘客，享受折扣票价。",
-  "myki_usage": "如何使用 Myki 卡乘车",
+    "travel_preparation": "2. 出行准备",
+    "ticket_purchase_guide": "购票指南",
+    "ticket_purchase": "如何购买和充值 Myki 卡。",
+    "ticket_purchase_steps_1": "可在火车站、便利店或网上购买 Myki 卡。",
+    "ticket_purchase_steps_2": "可在 Myki 机、7-Eleven 或网上充值。",
+    "ticket_purchase_steps_3": "保持 Myki 卡有足够余额，确保顺利出行。",
+    "card_types": "Myki 卡的类型",
+    "card_types_list_1": "Myki 现金卡：按次计费。",
+    "card_types_list_2": "Myki 月票：在设定时间内无限次乘车。",
+    "card_types_list_3": "优惠卡：特定乘客可享折扣票价。",
+    "myki_usage": "如何使用 Myki 卡乘车",
 
-  "real_time_navigation": "3. 实时导航",
-  "route_planning": "路线规划",
-  "using_google_maps": "使用 Google 地图获取公共交通路线。",
-  "route_planning_steps_1": "打开 Google 地图应用并输入目的地。",
-  "route_planning_steps_2": "选择公共交通选项以获取详细的路线信息。",
-  "finding_correct_stop": "找到正确的巴士、电车或火车站",
-  "stop_info_1": "每个站点都有一个唯一的 ID 和实时信息显示。",
-  "stop_info_2": "使用 PTV 应用程序或网站获取更准确的本地信息。",
-  "transfer_alerts": "换乘提醒",
-  "set_alerts": "设置换乘、延误或站台变更的提醒。",
-  "trip_updates": "行程更新和换乘通知",
-  "platform_guidance": "找到正确的站台或停靠点",
-  "platform_guidance_text": "学习如何阅读站台地图和站台编号。",
+    "real_time_navigation": "3. 实时导航",
+    "route_planning": "路线规划",
+    "using_google_maps": "使用 Google 地图查询公共交通路线。",
+    "route_planning_steps_1": "打开 Google 地图应用并输入目的地。",
+    "route_planning_steps_2": "选择公共交通选项，获取详细指引。",
+    "finding_correct_stop": "找到正确的巴士、电车或火车站",
+    "stop_info_1": "每个站点都有唯一编号和实时信息。",
+    "stop_info_2": "使用 PTV 应用或网站获取更准确的本地信息。",
+    "transfer_alerts": "换乘提醒",
+    "set_alerts": "设置换乘、延误或站台变更提醒。",
+    "trip_updates": "行程更新与换乘通知",
+    "platform_guidance": "找到正确的站台或站点",
+    "platform_guidance_text": "学习阅读站台地图和编号。",
 
-  "on_board_guidance": "4. 车上指导",
-  "boarding_exiting_tips": "上车和下车提示",
-  "getting_on_off_safely": "如何安全上车和下车：",
-  "boarding_tips_1": "等待车辆完全停稳后再上车。",
-  "boarding_tips_2": "使用扶手以防摔倒。",
-  "stop_button_usage": "如何使用巴士和电车上的停车按钮",
-  "stop_button_instruction": "按下红色或黄色的停车按钮，通知司机你希望在下一站下车。",
-  "priority_seating": "优先座位：",
-  "priority_seating_text": "使用前排的优先座位，这些座位优先留给老年人和行动不便的人士。",
-  "emergency_assistance": "紧急援助",
-  "seeking_help": "在车上寻求帮助",
-  "seeking_help_text": "如果需要帮助，可以使用紧急对讲机或通知司机。",
-  "safety_security": "安全与保安",
-  "safety_security_text": "了解紧急出口和疏散程序。",
-
-  "nav": {
-  "home": "首页",
-  "travel": "出行指南",
-  "social": "社交活动",
-  "suburb": "探索社区",
-  "communityServices": "社区服务"
-},
-
-"home": {
-  "heroTitle": "带来关怀、舒适与联系！",
-  "heroSubtitle": "无论你来自哪里，每个人都应感受到家的温暖。",
-  "section1Title": "社交活动",
-  "section1Desc": "参加为老年人设计的本地活动 — 从兴趣小组到健康课程和信息讲座。",
-  "section1Btn": "了解更多",
-  "section2Title": "探索文化",
-  "section2Desc": "选择一个文化身份，发现其在澳大利亚社区中的活跃足迹。",
-  "section2Btn": "按文化探索",
-  "section3Title": "出行指南",
-  "section3Desc": "一步步教你如何安全使用公共交通工具。",
-  "section3Btn": "学习出行",
-  "chatTitle": "需要帮助？试试 Uni 聊天助手",
-  "chatDesc": "Uni 是你的好帮手！如果你不知道该去哪，就来问问 Uni 吧。",
-  "chatBtn": "开始对话"
-},
-
-"services": {
-  "heroTitle": "老年人社区服务",
-  "heroDesc": "探索澳大利亚政府为老年人提供的福祉、社交联系、健康和自主生活支持计划。",
-  "buttonText": "访问官方网站",
-  "items": [
-    { "name": "我的老年护理（My Aged Care）", "description": "获取政府资助老年护理服务的主要入口，包括评估、居家支持和服务查询。" },
-    { "name": "联邦居家支持计划（CHSP）", "description": "入门级服务，帮助老年人留在家中并活跃于社区。包括交通、社交支持和送餐服务。" },
-    { "name": "居家护理配套", "description": "为有复杂护理需求的人士量身定制的协调支持，帮助他们安全地在家中生活。" },
-    { "name": "老年人志愿访问者计划（ACVVS）", "description": "通过定期志愿者探访，促进老年人与他人的社交联系。" },
-    { "name": "全国老年护理倡导计划（NACAP）", "description": "为老年人提供免费的倡导服务，帮助他们理解和维护在使用老年护理服务时的权益。" },
-    { "name": "老年人残疾支持（DSOA）", "description": "为65岁以上、之前接受残疾服务但不符合NDIS资格的人士继续提供支持。" },
-    { "name": "积极老龄化倡议", "description": "促进健康、积极老龄化，终身学习和社会参与的各项计划。" },
-    { "name": "2025年7月起的居家支持计划", "description": "一个新的居家支持计划，结合CHSP与居家护理配套，为老年人提供灵活的居家服务。" },
-    { "name": "偏远地区服务", "description": "为澳大利亚偏远社区量身定制的专业老年护理支持和服务。" },
-    { "name": "2024年老年护理法", "description": "旨在建立更简单、公平、富有同情心的澳大利亚老年护理制度的重大改革。" }
-  ]
+    "on_board_guidance": "4. 车上指导",
+    "boarding_exiting_tips": "上车与下车提示",
+    "getting_on_off_safely": "如何安全上下车：",
+    "boarding_tips_1": "等待车辆完全停稳再上车。",
+    "boarding_tips_2": "使用扶手防止跌倒。",
+    "stop_button_usage": "如何使用巴士或电车上的停车按钮",
+    "stop_button_instruction": "按下红色或黄色按钮，通知司机你要在下一站下车。",
+    "priority_seating": "优先座位：",
+    "priority_seating_text": "使用车前部的优先座位，优先为老年人和行动不便者保留。",
+    "emergency_assistance": "紧急援助",
+    "seeking_help": "车上寻求帮助",
+    "seeking_help_text": "如需帮助，可使用紧急对讲机或通知司机。",
+    "safety_security": "安全与保安",
+    "safety_security_text": "了解紧急出口与疏散程序。"
+  }
 }
-
-
-
-}
-
-  

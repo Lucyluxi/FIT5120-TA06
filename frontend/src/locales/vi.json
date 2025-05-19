@@ -1,64 +1,136 @@
 {
-    "heroTitle": "Mang lại sự thoải mái, chăm sóc và kết nối!",
-    "heroSubtitle": "Bởi vì ai cũng xứng đáng cảm thấy như đang ở nhà, dù họ đến từ đâu.",
-    "card1": "Hoạt động xã hội",
-    "card2": "Các vùng ngoại ô đa văn hóa",
-    "card3": "Chatbot thông tin văn hóa",
-    "card4": "Trò chơi",
-
+  "localeCode": "vi",
+  "nav": {
+    "home": "Trang chủ",
+    "travel": "Hướng dẫn di chuyển",
+    "social": "Hoạt động xã hội",
+    "suburb": "Khám phá vùng ngoại ô",
+    "communityServices": "Dịch vụ cộng đồng"
+  },
+  "home": {
+    "heroTitle": "Mang đến sự thoải mái, quan tâm và kết nối!",
+    "heroSubtitle": "Bất kể bạn đến từ đâu, ai cũng xứng đáng cảm thấy như đang ở nhà.",
+    "section1Title": "Hoạt động xã hội",
+    "section1Desc": "Tham gia các sự kiện địa phương dành cho người lớn tuổi — từ nhóm sở thích, hoạt động sức khỏe đến hội thảo và buổi gặp mặt thân mật.",
+    "section1Btn": "Tìm hiểu thêm",
+    "section2Title": "Khám phá văn hoá",
+    "section2Desc": "Chọn một nền văn hóa và khám phá các khu vực sinh sống, kết nối và lễ hội của cộng đồng tại Úc.",
+    "section2Btn": "Khám phá theo văn hóa",
+    "section3Title": "Hướng dẫn di chuyển",
+    "section3Desc": "Hướng dẫn từng bước giúp bạn sử dụng phương tiện công cộng một cách tự tin — sử dụng thẻ Myki, xe lửa, xe điện và đi bộ an toàn.",
+    "section3Btn": "Học cách di chuyển",
+    "section4Title": "Tìm cộng đồng của bạn",
+    "section4Desc": "Khám phá các vùng ngoại ô nơi cộng đồng cùng nền văn hóa với bạn sinh sống và kết nối. Cảm giác như ở nhà, dù bạn ở đâu.",
+    "section4Btn": "Khám phá vùng ngoại ô",
+    "chatTitle": "Cần giúp đỡ? Hãy trò chuyện với Uni",
+    "chatDesc": "Gặp Uni, người bạn đồng hành thân thiện của bạn. Nếu bạn không biết đi đâu, cứ hỏi! Uni sẽ giúp bạn tìm dịch vụ, sự kiện, hoặc đưa bạn đến đúng nơi.",
+    "chatBtn": "Bắt đầu trò chuyện"
+  },
+  "services": {
+    "heroTitle": "Dịch vụ cộng đồng cho người cao tuổi",
+    "heroDesc": "Khám phá các chương trình của Chính phủ Úc hỗ trợ phúc lợi, kết nối xã hội, sức khỏe và cuộc sống độc lập cho người cao tuổi.",
+    "buttonText": "Truy cập trang chính thức",
+    "items": [
+      {
+        "name": "My Aged Care",
+        "description": "Cổng thông tin chính để truy cập các dịch vụ chăm sóc người cao tuổi do chính phủ tài trợ bao gồm đánh giá, hỗ trợ tại nhà và công cụ tìm kiếm dịch vụ."
+      },
+      {
+        "name": "Chương trình Hỗ trợ tại nhà của Khối Thịnh vượng chung (CHSP)",
+        "description": "Dịch vụ cấp đầu giúp người lớn tuổi sống tại nhà và tham gia vào cộng đồng. Bao gồm giao thông, hỗ trợ xã hội và giao bữa ăn."
+      },
+      {
+        "name": "Gói Chăm sóc tại nhà",
+        "description": "Hỗ trợ được phối hợp dành cho những người có nhu cầu chăm sóc phức tạp để giúp họ sống an toàn tại nhà."
+      },
+      {
+        "name": "Chương trình Tình nguyện viên thăm hỏi người cao tuổi (ACVVS)",
+        "description": "Kết nối người cao tuổi với tình nguyện viên để tạo mối quan hệ bạn bè và tương tác xã hội thường xuyên."
+      },
+      {
+        "name": "Chương trình Vận động chăm sóc người cao tuổi quốc gia (NACAP)",
+        "description": "Cung cấp dịch vụ vận động miễn phí để giúp người cao tuổi hiểu và bảo vệ quyền lợi của họ trong quá trình sử dụng dịch vụ chăm sóc."
+      },
+      {
+        "name": "Hỗ trợ người khuyết tật lớn tuổi (DSOA)",
+        "description": "Hỗ trợ tiếp tục cho người trên 65 tuổi từng nhận dịch vụ khuyết tật chuyên biệt nhưng không đủ điều kiện cho NDIS."
+      },
+      {
+        "name": "Sáng kiến lão hóa tích cực",
+        "description": "Các chương trình thúc đẩy lối sống lành mạnh, học tập suốt đời và gắn kết xã hội cho người cao tuổi."
+      },
+      {
+        "name": "Chương trình Hỗ trợ tại nhà (từ tháng 7 năm 2025)",
+        "description": "Chương trình mới kết hợp CHSP và Gói chăm sóc tại nhà thành một dịch vụ linh hoạt tại nhà cho người lớn tuổi."
+      },
+      {
+        "name": "Dịch vụ ở khu vực nông thôn và vùng sâu vùng xa",
+        "description": "Hỗ trợ chăm sóc người cao tuổi chuyên biệt phù hợp với nhu cầu của các cộng đồng vùng sâu vùng xa."
+      },
+      {
+        "name": "Luật chăm sóc người cao tuổi 2024",
+        "description": "Cải cách lớn nhằm tạo ra hệ thống chăm sóc người cao tuổi đơn giản, công bằng và đầy nhân ái hơn."
+      }
+    ]
+  },
+  "exploreActivitiesTitle": "Khám phá các hoạt động xã hội!",
+  "chatbot": {
+    "button": "Trò chuyện",
+    "intro": "Chào bạn, tôi là Uni – hãy nhấp vào nếu bạn cần giúp đỡ!",
+    "option1": "Tôi muốn tìm hiểu cách sử dụng phương tiện công cộng ở Melbourne.",
+    "option2": "Tôi muốn tìm các hoạt động để giao lưu với người khác.",
+    "option3": "Tôi muốn khám phá các vùng ngoại ô đa văn hóa."
+  },
+  "filters": {
     "whatsOn": "Sự kiện sắp diễn ra",
     "date": "Ngày",
-    "location": "Địa điểm",
-    "category":"Thể loại",
     "search": "Tìm kiếm",
     "reset": "Đặt lại",
     "refine": "Lọc",
     "hideRefine": "Ẩn lọc",
     "what": "Thể loại",
     "where": "Địa điểm",
+    "anything": "Bất kỳ thể loại nào",
     "anywhere": "Bất kỳ địa điểm nào",
     "keywords": "Từ khóa",
     "upcoming": "Sự kiện sắp diễn ra",
-    "anything": "Bất kỳ thể loại nào",
     "education": "Giáo dục",
     "exercise": "Thể dục & Sức khỏe",
     "hobbies": "Sở thích & Sáng tạo",
     "social": "Giao lưu & Cộng đồng",
     "entertainment": "Giải trí & Văn hóa",
-    "noImage": "Không có hình ảnh",
+    "location": "Địa điểm",
+    "category": "Thể loại",
     "previous": "Trước",
     "next": "Tiếp theo",
     "pageOf": "Trang {current} trong tổng số {total} trang",
-
-    "localeCode": "vi",
-    "eventDetails": {
-      "noImage": "Không có hình ảnh",
-      "date": "Ngày",
-      "location": "Địa điểm",
-      "category": "Thể loại",
-      "description": "Mô tả",
-      "mapTitle": "Bản đồ vị trí sự kiện",
-      "backButton": "← Quay lại sự kiện",
-      "loading": "Đang tải chi tiết sự kiện..."
-    },
-
+    "noImage": "Không có hình ảnh"
+  },
+  "suburb": {
     "chooseCulturePrompt": "Vui lòng chọn nền văn hóa để khám phá",
     "Indian": "Ấn Độ",
     "Chinese": "Trung Quốc",
     "Greek": "Hy Lạp",
     "Vietnamese": "Việt Nam",
     "clickToLearnMore": "Nhấn để tìm hiểu thêm",
-    "previous": "Trước",
-    "next": "Tiếp theo",
-
     "placesToVisit": "Địa điểm tham quan (bấm để xem vị trí trên bản đồ):",
     "noFeatures": "Không tìm thấy đặc điểm văn hóa nào trong khu vực này.",
     "dataSource": "Nguồn dữ liệu: © Các tác giả OpenStreetMap",
     "back": "Quay lại",
     "locationMap": "Bản đồ vị trí",
-    "mapNotAvailable": "Bản đồ không có sẵn",
-
-    "chatbotTitle": "Trí tuện văn hoá",
+    "mapNotAvailable": "Bản đồ không có sẵn"
+  },
+  "eventDetails": {
+    "date": "Ngày",
+    "location": "Địa điểm",
+    "category": "Thể loại",
+    "description": "Mô tả",
+    "mapTitle": "Bản đồ vị trí sự kiện",
+    "noImage": "Không có hình ảnh",
+    "loading": "Đang tải chi tiết sự kiện...",
+    "backButton": "← Quay lại sự kiện"
+  },
+  "chat": {
     "vietnamese": "Việt Nam 🇻🇳",
     "chinese": "Trung Quốc 🇨🇳",
     "greek": "Hy Lạp 🇬🇷",
@@ -78,129 +150,77 @@
     "noFacts": "Xin lỗi, chưa có dữ liệu cho chủ đề này.",
     "allFactsShown": "Tất cả sự thật đã được hiển thị. Hãy chọn chủ đề hoặc văn hoá khác.",
     "whatNext": "Bạn muốn làm gì tiếp theo?",
-    "welcome": "Xin chào! Tôi có thể chia sẻ những sự thật văn hoá thú vị. Bạn muốn tìm hiểu văn hoá nào?",
-
+    "welcome": "Xin chào! Tôi có thể chia sẻ những sự thật văn hoá thú vị. Bạn muốn tìm hiểu văn hoá nào?"
+  },
+  "games": {
     "chooseGame": "🎮 Chọn một Trò chơi",
     "sudoku": "Sudoku",
     "memoryMatch": "Ghép thẻ nhớ",
     "jigsawPuzzle": "Trò chơi xếp hình",
-
     "sudokuTitle": "🧩 Trò chơi Sudoku",
     "timeElapsed": "Thời gian đã trôi qua",
     "seconds": "giây",
     "checkAnswers": "Kiểm tra đáp án",
     "newPuzzle": "Câu đố mới",
     "congratulations": "🎉 Chúc mừng! Bạn đã hoàn thành câu đố trong",
-
     "memoryTitle": "🧠 Trò chơi ghép đôi",
     "memoryInstructions": "Nhấp vào hai thẻ để tìm cặp phù hợp!",
     "restart": "Chơi lại",
-
     "puzzleTitle": "🧩 Trò chơi ghép hình",
     "puzzleInstructions": "Nhấp và hoán đổi các mảnh ghép để hoàn thành bức tranh!",
     "puzzleCompleted": "Đã hoàn thành!",
-    "shuffle": "Xáo trộn",
-
-  "intro_title": "Chào mừng đến với Hướng dẫn Giao thông cho Người Cao tuổi Nhập cư",
-  "intro_text": "Hướng dẫn này nhằm giúp người cao tuổi nhập cư tự tin sử dụng hệ thống giao thông công cộng tại Melbourne, bao gồm lối đi bộ, thẻ Myki, lập kế hoạch tuyến đường và lên xuống an toàn.",
-
-  "basic_transportation_knowledge": "1. Kiến Thức Giao Thông Cơ Bản",
-  "crosswalk_usage": "Cách Sử Dụng Lối Đi Bộ",
-  "crosswalk_usage_text": "Cách Sử Dụng Nút Bấm Qua Đường:",
-  "crosswalk_instructions_1": "Đèn người đi bộ màu xanh lá: Có thể băng qua an toàn.",
-  "crosswalk_instructions_2": "Đèn người đi bộ màu đỏ nhấp nháy: Không bắt đầu băng qua, nhưng nếu đã bắt đầu, hãy hoàn thành việc băng qua.",
-  "crosswalk_instructions_3": "Đèn người đi bộ màu đỏ ổn định: Không băng qua đường.",
-  "walk_signals": "Hiểu Các Tín Hiệu Đèn Dành Cho Người Đi Bộ:",
-  "walk_signals_text_1": "Tìm nút bấm trên cột đèn giao thông.",
-  "walk_signals_text_2": "Nhấn nút để kích hoạt tín hiệu qua đường cho người đi bộ.",
-  "walk_signals_text_3": "Chờ đèn người đi bộ màu xanh hoặc tín hiệu âm thanh (tiếng bíp) cho biết có thể băng qua an toàn.",
-
-  "travel_preparation": "2. Chuẩn Bị Cho Chuyến Đi",
-  "ticket_purchase_guide": "Hướng Dẫn Mua Vé",
-  "ticket_purchase": "Cách mua và nạp tiền thẻ Myki.",
-  "ticket_purchase_steps_1": "Mua thẻ Myki tại nhà ga, cửa hàng tiện lợi hoặc trực tuyến.",
-  "ticket_purchase_steps_2": "Nạp tiền cho thẻ Myki tại máy nạp, cửa hàng 7-Eleven hoặc trực tuyến.",
-  "ticket_purchase_steps_3": "Giữ thẻ Myki có đủ tiền để đảm bảo chuyến đi không bị gián đoạn.",
-  "card_types": "Các Loại Thẻ Myki",
-  "card_types_list_1": "Myki Money: Trả theo chuyến.",
-  "card_types_list_2": "Myki Pass: Di chuyển không giới hạn trong một khoảng thời gian nhất định.",
-  "card_types_list_3": "Thẻ Myki Giảm Giá: Vé ưu đãi cho những hành khách đủ điều kiện.",
-  "myki_usage": "Cách Sử Dụng Thẻ Myki Khi Đi Lại",
-
-  "real_time_navigation": "3. Điều Hướng Theo Thời Gian Thực",
-  "route_planning": "Lập Kế Hoạch Tuyến Đường",
-  "using_google_maps": "Sử dụng Google Maps để tìm đường đi bằng phương tiện công cộng.",
-  "route_planning_steps_1": "Mở ứng dụng Google Maps và nhập điểm đến của bạn.",
-  "route_planning_steps_2": "Chọn tùy chọn phương tiện công cộng để xem hướng dẫn chi tiết.",
-  "finding_correct_stop": "Tìm Đúng Trạm Xe Buýt, Tàu Điện Hoặc Ga Tàu",
-  "stop_info_1": "Mỗi trạm có một ID duy nhất và hiển thị thông tin thời gian thực.",
-  "stop_info_2": "Sử dụng ứng dụng PTV hoặc trang web để biết thông tin chi tiết hơn về địa phương.",
-  "transfer_alerts": "Cảnh Báo Chuyển Tuyến",
-  "set_alerts": "Cài đặt cảnh báo cho chuyển tuyến, trễ giờ hoặc thay đổi sân ga.",
-  "trip_updates": "Cập Nhật Chuyến Đi và Thông Báo Chuyển Tuyến",
-  "platform_guidance": "Tìm Đúng Sân Ga Hoặc Điểm Dừng",
-  "platform_guidance_text": "Học cách đọc bản đồ sân ga và số sân ga.",
-
-  "on_board_guidance": "4. Hướng Dẫn Trên Xe",
-  "boarding_exiting_tips": "Mẹo Lên và Xuống Xe",
-  "getting_on_off_safely": "Cách Lên và Xuống Xe An Toàn:",
-  "boarding_tips_1": "Chờ xe dừng hoàn toàn trước khi lên xe.",
-  "boarding_tips_2": "Sử dụng tay vịn để tránh ngã.",
-  "stop_button_usage": "Cách Sử Dụng Nút Dừng Trên Xe Buýt và Tàu Điện",
-  "stop_button_instruction": "Nhấn nút dừng màu đỏ hoặc vàng để thông báo cho tài xế bạn muốn xuống tại điểm dừng tiếp theo.",
-  "priority_seating": "Ghế Ưu Tiên:",
-  "priority_seating_text": "Sử dụng ghế ưu tiên ở phía trước, dành cho người cao tuổi và những người gặp khó khăn về di chuyển.",
-  "emergency_assistance": "Hỗ Trợ Khẩn Cấp",
-  "seeking_help": "Yêu Cầu Trợ Giúp Trên Xe",
-  "seeking_help_text": "Sử dụng bộ đàm khẩn cấp hoặc thông báo cho tài xế nếu bạn cần trợ giúp.",
-  "safety_security": "An Toàn và An Ninh",
-  "safety_security_text": "Hiểu các lối thoát khẩn cấp và quy trình sơ tán.",
-
-  "nav": {
-  "home": "Trang chủ",
-  "travel": "Hướng dẫn di chuyển",
-  "social": "Hoạt động xã hội",
-  "suburb": "Khám phá vùng ngoại ô",
-  "communityServices": "Dịch vụ cộng đồng"
-},
-
-"home": {
-  "heroTitle": "Mang đến sự thoải mái, quan tâm và kết nối!",
-  "heroSubtitle": "Bất kể bạn đến từ đâu, ai cũng xứng đáng cảm thấy như đang ở nhà.",
-  "section1Title": "Hoạt động xã hội",
-  "section1Desc": "Tham gia các sự kiện địa phương dành cho người lớn tuổi — từ nhóm sở thích, hoạt động sức khỏe đến hội thảo và buổi gặp mặt thân mật.",
-  "section1Btn": "Tìm hiểu thêm",
-  "section2Title": "Khám phá văn hoá",
-  "section2Desc": "Chọn một nền văn hóa và khám phá các khu vực sinh sống, kết nối và lễ hội của cộng đồng tại Úc.",
-  "section2Btn": "Khám phá theo văn hóa",
-  "section3Title": "Hướng dẫn di chuyển",
-  "section3Desc": "Hướng dẫn từng bước giúp bạn sử dụng phương tiện công cộng một cách tự tin — sử dụng thẻ Myki, xe lửa, xe điện và đi bộ an toàn.",
-  "section3Btn": "Học cách di chuyển",
-  "chatTitle": "Cần giúp đỡ? Hãy trò chuyện với Uni",
-  "chatDesc": "Gặp Uni, người bạn đồng hành thân thiện của bạn. Nếu bạn không biết đi đâu, cứ hỏi! Uni sẽ giúp bạn tìm dịch vụ, sự kiện, hoặc đưa bạn đến đúng nơi.",
-  "chatBtn": "Bắt đầu trò chuyện"
-},
-
-"services": {
-  "heroTitle": "Dịch vụ cộng đồng cho người cao tuổi",
-  "heroDesc": "Khám phá các chương trình của Chính phủ Úc hỗ trợ phúc lợi, kết nối xã hội, sức khỏe và cuộc sống độc lập cho người cao tuổi.",
-  "buttonText": "Truy cập trang chính thức",
-  "items": [
-    { "name": "My Aged Care", "description": "Cổng thông tin chính để truy cập các dịch vụ chăm sóc người cao tuổi do chính phủ tài trợ bao gồm đánh giá, hỗ trợ tại nhà và công cụ tìm kiếm dịch vụ." },
-    { "name": "Chương trình Hỗ trợ tại nhà của Khối Thịnh vượng chung (CHSP)", "description": "Dịch vụ cấp đầu giúp người lớn tuổi sống tại nhà và tham gia vào cộng đồng. Bao gồm giao thông, hỗ trợ xã hội và giao bữa ăn." },
-    { "name": "Gói Chăm sóc tại nhà", "description": "Hỗ trợ được phối hợp dành cho những người có nhu cầu chăm sóc phức tạp để giúp họ sống an toàn tại nhà." },
-    { "name": "Chương trình Tình nguyện viên thăm hỏi người cao tuổi (ACVVS)", "description": "Kết nối người cao tuổi với tình nguyện viên để tạo mối quan hệ bạn bè và tương tác xã hội thường xuyên." },
-    { "name": "Chương trình Vận động chăm sóc người cao tuổi quốc gia (NACAP)", "description": "Cung cấp dịch vụ vận động miễn phí để giúp người cao tuổi hiểu và bảo vệ quyền lợi của họ trong quá trình sử dụng dịch vụ chăm sóc." },
-    { "name": "Hỗ trợ người khuyết tật lớn tuổi (DSOA)", "description": "Hỗ trợ tiếp tục cho người trên 65 tuổi từng nhận dịch vụ khuyết tật chuyên biệt nhưng không đủ điều kiện cho NDIS." },
-    { "name": "Sáng kiến lão hóa tích cực", "description": "Các chương trình thúc đẩy lối sống lành mạnh, học tập suốt đời và gắn kết xã hội cho người cao tuổi." },
-    { "name": "Chương trình Hỗ trợ tại nhà (từ tháng 7 năm 2025)", "description": "Chương trình mới kết hợp CHSP và Gói chăm sóc tại nhà thành một dịch vụ linh hoạt tại nhà cho người lớn tuổi." },
-    { "name": "Dịch vụ ở khu vực nông thôn và vùng sâu vùng xa", "description": "Hỗ trợ chăm sóc người cao tuổi chuyên biệt phù hợp với nhu cầu của các cộng đồng vùng sâu vùng xa." },
-    { "name": "Luật chăm sóc người cao tuổi 2024", "description": "Cải cách lớn nhằm tạo ra hệ thống chăm sóc người cao tuổi đơn giản, công bằng và đầy nhân ái hơn." }
-  ]
+    "shuffle": "Xáo trộn"
+  },
+  "guide": {
+    "intro_title": "Chào mừng đến với Hướng dẫn Giao thông cho Người Cao tuổi Nhập cư",
+    "intro_text": "Hướng dẫn này nhằm giúp người cao tuổi nhập cư tự tin sử dụng hệ thống giao thông công cộng tại Melbourne, bao gồm lối đi bộ, thẻ Myki, lập kế hoạch tuyến đường và lên xuống an toàn.",
+    "basic_transportation_knowledge": "1. Kiến Thức Giao Thông Cơ Bản",
+    "crosswalk_usage": "Cách Sử Dụng Lối Đi Bộ",
+    "crosswalk_usage_text": "Cách Sử Dụng Nút Bấm Qua Đường:",
+    "crosswalk_instructions_1": "Đèn người đi bộ màu xanh lá: Có thể băng qua an toàn.",
+    "crosswalk_instructions_2": "Đèn người đi bộ màu đỏ nhấp nháy: Không bắt đầu băng qua, nhưng nếu đã bắt đầu, hãy hoàn thành việc băng qua.",
+    "crosswalk_instructions_3": "Đèn người đi bộ màu đỏ ổn định: Không băng qua đường.",
+    "walk_signals": "Hiểu Các Tín Hiệu Đèn Dành Cho Người Đi Bộ:",
+    "walk_signals_text_1": "Tìm nút bấm trên cột đèn giao thông.",
+    "walk_signals_text_2": "Nhấn nút để kích hoạt tín hiệu qua đường cho người đi bộ.",
+    "walk_signals_text_3": "Chờ đèn người đi bộ màu xanh hoặc tín hiệu âm thanh (tiếng bíp) cho biết có thể băng qua an toàn.",
+    "travel_preparation": "2. Chuẩn Bị Cho Chuyến Đi",
+    "ticket_purchase_guide": "Hướng Dẫn Mua Vé",
+    "ticket_purchase": "Cách mua và nạp tiền thẻ Myki.",
+    "ticket_purchase_steps_1": "Mua thẻ Myki tại nhà ga, cửa hàng tiện lợi hoặc trực tuyến.",
+    "ticket_purchase_steps_2": "Nạp tiền cho thẻ Myki tại máy nạp, cửa hàng 7-Eleven hoặc trực tuyến.",
+    "ticket_purchase_steps_3": "Giữ thẻ Myki có đủ tiền để đảm bảo chuyến đi không bị gián đoạn.",
+    "card_types": "Các Loại Thẻ Myki",
+    "card_types_list_1": "Myki Money: Trả theo chuyến.",
+    "card_types_list_2": "Myki Pass: Di chuyển không giới hạn trong một khoảng thời gian nhất định.",
+    "card_types_list_3": "Thẻ Myki Giảm Giá: Vé ưu đãi cho những hành khách đủ điều kiện.",
+    "myki_usage": "Cách Sử Dụng Thẻ Myki Khi Đi Lại",
+    "real_time_navigation": "3. Điều Hướng Theo Thời Gian Thực",
+    "route_planning": "Lập Kế Hoạch Tuyến Đường",
+    "using_google_maps": "Sử dụng Google Maps để tìm đường đi bằng phương tiện công cộng.",
+    "route_planning_steps_1": "Mở ứng dụng Google Maps và nhập điểm đến của bạn.",
+    "route_planning_steps_2": "Chọn tùy chọn phương tiện công cộng để xem hướng dẫn chi tiết.",
+    "finding_correct_stop": "Tìm Đúng Trạm Xe Buýt, Tàu Điện Hoặc Ga Tàu",
+    "stop_info_1": "Mỗi trạm có một ID duy nhất và hiển thị thông tin thời gian thực.",
+    "stop_info_2": "Sử dụng ứng dụng PTV hoặc trang web để biết thông tin chi tiết hơn về địa phương.",
+    "transfer_alerts": "Cảnh Báo Chuyển Tuyến",
+    "set_alerts": "Cài đặt cảnh báo cho chuyển tuyến, trễ giờ hoặc thay đổi sân ga.",
+    "trip_updates": "Cập Nhật Chuyến Đi và Thông Báo Chuyển Tuyến",
+    "platform_guidance": "Tìm Đúng Sân Ga Hoặc Điểm Dừng",
+    "platform_guidance_text": "Học cách đọc bản đồ sân ga và số sân ga.",
+    "on_board_guidance": "4. Hướng Dẫn Trên Xe",
+    "boarding_exiting_tips": "Mẹo Lên và Xuống Xe",
+    "getting_on_off_safely": "Cách Lên và Xuống Xe An Toàn:",
+    "boarding_tips_1": "Chờ xe dừng hoàn toàn trước khi lên xe.",
+    "boarding_tips_2": "Sử dụng tay vịn để tránh ngã.",
+    "stop_button_usage": "Cách Sử Dụng Nút Dừng Trên Xe Buýt và Tàu Điện",
+    "stop_button_instruction": "Nhấn nút dừng màu đỏ hoặc vàng để thông báo cho tài xế bạn muốn xuống tại điểm dừng tiếp theo.",
+    "priority_seating": "Ghế Ưu Tiên:",
+    "priority_seating_text": "Sử dụng ghế ưu tiên ở phía trước, dành cho người cao tuổi và những người gặp khó khăn về di chuyển.",
+    "emergency_assistance": "Hỗ Trợ Khẩn Cấp",
+    "seeking_help": "Yêu Cầu Trợ Giúp Trên Xe",
+    "seeking_help_text": "Sử dụng bộ đàm khẩn cấp hoặc thông báo cho tài xế nếu bạn cần trợ giúp.",
+    "safety_security": "An Toàn và An Ninh",
+    "safety_security_text": "Hiểu các lối thoát khẩn cấp và quy trình sơ tán."
+  }
 }
-
-
-
-}
-
-  

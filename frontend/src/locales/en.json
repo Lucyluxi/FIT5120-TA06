@@ -1,11 +1,104 @@
 {
+  "localeCode": "en",
+
+  "nav": {
+    "home": "Home",
+    "travel": "Travel Guide",
+    "social": "Social Activities",
+    "suburb": "Explore Suburbs",
+    "communityServices": "Community Services"
+  },
+
+  "home": {
     "heroTitle": "Bringing Comfort, Care, and Connection!",
     "heroSubtitle": "Because everyone deserves to feel at home, no matter where they're from.",
-    "card1": "Social Activities",
-    "card2": "Culturally Diverse Suburbs",
-    "card3": "Cultural Info Chatbot",
-    "card4": "Games",
+    "section1Title": "Social Activities",
+    "section1Desc": "Take part in local events designed to bring older adults together — from hobby groups and wellness activities to information sessions and friendly meetups.",
+    "section1Btn": "Learn More",
+    "section2Title": "Explore Culture",
+    "section2Desc": "Select a cultural identity and uncover the Australian suburbs where the community lives, connects, and celebrates.",
+    "section2Btn": "Explore by Culture",
+    "section3Title": "Your Travel Guide",
+    "section3Desc": "Step-by-step guides to help you use public transport with confidence.",
+    "section3Btn": "Learn to Travel",
+    "section4Title": "Find Your Community",
+    "section4Desc": "Discover suburbs where people from your background live and connect. Feel at home, wherever you are.",
+    "section4Btn": "Explore Suburbs",
+    "chatTitle": "Need a Hand? Chat with Uni",
+    "chatDesc": "Meet Uni, your friendly guide. If you're not sure where to go, just ask!",
+    "chatBtn": "Let's Talk"
+  },
 
+  "services": {
+    "heroTitle": "Community Services for Older Adults",
+    "heroDesc": "Explore Australian Government programs designed to support wellbeing, social connection, health, and independent living for seniors.",
+    "buttonText": "Visit Official Site",
+    "items": [
+      {
+        "name": "My Aged Care",
+        "description": "The central portal for accessing government-funded aged care services including assessments, support at home, and service finders."
+      },
+      {
+        "name": "Commonwealth Home Support Programme (CHSP)",
+        "description": "Entry-level services to help older people stay at home and be active in their community. Includes transport, social support, and meal delivery."
+      },
+      {
+        "name": "Home Care Packages",
+        "description": "Coordinated support tailored to people with complex care needs to help them remain living safely at home."
+      },
+      {
+        "name": "Aged Care Volunteer Visitors Scheme (ACVVS)",
+        "description": "Supports social connections by pairing older people with volunteer visitors for regular companionship."
+      },
+      {
+        "name": "National Aged Care Advocacy Program (NACAP)",
+        "description": "Free advocacy to help older Australians understand and exercise their rights when using aged care services."
+      },
+      {
+        "name": "Disability Support for Older Australians (DSOA)",
+        "description": "Continued support for people over 65 who were previously receiving specialist disability services but are not eligible for the NDIS."
+      },
+      {
+        "name": "Positive Ageing Initiatives",
+        "description": "Programs that promote healthy and active ageing, lifelong learning, and social engagement for older adults."
+      },
+      {
+        "name": "Support at Home Program (from July 2025)",
+        "description": "A new program combining CHSP and Home Care Packages into one flexible in-home support service for seniors."
+      },
+      {
+        "name": "Services in Rural and Remote Areas",
+        "description": "Specialised aged care support and services tailored to the needs of rural and remote communities in Australia."
+      },
+      {
+        "name": "Aged Care Act 2024",
+        "description": "A major reform aiming to create a simpler, fairer, and more compassionate aged care system in Australia."
+      }
+    ]
+  },
+
+  "exploreActivitiesTitle": "Explore Social Activities!",
+
+  "chatbot": {
+    "button": "Chat",
+    "intro": "Hi, I am Uni - just click if you need a hand!",
+    "option1": "I'd like to learn how to use public transportation in Melbourne.",
+    "option2": "I'd like to find some activities where I can socialize with others.",
+    "option3": "I'd like to discover cultural suburbs."
+  },
+
+  "eventDetails": {
+    "date": "📅 Date",
+    "location": "📍 Location",
+    "category": "🏷️ Category",
+    "description": "Description",
+    "mapTitle": "Event Location Map",
+    "noImage": "No image available",
+    "loading": "Loading event details...",
+    "backButton": "← Back to events"
+  },
+
+  "filters": {
     "whatsOn": "What's On",
     "date": "Date",
     "search": "Search",
@@ -23,44 +116,30 @@
     "hobbies": "Hobbies & Creativity",
     "social": "Social & Community",
     "entertainment": "Entertainment & Culture",
-    "noImage": "No Image Available",
-    "noImage": "No Image Available",
-    "date": "Date",
     "location": "Location",
     "category": "Category",
     "previous": "Previous",
     "next": "Next",
     "pageOf": "Page {current} of {total}",
-
-    "localeCode": "en",
-    "eventDetails": {
-    "date": "📅 Date",
-    "location": "📍 Location",
-    "category": "🏷️ Category",
-    "description": "Description",
-    "mapTitle": "Event Location Map",
-    "noImage": "No image available",
-    "loading": "Loading event details...",
-    "backButton": "← Back to events"
+    "noImage": "No Image Available"
   },
 
+  "suburb": {
     "chooseCulturePrompt": "Please choose a cultural background to explore",
     "Indian": "Indian",
     "Chinese": "Chinese",
     "Greek": "Greek",
     "Vietnamese": "Vietnamese",
     "clickToLearnMore": "Click to learn more",
-    "previous": "Previous",
-    "next": "Next",
-
     "placesToVisit": "Places to visit (click to see the map location):",
     "noFeatures": "No cultural features found in this suburb.",
     "dataSource": "Data source: © OpenStreetMap contributors",
     "back": "Back",
     "locationMap": "Location Map",
-    "mapNotAvailable": "Map not available",
+    "mapNotAvailable": "Map not available"
+  },
 
-    "chatbotTitle": "Cultural Info Chatbot",
+  "chat": {
     "vietnamese": "Vietnamese 🇻🇳",
     "chinese": "Chinese 🇨🇳",
     "greek": "Greek 🇬🇷",
@@ -80,159 +159,79 @@
     "noFacts": "Sorry, no facts available for this topic.",
     "allFactsShown": "No more facts available for this topic. Please choose another topic or culture.",
     "whatNext": "What would you like to do next?",
-    "welcome": "Hi! I can share interesting cultural facts. Which culture would you like to learn about?",
+    "welcome": "Hi! I can share interesting cultural facts. Which culture would you like to learn about?"
+  },
 
+  "games": {
     "chooseGame": "🎮 Choose a Game",
     "sudoku": "Sudoku",
     "memoryMatch": "Memory Match",
     "jigsawPuzzle": "Jigsaw Puzzle",
-
     "sudokuTitle": "🧩 Sudoku Game",
     "timeElapsed": "Time Elapsed",
     "seconds": "seconds",
     "checkAnswers": "Check Answers",
     "newPuzzle": "New Puzzle",
     "congratulations": "🎉 Congratulations! Puzzle completed in",
-
     "memoryTitle": "🧠 Memory Match",
     "memoryInstructions": "Click two cards to find a match!",
     "restart": "Restart",
-
     "puzzleTitle": "🧩 Jigsaw Puzzle",
     "puzzleInstructions": "Click and swap tiles to complete the picture!",
     "puzzleCompleted": "Puzzle completed!",
-    "shuffle": "Shuffle",
+    "shuffle": "Shuffle"
+  },
 
-  "intro_title": "Welcome to the Elderly Immigrant Transport Guide",
-  "intro_text": "This guide aims to help elderly immigrants confidently navigate Melbourne's public transportation system, including crosswalks, Myki cards, route planning, and safe boarding.",
-
-  "basic_transportation_knowledge": "1. Basic Transportation Knowledge",
-  "crosswalk_usage": "Crosswalk Usage",
-  "crosswalk_usage_text": "How to Use Pedestrian Crossing Buttons:",
-  "crosswalk_instructions_1": "Green Walking Figure: Safe to cross.",
-  "crosswalk_instructions_2": "Flashing Red Figure: Do not start crossing, but complete your crossing if you have already started.",
-  "crosswalk_instructions_3": "Steady Red Figure: Do not cross.",
-  "walk_signals": "Understanding Walk Signals:",
-  "walk_signals_text_1": "Locate the button box on the traffic light pole.",
-  "walk_signals_text_2": "Press the button to activate the pedestrian crossing signal.",
-  "walk_signals_text_3": "Wait for the green walking figure or the sound signal (beeping sound) indicating it’s safe to cross.",
-
-  "travel_preparation": "2. Travel Preparation",
-  "ticket_purchase_guide": "Ticket Purchase Guide",
-  "ticket_purchase": "How to buy and top up Myki cards.",
-  "ticket_purchase_steps_1": "Buy a Myki card from train stations, convenience stores, or online.",
-  "ticket_purchase_steps_2": "Top up your card at Myki machines, 7-Eleven stores, or online.",
-  "ticket_purchase_steps_3": "Keep your Myki card topped up for uninterrupted travel.",
-  "card_types": "Types of Myki Cards",
-  "card_types_list_1": "Myki Money: Pay as you go.",
-  "card_types_list_2": "Myki Pass: Unlimited travel for a set period.",
-  "card_types_list_3": "Concession Myki: Discounted fares for eligible passengers.",
-  "myki_usage": "Using Myki Cards for Travel",
-
-  "real_time_navigation": "3. Real-Time Navigation",
-  "route_planning": "Route Planning",
-  "using_google_maps": "Using Google Maps for public transport directions.",
-  "route_planning_steps_1": "Open the Google Maps app and enter your destination.",
-  "route_planning_steps_2": "Choose the public transport option for detailed directions.",
-  "finding_correct_stop": "Finding the Correct Bus, Tram, or Train Stop",
-  "stop_info_1": "Each stop has a unique ID and real-time information display.",
-  "stop_info_2": "Use the PTV app or website for more accurate local information.",
-  "transfer_alerts": "Transfer Alerts",
-  "set_alerts": "Set alerts for transfers, delays, or platform changes.",
-  "trip_updates": "Trip Updates and Transfer Notifications",
-  "platform_guidance": "Finding the Right Platform or Stop",
-  "platform_guidance_text": "Learn to read station maps and platform numbers.",
-
-  "on_board_guidance": "4. On-Board Guidance",
-  "boarding_exiting_tips": "Boarding and Exiting Tips",
-  "getting_on_off_safely": "Getting On and Off Safely:",
-  "boarding_tips_1": "Wait for the vehicle to come to a complete stop before boarding.",
-  "boarding_tips_2": "Use the handrails to prevent falls.",
-  "stop_button_usage": "Using the Stop Button on Buses and Trams",
-  "stop_button_instruction": "Press the red or yellow stop button to notify the driver you want to get off at the next stop.",
-  "priority_seating": "Priority Seating:",
-  "priority_seating_text": "Use priority seats near the front, which are reserved for seniors and those with mobility challenges.",
-  "emergency_assistance": "Emergency Assistance",
-  "seeking_help": "Seeking Help on Board",
-  "seeking_help_text": "Use the emergency intercom or notify the driver if you need assistance.",
-  "safety_security": "Safety and Security",
-  "safety_security_text": "Be aware of emergency exits and evacuation procedures.",
-
-  "nav": {
-  "home": "Home",
-  "travel": "Travel Guidelines",
-  "social": "Social Activities",
-  "suburb": "Explore Suburbs",
-  "communityServices": "Community Services"
-},
-
-"home": {
-  "heroTitle": "Bringing Comfort, Care, and Connection!",
-  "heroSubtitle": "Because everyone deserves to feel at home, no matter where they're from.",
-  "section1Title": "Social Activities",
-  "section1Desc": "Take part in local events designed to bring older adults together — from hobby groups and wellness activities to information sessions and friendly meetups.",
-  "section1Btn": "Learn More",
-  "section2Title": "Explore Culture",
-  "section2Desc": "Select a cultural identity and uncover the Australian suburbs where the community lives, connects, and celebrates.",
-  "section2Btn": "Explore by Culture",
-  "section3Title": "Your Travel Guide",
-  "section3Desc": "Step-by-step guides to help you use public transport with confidence.",
-  "section3Btn": "Learn to Travel",
-  "chatTitle": "Need a Hand? Chat with Uni",
-  "chatDesc": "Meet Uni, your friendly guide. If you're not sure where to go, just ask!",
-  "chatBtn": "Let's Talk"
-},
-
-"services": {
-  "heroTitle": "Community Services for Older Adults",
-  "heroDesc": "Explore Australian Government programs designed to support wellbeing, social connection, health, and independent living for seniors.",
-  "buttonText": "Visit Official Site",
-  "items": [
-    {
-      "name": "My Aged Care",
-      "description": "The central portal for accessing government-funded aged care services including assessments, support at home, and service finders."
-    },
-    {
-      "name": "Commonwealth Home Support Programme (CHSP)",
-      "description": "Entry-level services to help older people stay at home and be active in their community. Includes transport, social support, and meal delivery."
-    },
-    {
-      "name": "Home Care Packages",
-      "description": "Coordinated support tailored to people with complex care needs to help them remain living safely at home."
-    },
-    {
-      "name": "Aged Care Volunteer Visitors Scheme (ACVVS)",
-      "description": "Supports social connections by pairing older people with volunteer visitors for regular companionship."
-    },
-    {
-      "name": "National Aged Care Advocacy Program (NACAP)",
-      "description": "Free advocacy to help older Australians understand and exercise their rights when using aged care services."
-    },
-    {
-      "name": "Disability Support for Older Australians (DSOA)",
-      "description": "Continued support for people over 65 who were previously receiving specialist disability services but are not eligible for the NDIS."
-    },
-    {
-      "name": "Positive Ageing Initiatives",
-      "description": "Programs that promote healthy and active ageing, lifelong learning, and social engagement for older adults."
-    },
-    {
-      "name": "Support at Home Program (from July 2025)",
-      "description": "A new program combining CHSP and Home Care Packages into one flexible in-home support service for seniors."
-    },
-    {
-      "name": "Services in Rural and Remote Areas",
-      "description": "Specialised aged care support and services tailored to the needs of rural and remote communities in Australia."
-    },
-    {
-      "name": "Aged Care Act 2024",
-      "description": "A major reform aiming to create a simpler, fairer, and more compassionate aged care system in Australia."
-    }
-  ]
+  "guide": {
+    "intro_title": "Welcome to the Elderly Immigrant Transport Guide",
+    "intro_text": "This guide aims to help elderly immigrants confidently navigate Melbourne's public transportation system, including crosswalks, Myki cards, route planning, and safe boarding.",
+    "basic_transportation_knowledge": "1. Basic Transportation Knowledge",
+    "crosswalk_usage": "Crosswalk Usage",
+    "crosswalk_usage_text": "How to Use Pedestrian Crossing Buttons:",
+    "crosswalk_instructions_1": "Green Walking Figure: Safe to cross.",
+    "crosswalk_instructions_2": "Flashing Red Figure: Do not start crossing, but complete your crossing if you have already started.",
+    "crosswalk_instructions_3": "Steady Red Figure: Do not cross.",
+    "walk_signals": "Understanding Walk Signals:",
+    "walk_signals_text_1": "Locate the button box on the traffic light pole.",
+    "walk_signals_text_2": "Press the button to activate the pedestrian crossing signal.",
+    "walk_signals_text_3": "Wait for the green walking figure or the sound signal (beeping sound) indicating it’s safe to cross.",
+    "travel_preparation": "2. Travel Preparation",
+    "ticket_purchase_guide": "Ticket Purchase Guide",
+    "ticket_purchase": "How to buy and top up Myki cards.",
+    "ticket_purchase_steps_1": "Buy a Myki card from train stations, convenience stores, or online.",
+    "ticket_purchase_steps_2": "Top up your card at Myki machines, 7-Eleven stores, or online.",
+    "ticket_purchase_steps_3": "Keep your Myki card topped up for uninterrupted travel.",
+    "card_types": "Types of Myki Cards",
+    "card_types_list_1": "Myki Money: Pay as you go.",
+    "card_types_list_2": "Myki Pass: Unlimited travel for a set period.",
+    "card_types_list_3": "Concession Myki: Discounted fares for eligible passengers.",
+    "myki_usage": "Using Myki Cards for Travel",
+    "real_time_navigation": "3. Real-Time Navigation",
+    "route_planning": "Route Planning",
+    "using_google_maps": "Using Google Maps for public transport directions.",
+    "route_planning_steps_1": "Open the Google Maps app and enter your destination.",
+    "route_planning_steps_2": "Choose the public transport option for detailed directions.",
+    "finding_correct_stop": "Finding the Correct Bus, Tram, or Train Stop",
+    "stop_info_1": "Each stop has a unique ID and real-time information display.",
+    "stop_info_2": "Use the PTV app or website for more accurate local information.",
+    "transfer_alerts": "Transfer Alerts",
+    "set_alerts": "Set alerts for transfers, delays, or platform changes.",
+    "trip_updates": "Trip Updates and Transfer Notifications",
+    "platform_guidance": "Finding the Right Platform or Stop",
+    "platform_guidance_text": "Learn to read station maps and platform numbers.",
+    "on_board_guidance": "4. On-Board Guidance",
+    "boarding_exiting_tips": "Boarding and Exiting Tips",
+    "getting_on_off_safely": "Getting On and Off Safely:",
+    "boarding_tips_1": "Wait for the vehicle to come to a complete stop before boarding.",
+    "boarding_tips_2": "Use the handrails to prevent falls.",
+    "stop_button_usage": "Using the Stop Button on Buses and Trams",
+    "stop_button_instruction": "Press the red or yellow stop button to notify the driver you want to get off at the next stop.",
+    "priority_seating": "Priority Seating:",
+    "priority_seating_text": "Use priority seats near the front, which are reserved for seniors and those with mobility challenges.",
+    "emergency_assistance": "Emergency Assistance",
+    "seeking_help": "Seeking Help on Board",
+    "seeking_help_text": "Use the emergency intercom or notify the driver if you need assistance.",
+    "safety_security": "Safety and Security",
+    "safety_security_text": "Be aware of emergency exits and evacuation procedures."
+  }
 }
-
-
-
-}
-
-  

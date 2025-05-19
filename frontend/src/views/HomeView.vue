@@ -1,29 +1,21 @@
 <template>
   <div class="home-container">
-    <!-- Hero Section -->
+    <!-- 🟠 Hero Section -->
     <section class="hero-section">
       <div class="hero-video-wrapper">
         <video autoplay muted loop playsinline class="hero-video">
           <source src="@/assets/freepik__dynamic-side-view-a-diverse-group-of-four-animated__51270.mp4" type="video/mp4" />
         </video>
       </div>
-      <div
-        class="hero-description"
-        @mouseenter="speak(t('home.heroTitle') + ' ' + t('home.heroSubtitle'))"
-        @mouseleave="stop"
-      >
+      <div class="hero-description">
         <h1>{{ t('home.heroTitle') }}</h1>
         <p>{{ t('home.heroSubtitle') }}</p>
       </div>
     </section>
 
-    <!-- Section 2: Social Activities -->
+    <!-- 🟠 Section 1: Social Activities -->
     <section class="info-section light-blue">
-      <div
-        class="info-text"
-        @mouseenter="speak(t('home.section1Title') + '. ' + t('home.section1Desc'))"
-        @mouseleave="stop"
-      >
+      <div class="info-text">
         <h2>{{ t('home.section1Title') }}</h2>
         <p>{{ t('home.section1Desc') }}</p>
         <button class="info-button">{{ t('home.section1Btn') }}</button>
@@ -35,31 +27,23 @@
       </div>
     </section>
 
-    <!-- Section 3: Explore Culture -->
+    <!-- 🟠 Section 2: Explore Culture -->
     <section class="info-section">
       <div class="info-video left-end">
         <video autoplay muted loop playsinline class="section-video">
           <source src="@/assets/culture_explore.mp4" type="video/mp4" />
         </video>
       </div>
-      <div
-        class="info-text"
-        @mouseenter="speak(t('home.section2Title') + '. ' + t('home.section2Desc'))"
-        @mouseleave="stop"
-      >
+      <div class="info-text">
         <h2>{{ t('home.section2Title') }}</h2>
         <p>{{ t('home.section2Desc') }}</p>
         <button class="info-button">{{ t('home.section2Btn') }}</button>
       </div>
     </section>
 
-    <!-- Navigation -->
+    <!-- 🟠 Section 3: Navigation -->
     <section class="info-section light-blue">
-      <div
-        class="info-text"
-        @mouseenter="speak(t('home.section3Title') + '. ' + t('home.section3Desc'))"
-        @mouseleave="stop"
-      >
+      <div class="info-text">
         <h2>{{ t('home.section3Title') }}</h2>
         <p>{{ t('home.section3Desc') }}</p>
         <button class="info-button">{{ t('home.section3Btn') }}</button>
@@ -71,7 +55,19 @@
       </div>
     </section>
 
-    <!-- Chatbot -->
+    <!-- 🟠 Section 4: Services for Older Adults -->
+    <section class="info-section">
+      <div class="info-text">
+        <h2>{{ t('home.section4Title') }}</h2>
+        <p>{{ t('home.section4Desc') }}</p>
+        <button class="info-button" @click="goToServices">{{ t('home.section4Btn') }}</button>
+      </div>
+      <div class="info-video right-end">
+        <img src="/images/Seniors_Help.jpg" alt="Seniors Tech Help" class="section-image small-section-image" />
+      </div>
+    </section>
+
+    <!-- 🟠 Section 5: Chatbot -->
     <section class="info-section chatbot-section">
       <div class="chatbot-wrapper">
         <div class="chatbot-video">
@@ -79,11 +75,7 @@
             <source src="@/assets/chatbot.mp4" type="video/mp4" />
           </video>
         </div>
-        <div
-          class="chatbot-text"
-          @mouseenter="speak(t('home.chatTitle') + '. ' + t('home.chatDesc'))"
-          @mouseleave="stop"
-        >
+        <div class="chatbot-text">
           <h2>{{ t('home.chatTitle') }}</h2>
           <p>{{ t('home.chatDesc') }}</p>
           <button class="info-button">{{ t('home.chatBtn') }}</button>
@@ -94,55 +86,12 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
-const { t, locale } = useI18n()
-
-const props = defineProps({
-  selectedLang: {
-    type: String,
-    default: 'en-AU'
-  },
-  selectedVoice: {
-    type: String,
-    default: ''
-  },
-  isMuted: {
-    type: Boolean,
-    default: false
-  }
-})
-
-const voices = ref([])
-
-const loadVoices = () => {
-  voices.value = speechSynthesis.getVoices()
+function goToServices() {
+  window.location.href = '/services'
 }
-
-const speak = (text) => {
-  if (props.isMuted || !window.speechSynthesis) return
-
-  const utterance = new SpeechSynthesisUtterance(text)
-  utterance.lang = props.selectedLang
-
-  const voice = voices.value.find(v => v.name === props.selectedVoice || v.lang === props.selectedLang)
-  if (voice) utterance.voice = voice
-
-  speechSynthesis.cancel()
-  speechSynthesis.speak(utterance)
-}
-
-const stop = () => {
-  speechSynthesis.cancel()
-}
-
-onMounted(() => {
-  loadVoices()
-  if (typeof speechSynthesis !== 'undefined') {
-    speechSynthesis.onvoiceschanged = loadVoices
-  }
-})
 </script>
 
 <style scoped>
@@ -154,7 +103,6 @@ onMounted(() => {
   background-color: #fff;
 }
 
-/* Hero Section */
 .hero-section {
   display: flex;
   align-items: center;
@@ -193,7 +141,6 @@ onMounted(() => {
   line-height: 1.8;
 }
 
-/* Info Sections */
 .info-section {
   display: flex;
   align-items: center;
@@ -241,6 +188,14 @@ onMounted(() => {
   object-fit: cover;
 }
 
+.small-section-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
 .info-text h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
@@ -269,7 +224,6 @@ onMounted(() => {
   background-color: #e68a00;
 }
 
-/* Chatbot Section */
 .chatbot-section {
   flex-direction: column;
   justify-content: center;

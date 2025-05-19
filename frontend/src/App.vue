@@ -3,12 +3,11 @@ import { ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import Header from './components/Header.vue';
-import AccessibilityPanel from './views/AccessibilityPanel.vue';
-
+//import AccessibilityPanel from './views/AccessibilityPanel.vue';
 
 const route = useRoute();
 const router = useRouter();
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const isAuthenticated = ref(false);
 
 watch(
@@ -59,38 +58,38 @@ function handleChatOption(option) {
         <option value="zh">中文</option>
         <option value="vi">Tiếng Việt</option>
         <option value="el">Ελληνικά</option>
+        <option value="hi">हिन्दी</option>
       </select>
       <AccessibilityPanel />
-
     </div>
 
     <!-- 💬 Chatbot Button -->
     <div class="chatbot-container">
       <button class="chatbot-toggle" @click="toggleChatbot">
-        💬 Chat
+        💬 {{ t("chatbot.button") }}
       </button>
 
       <!-- Chatbot Window -->
       <div v-if="chatbotOpen" class="chatbot-window">
         <div class="chatbot-header">
-          <span>How can we help you?</span>
+          <span>{{ t("chatbot.intro") }}</span>
           <button @click="toggleChatbot" class="close-btn">✖</button>
         </div>
         <div class="chatbot-body">
           <ul>
             <li>
               <button @click="handleChatOption('Organising guideline')">
-                I'd like to learn how to use public transportation in Melbourne.
+                {{ t("chatbot.option1") }}
               </button>
             </li>
             <li>
               <button @click="handleChatOption('Organising activities')">
-                I'd like to find some activities where I can socialize with others.
+                {{ t("chatbot.option2") }}
               </button>
             </li>
             <li>
               <button @click="handleChatOption('Discover suburbs')">
-                I'd like to discover cultural suburbs.
+                {{ t("chatbot.option3") }}
               </button>
             </li>
           </ul>

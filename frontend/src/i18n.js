@@ -3,12 +3,14 @@ import en from './locales/en.json'
 import zh from './locales/zh.json'
 import vi from './locales/vi.json'
 import el from './locales/el.json'
+import hi from './locales/hi.json'
 
 const messages = {
   en,
   zh,
   vi,
-  el
+  el,
+  hi
 }
 
 const i18n = createI18n({

@@ -1,9 +1,7 @@
 <template>
   <div class="container py-5 bg-white text-black">
     <!-- Page Title -->
-    <header class="text-center py-4 mb-4">
-      <h1 class="display-5 fw-bold">{{ $t("whatsOn") }}</h1>
-    </header>
+     <header class="py-4 mb-4 d-flex justify-content-center"><h1 class="display-5 fw-bold text-center">{{ $t("exploreActivitiesTitle") }}</h1></header>
 
     <!-- Date Range Picker and Buttons -->
     <div class="d-flex justify-content-center mb-4">
