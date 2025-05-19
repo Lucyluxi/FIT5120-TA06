@@ -1,11 +1,11 @@
 <template>
   <div class="container py-5 bg-white text-black">
-    <!-- Title -->
+    <!-- Page Title -->
     <header class="text-center py-4 mb-4">
       <h1 class="display-5 fw-bold">{{ $t("whatsOn") }}</h1>
     </header>
 
-    <!-- Date Range Picker -->
+    <!-- Date Range Picker and Buttons -->
     <div class="d-flex justify-content-center mb-4">
       <Datepicker
         v-model="selectedRange"
@@ -21,7 +21,7 @@
       <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('reset') }}</button>
     </div>
 
-    <!-- Advanced Filter Button -->
+    <!-- Advanced Filter Toggle Button -->
     <div class="d-flex justify-content-center mb-4" v-if="showAdvancedFilter">
       <button class="btn btn-outline-primary" @click="openAdvancedFilter">
         {{ $t('Advanced Filter') }}
@@ -31,7 +31,7 @@
     <!-- Advanced Filter Options -->
     <div class="d-flex justify-content-center mb-4" v-if="showFilterOptions">
       <div class="d-flex gap-3 w-100 flex-wrap" style="max-width: 800px;">
-        <!-- Category Filter -->
+        <!-- Category Dropdown -->
         <select v-model="selectedCategory" class="form-select" style="flex: 1;">
           <option value="">{{ $t("anything") }}</option>
           <option value="Education">{{ $t("education") }}</option>
@@ -41,7 +41,7 @@
           <option value="Entertainment & Culture">{{ $t("entertainment") }}</option>
         </select>
 
-        <!-- Keyword Filter -->
+        <!-- Keyword Input -->
         <input
           type="text"
           v-model="searchKeyword"
@@ -85,26 +85,34 @@
 </template>
 
 <script setup>
+// Imports
 import { ref, onMounted, computed, watch } from 'vue';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 import { useI18n } from 'vue-i18n';
 import { translateText } from '@/services/translationService';
 
+// i18n localization
 const { t: $t, locale } = useI18n();
 
+// Reactive state
 const events = ref([]);
 const translatedEvents = ref([]);
 const filteredEvents = ref([]);
 const selectedRange = ref([]);
 const currentPage = ref(1);
 const eventsPerPage = 8;
-const showAdvancedFilter = ref(true);     // ✅ 初始显示按钮
-const showFilterOptions = ref(false);     // ✅ 初始隐藏筛选区域
-const selectedCategory = ref("");
-const searchKeyword = ref("");
 
-// Fetch and translate events
+const showAdvancedFilter = ref(true);      // Show Advanced Filter button on load
+const showFilterOptions = ref(false);      // Hide filter fields on load
+
+const selectedCategory = ref("");          // Selected category
+const searchKeyword = ref("");             // Input keyword
+
+// Fetch events and translate on mount
+onMounted(fetchEvents);
+
+// Fetch events from API
 async function fetchEvents() {
   try {
     const res = await fetch('/api/events');
@@ -117,19 +125,17 @@ async function fetchEvents() {
   }
 }
 
-// Translate event fields
+// Translate events based on current locale
 async function translateEvents(eventsData) {
   try {
     const lang = locale.value;
     translatedEvents.value = await Promise.all(
-      eventsData.map(async (event) => {
-        return {
-          ...event,
-          translatedTitle: await translateText(event.title, lang),
-          translatedLocation: await translateText(event.location, lang),
-          translatedCategory: await translateText(event.category, lang),
-        };
-      })
+      eventsData.map(async (event) => ({
+        ...event,
+        translatedTitle: await translateText(event.title, lang),
+        translatedLocation: await translateText(event.location, lang),
+        translatedCategory: await translateText(event.category, lang),
+      }))
     );
     filteredEvents.value = [...translatedEvents.value];
   } catch (error) {
@@ -137,15 +143,12 @@ async function translateEvents(eventsData) {
   }
 }
 
-// Watch for locale changes
+// Re-translate on language switch
 watch(locale, () => {
   if (events.value.length > 0) {
     translateEvents(events.value);
   }
 });
-
-// Fetch events on mount
-onMounted(fetchEvents);
 
 // Pagination logic
 const totalPages = computed(() => Math.ceil(filteredEvents.value.length / eventsPerPage));
@@ -154,69 +157,63 @@ const paginatedEvents = computed(() => {
   return filteredEvents.value.slice(start, start + eventsPerPage);
 });
 
-function nextPage() {
-  if (currentPage.value < totalPages.value) currentPage.value++;
+// Date disabling logic
+function isDateDisabled(date) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return date < today;
 }
 
-function prevPage() {
-  if (currentPage.value > 1) currentPage.value--;
-}
-
-// Date range filter
-function filterEvents() {
-  if (!selectedRange.value || selectedRange.value.length !== 2) {
-    filteredEvents.value = [...translatedEvents.value];
-    return;
-  }
-
-  const [start, end] = selectedRange.value;
-  start.setHours(0, 0, 0, 0);
-  end.setHours(23, 59, 59, 999);
-
-  filteredEvents.value = translatedEvents.value.filter(event => {
-    const eventDate = new Date(event.date);
-    eventDate.setHours(0, 0, 0, 0);
-    return eventDate >= start && eventDate <= end;
-  });
-
-  currentPage.value = 1;
-}
-
-
+// Toggle to show advanced filters
 function openAdvancedFilter() {
   showFilterOptions.value = true;
   showAdvancedFilter.value = false;
 }
 
-// 高级筛选
-function applyAdvancedFilters() {
+// Reset all filters and UI
+function resetFilters() {
+  selectedRange.value = [];
+  selectedCategory.value = "";
+  searchKeyword.value = "";
+  filteredEvents.value = [...translatedEvents.value];
+  currentPage.value = 1;
+
+  // Restore initial UI state
+  showAdvancedFilter.value = true;
+  showFilterOptions.value = false;
+}
+
+// Filter events based on time + category + keyword (AND logic)
+function filterEvents() {
+  const [start, end] = selectedRange.value || [];
+
   filteredEvents.value = translatedEvents.value.filter(event => {
-    const matchesCategory = selectedCategory.value === "" || event.translatedCategory === selectedCategory.value;
-    const matchesKeyword = searchKeyword.value === "" || event.translatedTitle.toLowerCase().includes(searchKeyword.value.toLowerCase());
-    return matchesCategory && matchesKeyword;
+    let match = true;
+
+    // Time filter
+    if (start && end) {
+      const eventDate = new Date(event.date);
+      eventDate.setHours(0, 0, 0, 0);
+      start.setHours(0, 0, 0, 0);
+      end.setHours(23, 59, 59, 999);
+      if (eventDate < start || eventDate > end) match = false;
+    }
+
+    // Category filter
+    if (selectedCategory.value && event.translatedCategory !== selectedCategory.value) {
+      match = false;
+    }
+
+    // Keyword filter
+    if (searchKeyword.value &&
+        !event.translatedTitle.toLowerCase().includes(searchKeyword.value.toLowerCase())) {
+      match = false;
+    }
+
+    return match;
   });
 
   currentPage.value = 1;
-}
-
-// 自动筛选
-watch([selectedCategory, searchKeyword], applyAdvancedFilters);
-
-// ✅ 点击 Reset：隐藏筛选区域，重新显示按钮
-function resetFilters() {
-  selectedRange.value = [];
-  filteredEvents.value = [...translatedEvents.value];
-  selectedCategory.value = "";
-  searchKeyword.value = "";
-  currentPage.value = 1;
-  showFilterOptions.value = false;    // ✅ 隐藏高级筛选区域
-  showAdvancedFilter.value = true;    // ✅ 显示按钮
-}
-
-function isDateDisabled(date) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return date < today;
 }
 </script>
 
