@@ -14,7 +14,7 @@
   
   <style scoped>
   .background-section {
-    background-color: rgba(252, 235, 213, 0.8); /* soft warm beige */
+    background-color: rgba(253, 253, 253, 0.8); /* soft warm beige */
   }
   </style>
   

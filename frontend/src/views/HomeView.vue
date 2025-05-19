@@ -1,168 +1,301 @@
 <template>
-  <div>
-    <!-- 🖼️ Hero Section -->
-    <section class="hero-image d-flex align-items-center justify-content-center text-center text-white">
-      <div class="z-index-2 position-relative text-box p-4">
-        <h1 class="fade-in-up hero-title">{{ $t("heroTitle") }}</h1>
-        <p class="fade-in-up hero-subtitle">{{ $t("heroSubtitle") }}</p>
+  <div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-video-wrapper">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="@/assets/freepik__dynamic-side-view-a-diverse-group-of-four-animated__51270.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-description"
+           @mouseenter="speak('Bringing Comfort, Care, and Connection! Because everyone deserves to feel at home, no matter where they are from.')"
+           @mouseleave="stop">
+        <h1>Bringing Comfort, Care, and Connection!</h1>
+        <p>Because everyone deserves to feel at home, no matter where they're from.</p>
       </div>
     </section>
 
-    <!-- 📷 Cards Section -->
-    <BackgroundSection>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <router-link to="/activity" class="text-decoration-none">
-            <div class="card-wrapper">
-              <img src="/images/social.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">{{ $t("card1") }}</h5>
-            </div>
-          </router-link>
-        </div>
+    <!-- Section 2: Social Activities -->
+    <section class="info-section light-blue">
+      <div class="info-text"
+           @mouseenter="speak('Social Activities. Take part in events to meet new people and enjoy group wellness or hobby sessions.')"
+           @mouseleave="stop">
+        <h2>Social Activities</h2>
+        <p>
+          Take part in local events designed to bring older adults together — from hobby groups and wellness activities to information sessions and friendly meetups.
+        </p>
+        <button class="info-button">Learn More</button>
+      </div>
+      <div class="info-video right-end">
+        <video autoplay muted loop playsinline class="section-video">
+          <source src="@/assets/social_activities.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
 
-        <div class="col-md-3">
-          <router-link to="/suburb" class="text-decoration-none">
-            <div class="card-wrapper">
-              <img src="/images/suburb.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">{{ $t("card2") }}</h5>
-            </div>
-          </router-link>
-        </div>
+    <!-- Section 3: Explore Culture -->
+    <section class="info-section">
+      <div class="info-video left-end">
+        <video autoplay muted loop playsinline class="section-video">
+          <source src="@/assets/culture_explore.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="info-text"
+           @mouseenter="speak('Explore Culture. Discover cultural suburbs and community life in Melbourne.')"
+           @mouseleave="stop">
+        <h2>Explore Culture</h2>
+        <p>
+          Select a cultural identity and uncover the Australian suburbs where the community lives, connects, and celebrates. Click through to discover where cultures thrive — and what to explore once you’re there.
+        </p>
+        <button class="info-button">Explore by Culture</button>
+      </div>
+    </section>
 
-        <div class="col-md-3">
-          <router-link to="/chatbot" class="text-decoration-none">
-            <div class="card-wrapper">
-              <img src="/images/chatbot.png" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">{{ $t("card3") }}</h5>
-            </div>
-          </router-link>
-        </div>
+    <!-- Navigation -->
+    <section class="info-section light-blue">
+      <div class="info-text"
+           @mouseenter="speak('Your Travel Guide. Learn to use Myki cards, take buses, trains, trams and walk safely.')"
+           @mouseleave="stop">
+        <h2>Your Travel Guide</h2>
+        <p>
+          Step-by-step guides to help you use public transport with confidence. Learn how to use Myki cards, catch trains, trams, and buses, and navigate sidewalks safely — so you can get to your destination hassle-free.
+        </p>
+        <button class="info-button">Learn to Travel</button>
+      </div>
+      <div class="info-video right-end">
+        <video autoplay muted loop playsinline class="section-video">
+          <source src="@/assets/navigation.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
 
-        <div class="col-md-3">
-          <router-link to="/game" class="text-decoration-none">
-            <div class="card-wrapper">
-              <img src="/images/education.jpg" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
-              <h5 class="card-title-overlay">{{ $t("card4") }}</h5>
-            </div>
-          </router-link>
+    <!-- Chatbot -->
+    <section class="info-section chatbot-section">
+      <div class="chatbot-wrapper">
+        <div class="chatbot-video">
+          <video autoplay muted loop playsinline class="section-video">
+            <source src="@/assets/chatbot.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="chatbot-text"
+             @mouseenter="speak('Need a hand? Chat with Uni. Ask questions or find events easily.')"
+             @mouseleave="stop">
+          <h2>Need a Hand? Chat with Uni</h2>
+          <p>
+            Meet Uni, your friendly guide. If you're not sure where to go, just ask! Uni can help you find services, explore events, or take you straight to what you need — anytime you're in doubt.
+          </p>
+          <button class="info-button">Let's Talk</button>
         </div>
       </div>
-    </BackgroundSection>
+    </section>
+
   </div>
 </template>
 
 <script>
-import BackgroundSection from "@/components/BackgroundSection.vue";
-import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import { ref, watch, onMounted } from 'vue';
 
 export default {
-  name: "HomePage",
-  components: {
-    BackgroundSection,
+  name: 'HomeView',
+  props: {
+    selectedLang: {
+      type: String,
+      default: 'en-AU'
+    },
+    selectedVoice: {
+      type: String,
+      default: ''
+    },
+    isMuted: {
+      type: Boolean,
+      default: false
+    }
   },
-  setup() {
-    const { locale } = useI18n();
-    const changeLanguage = () => {
-      // locale already bound with <select>
+  setup(props) {
+    const voices = ref([]);
+
+    const loadVoices = () => {
+      const all = speechSynthesis.getVoices();
+      voices.value = all;
     };
+
+    const speak = (text) => {
+      if (props.isMuted || !window.speechSynthesis) return;
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = props.selectedLang;
+
+      const voice = voices.value.find(v => v.name === props.selectedVoice || v.lang === props.selectedLang);
+      if (voice) utterance.voice = voice;
+
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
+    };
+
+    const stop = () => {
+      speechSynthesis.cancel();
+    };
+
+    onMounted(() => {
+      loadVoices();
+      if (typeof speechSynthesis !== 'undefined') {
+        speechSynthesis.onvoiceschanged = loadVoices;
+      }
+    });
+
     return {
-      locale,
-      changeLanguage,
+      speak,
+      stop
     };
-  },
+  }
 };
 </script>
 
 <style scoped>
-/* Hero Section */
-.hero-image {
-  background-image: url('/images/home.png');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-.hero-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
-  z-index: 1;
-}
-.text-box {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  border-radius: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #fff;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-.hero-subtitle {
-  font-size: 1.25rem;
-  margin-top: 1rem;
-}
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background-color: #fff;
 }
 
-/* Card Styling */
-.card-wrapper {
-  position: relative;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-video-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.hero-description {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-description h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-description p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+/* Info Sections */
+.info-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card-wrapper:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+
+.info-section:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
-.card-title-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border-radius: 0.5rem;
-  font-size: 1.125rem;
+
+.info-section.light-blue {
+  background-color: #eaf6fb;
+}
+
+.info-text {
+  flex: 1;
+  max-width: 550px;
+  text-align: left;
+}
+
+.info-video {
+  flex: 1;
+  display: flex;
+}
+
+.info-video.right-end {
+  justify-content: flex-end;
+}
+
+.info-video.left-end {
+  justify-content: flex-start;
+}
+
+.section-video {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.info-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
-.language-switcher {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  background-color: white;
-  border-radius: 8px;
-  padding: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-.language-switcher select {
-  border: none;
-  outline: none;
-  background: transparent;
+.info-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
+.info-button {
+  margin-top: 1rem;
+  padding: 0.85rem 1.7rem;
+  background-color: #f90;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: #e68a00;
+}
+
+/* Chatbot Section */
+.chatbot-section {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.chatbot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chatbot-video {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.chatbot-text {
+  max-width: 700px;
+}
 </style>

@@ -1,122 +1,140 @@
 <template>
-  <!-- Full-width header container -->
   <div class="container-fluid">
-    <header class="custom-header d-flex flex-wrap justify-content-center align-items-center border-bottom">
+    <header class="custom-header d-flex justify-content-between align-items-center flex-wrap">
       
       <!-- Brand logo and name -->
       <router-link
         to="/"
-        class="brand d-flex align-items-center me-md-auto link-body-emphasis text-decoration-none"
+        class="brand d-flex align-items-center text-decoration-none"
       >
-        <!-- Brand icon (orange version) -->
         <img
           src="/images/header.png"
           alt="Unitee Logo"
-          class="me-2 d-none d-md-inline"
-          style="width: 48px; height: 48px;"
+          class="logo me-2"
         />
-
-        <!-- Brand name -->
         <span class="brand-name">
           Unit<span class="highlight">e</span>e
         </span>
       </router-link>
 
       <!-- Navigation links -->
-      <ul class="nav nav-pills">
+      <ul class="nav nav-fill flex-grow-1 justify-content-end nav-spread">
         <li class="nav-item">
           <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/guideline" class="nav-link" :class="{ active: $route.path === '/guideline' }">Guideline</router-link>
+          <router-link to="/guideline" class="nav-link" :class="{ active: $route.path === '/guideline' }">Travel Guidelines</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/activityV2" class="nav-link" :class="{ active: $route.path.startsWith('/activityV2') }">Activities</router-link>
-        </li>
-        <!-- <li class="nav-item">
-          <router-link to="/discover" class="nav-link" :class="{ active: $route.path === '/discover' }">Discover</router-link>
-        </li> -->
-        <li class="nav-item">
-          <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">Discover Suburbs</router-link>
-        </li>
-        <!-- <li class="nav-item">
-          <router-link to="/chatbot" class="nav-link" :class="{ active: $route.path === '/chatbot' }">Chatbot</router-link>
+          <router-link to="/activityV2" class="nav-link" :class="{ active: $route.path.startsWith('/activityV2') }">Social Activities</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/game" class="nav-link" :class="{ active: $route.path === '/game' }">Game</router-link>
-        </li> -->
+          <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">Explore Suburbs</router-link>
+        </li>
       </ul>
     </header>
   </div>
 </template>
 
-
 <script setup>
-// No additional logic needed here
+// No logic needed
 </script>
 
 <style scoped>
-/* ---------------------
-  HEADER LAYOUT STYLES
----------------------- */
 .custom-header {
-  background-color: rgba(252, 235, 213, 0.8); /* soft warm beige */
-  padding: 0.5rem 2rem;
-  border-radius: 0 0 0.5rem 0.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #b3d6f0;
+  padding: 1rem 3rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  flex-wrap: wrap;
 }
 
-/* ---------------------
-  NAVIGATION STYLES
----------------------- */
-.nav-link {
-  font-weight: 500;
-  font-size: 1rem;
-  color: #4b3832; /* warm dark brown */
-  background-color: transparent;
-  border-radius: 0.375rem;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s;
+/* Logo */
+.logo {
+  width: 64px;
+  height: 64px;
 }
 
-.nav-link:hover {
-  background-color: #e08f55; /* soft orange hover */
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link.active {
-  background-color: #eec8aa;
-  color: #000;
-  font-weight: 600;
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.05);
-}
-
-/* ---------------------
-  BRANDING STYLES
----------------------- */
+/* Brand Name */
 .brand-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
   letter-spacing: 0.5px;
-  color: #4b3832;
+  color: #1A237E;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .brand-name:hover {
   transform: scale(1.05);
-  color: #e08f55;
+  color: #0D47A1;
 }
 
 .brand-name .highlight {
-  color: #e08f55;
+  color: #0D47A1;
 }
 
-/* Optional: smaller screens hide icon, keep brand name */
-@media (max-width: 576px) {
+/* Navigation Layout */
+.nav-spread {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 850px;
+}
+
+/* Nav Link Styling */
+.nav-link {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #1A237E;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+}
+
+.nav-link:hover {
+  background-color: #BBDEFB;
+  color: #0D47A1;
+  transform: translateY(-2px) scale(1.05); /* Float effect */
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
+}
+
+.nav-link.active {
+  background-color: #E3F2FD;
+  color: #0D47A1;
+  font-weight: 700;
+  box-shadow: inset 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-spread {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
   .brand-name {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 </style>
