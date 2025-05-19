@@ -156,7 +156,33 @@
   "seeking_help": "Seeking Help on Board",
   "seeking_help_text": "Use the emergency intercom or notify the driver if you need assistance.",
   "safety_security": "Safety and Security",
-  "safety_security_text": "Be aware of emergency exits and evacuation procedures."
+  "safety_security_text": "Be aware of emergency exits and evacuation procedures.",
+
+  "nav": {
+  "home": "Home",
+  "travel": "Travel Guidelines",
+  "social": "Social Activities",
+  "suburb": "Explore Suburbs"
+},
+
+"home": {
+  "heroTitle": "Bringing Comfort, Care, and Connection!",
+  "heroSubtitle": "Because everyone deserves to feel at home, no matter where they're from.",
+  "section1Title": "Social Activities",
+  "section1Desc": "Take part in local events designed to bring older adults together — from hobby groups and wellness activities to information sessions and friendly meetups.",
+  "section1Btn": "Learn More",
+  "section2Title": "Explore Culture",
+  "section2Desc": "Select a cultural identity and uncover the Australian suburbs where the community lives, connects, and celebrates.",
+  "section2Btn": "Explore by Culture",
+  "section3Title": "Your Travel Guide",
+  "section3Desc": "Step-by-step guides to help you use public transport with confidence.",
+  "section3Btn": "Learn to Travel",
+  "chatTitle": "Need a Hand? Chat with Uni",
+  "chatDesc": "Meet Uni, your friendly guide. If you're not sure where to go, just ask!",
+  "chatBtn": "Let's Talk"
+}
+
+
 }
 
   

@@ -154,7 +154,33 @@
   "seeking_help": "在车上寻求帮助",
   "seeking_help_text": "如果需要帮助，可以使用紧急对讲机或通知司机。",
   "safety_security": "安全与保安",
-  "safety_security_text": "了解紧急出口和疏散程序。"
+  "safety_security_text": "了解紧急出口和疏散程序。",
+
+  "nav": {
+  "home": "首页",
+  "travel": "出行指南",
+  "social": "社交活动",
+  "suburb": "探索社区"
+},
+
+"home": {
+  "heroTitle": "带来关怀、舒适与联系！",
+  "heroSubtitle": "无论你来自哪里，每个人都应感受到家的温暖。",
+  "section1Title": "社交活动",
+  "section1Desc": "参加为老年人设计的本地活动 — 从兴趣小组到健康课程和信息讲座。",
+  "section1Btn": "了解更多",
+  "section2Title": "探索文化",
+  "section2Desc": "选择一个文化身份，发现其在澳大利亚社区中的活跃足迹。",
+  "section2Btn": "按文化探索",
+  "section3Title": "出行指南",
+  "section3Desc": "一步步教你如何安全使用公共交通工具。",
+  "section3Btn": "学习出行",
+  "chatTitle": "需要帮助？试试 Uni 聊天助手",
+  "chatDesc": "Uni 是你的好帮手！如果你不知道该去哪，就来问问 Uni 吧。",
+  "chatBtn": "开始对话"
+}
+
+
 }
 
   

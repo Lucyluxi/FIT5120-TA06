@@ -15,6 +15,7 @@ import MemoryPage from '@/views/MemoryPage.vue'
 import PuzzlePage from '@/views/PuzzlePage.vue'
 import ActivityViewV2 from '@/views/ActivityViewV2.vue'
 import GuidelineView from '@/views/GuidelineView.vue'
+import OlderPeopleServicesView from '@/views/OlderPeopleServicesView.vue'
 // ❌ Remove LandingView import
 // import LandingView from '@/views/LandingView.vue'
 
@@ -41,7 +42,12 @@ const routes = [
   { path: '/game/sudoku', component: SudokuPage },
   { path: '/game/memory', component: MemoryPage },
   { path: '/game/puzzle', component: PuzzlePage },
-  { path: '/guideline',name: 'TravelGuide', component: GuidelineView }
+  { path: '/guideline',name: 'TravelGuide', component: GuidelineView },
+    {
+    path: '/older-services',
+    name: 'OlderPeopleServices',
+    component: OlderPeopleServicesView
+  }
 ]
 
 const router = createRouter({
