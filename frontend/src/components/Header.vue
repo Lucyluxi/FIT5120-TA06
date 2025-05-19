@@ -39,6 +39,9 @@
             {{ t('nav.suburb') }}
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/older-services" class="nav-link" :class="{ active: $route.path === '/older-services' }">Community Services</router-link>
+        </li>
       </ul>
     </header>
   </div>
