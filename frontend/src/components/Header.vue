@@ -20,16 +20,24 @@
       <!-- Navigation links -->
       <ul class="nav nav-fill flex-grow-1 justify-content-end nav-spread">
         <li class="nav-item">
-          <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Home</router-link>
+          <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">
+            {{ t('nav.home') }}
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/guideline" class="nav-link" :class="{ active: $route.path === '/guideline' }">Travel Guidelines</router-link>
+          <router-link to="/guideline" class="nav-link" :class="{ active: $route.path === '/guideline' }">
+            {{ t('nav.travel') }}
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/activityV2" class="nav-link" :class="{ active: $route.path.startsWith('/activityV2') }">Social Activities</router-link>
+          <router-link to="/activityV2" class="nav-link" :class="{ active: $route.path.startsWith('/activityV2') }">
+            {{ t('nav.social') }}
+          </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">Explore Suburbs</router-link>
+          <router-link to="/suburb" class="nav-link" :class="{ active: $route.path === '/suburb' }">
+            {{ t('nav.suburb') }}
+          </router-link>
         </li>
       </ul>
     </header>
@@ -37,7 +45,8 @@
 </template>
 
 <script setup>
-// No logic needed
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>
 
 <style scoped>
@@ -96,7 +105,7 @@
 .nav-link:hover {
   background-color: #BBDEFB;
   color: #0D47A1;
-  transform: translateY(-2px) scale(1.05); /* Float effect */
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
 }
 

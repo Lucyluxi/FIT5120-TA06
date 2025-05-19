@@ -154,7 +154,33 @@
   "seeking_help": "Yêu Cầu Trợ Giúp Trên Xe",
   "seeking_help_text": "Sử dụng bộ đàm khẩn cấp hoặc thông báo cho tài xế nếu bạn cần trợ giúp.",
   "safety_security": "An Toàn và An Ninh",
-  "safety_security_text": "Hiểu các lối thoát khẩn cấp và quy trình sơ tán."
+  "safety_security_text": "Hiểu các lối thoát khẩn cấp và quy trình sơ tán.",
+
+  "nav": {
+  "home": "Trang chủ",
+  "travel": "Hướng dẫn di chuyển",
+  "social": "Hoạt động xã hội",
+  "suburb": "Khám phá vùng ngoại ô"
+},
+
+"home": {
+  "heroTitle": "Mang đến sự thoải mái, quan tâm và kết nối!",
+  "heroSubtitle": "Bất kể bạn đến từ đâu, ai cũng xứng đáng cảm thấy như đang ở nhà.",
+  "section1Title": "Hoạt động xã hội",
+  "section1Desc": "Tham gia các sự kiện địa phương dành cho người lớn tuổi — từ nhóm sở thích, hoạt động sức khỏe đến hội thảo và buổi gặp mặt thân mật.",
+  "section1Btn": "Tìm hiểu thêm",
+  "section2Title": "Khám phá văn hoá",
+  "section2Desc": "Chọn một nền văn hóa và khám phá các khu vực sinh sống, kết nối và lễ hội của cộng đồng tại Úc.",
+  "section2Btn": "Khám phá theo văn hóa",
+  "section3Title": "Hướng dẫn di chuyển",
+  "section3Desc": "Hướng dẫn từng bước giúp bạn sử dụng phương tiện công cộng một cách tự tin — sử dụng thẻ Myki, xe lửa, xe điện và đi bộ an toàn.",
+  "section3Btn": "Học cách di chuyển",
+  "chatTitle": "Cần giúp đỡ? Hãy trò chuyện với Uni",
+  "chatDesc": "Gặp Uni, người bạn đồng hành thân thiện của bạn. Nếu bạn không biết đi đâu, cứ hỏi! Uni sẽ giúp bạn tìm dịch vụ, sự kiện, hoặc đưa bạn đến đúng nơi.",
+  "chatBtn": "Bắt đầu trò chuyện"
+}
+
+
 }
 
   

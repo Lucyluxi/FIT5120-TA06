@@ -7,24 +7,26 @@
           <source src="@/assets/freepik__dynamic-side-view-a-diverse-group-of-four-animated__51270.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="hero-description"
-           @mouseenter="speak('Bringing Comfort, Care, and Connection! Because everyone deserves to feel at home, no matter where they are from.')"
-           @mouseleave="stop">
-        <h1>Bringing Comfort, Care, and Connection!</h1>
-        <p>Because everyone deserves to feel at home, no matter where they're from.</p>
+      <div
+        class="hero-description"
+        @mouseenter="speak(t('home.heroTitle') + ' ' + t('home.heroSubtitle'))"
+        @mouseleave="stop"
+      >
+        <h1>{{ t('home.heroTitle') }}</h1>
+        <p>{{ t('home.heroSubtitle') }}</p>
       </div>
     </section>
 
     <!-- Section 2: Social Activities -->
     <section class="info-section light-blue">
-      <div class="info-text"
-           @mouseenter="speak('Social Activities. Take part in events to meet new people and enjoy group wellness or hobby sessions.')"
-           @mouseleave="stop">
-        <h2>Social Activities</h2>
-        <p>
-          Take part in local events designed to bring older adults together — from hobby groups and wellness activities to information sessions and friendly meetups.
-        </p>
-        <button class="info-button">Learn More</button>
+      <div
+        class="info-text"
+        @mouseenter="speak(t('home.section1Title') + '. ' + t('home.section1Desc'))"
+        @mouseleave="stop"
+      >
+        <h2>{{ t('home.section1Title') }}</h2>
+        <p>{{ t('home.section1Desc') }}</p>
+        <button class="info-button">{{ t('home.section1Btn') }}</button>
       </div>
       <div class="info-video right-end">
         <video autoplay muted loop playsinline class="section-video">
@@ -40,27 +42,27 @@
           <source src="@/assets/culture_explore.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="info-text"
-           @mouseenter="speak('Explore Culture. Discover cultural suburbs and community life in Melbourne.')"
-           @mouseleave="stop">
-        <h2>Explore Culture</h2>
-        <p>
-          Select a cultural identity and uncover the Australian suburbs where the community lives, connects, and celebrates. Click through to discover where cultures thrive — and what to explore once you’re there.
-        </p>
-        <button class="info-button">Explore by Culture</button>
+      <div
+        class="info-text"
+        @mouseenter="speak(t('home.section2Title') + '. ' + t('home.section2Desc'))"
+        @mouseleave="stop"
+      >
+        <h2>{{ t('home.section2Title') }}</h2>
+        <p>{{ t('home.section2Desc') }}</p>
+        <button class="info-button">{{ t('home.section2Btn') }}</button>
       </div>
     </section>
 
     <!-- Navigation -->
     <section class="info-section light-blue">
-      <div class="info-text"
-           @mouseenter="speak('Your Travel Guide. Learn to use Myki cards, take buses, trains, trams and walk safely.')"
-           @mouseleave="stop">
-        <h2>Your Travel Guide</h2>
-        <p>
-          Step-by-step guides to help you use public transport with confidence. Learn how to use Myki cards, catch trains, trams, and buses, and navigate sidewalks safely — so you can get to your destination hassle-free.
-        </p>
-        <button class="info-button">Learn to Travel</button>
+      <div
+        class="info-text"
+        @mouseenter="speak(t('home.section3Title') + '. ' + t('home.section3Desc'))"
+        @mouseleave="stop"
+      >
+        <h2>{{ t('home.section3Title') }}</h2>
+        <p>{{ t('home.section3Desc') }}</p>
+        <button class="info-button">{{ t('home.section3Btn') }}</button>
       </div>
       <div class="info-video right-end">
         <video autoplay muted loop playsinline class="section-video">
@@ -77,78 +79,70 @@
             <source src="@/assets/chatbot.mp4" type="video/mp4" />
           </video>
         </div>
-        <div class="chatbot-text"
-             @mouseenter="speak('Need a hand? Chat with Uni. Ask questions or find events easily.')"
-             @mouseleave="stop">
-          <h2>Need a Hand? Chat with Uni</h2>
-          <p>
-            Meet Uni, your friendly guide. If you're not sure where to go, just ask! Uni can help you find services, explore events, or take you straight to what you need — anytime you're in doubt.
-          </p>
-          <button class="info-button">Let's Talk</button>
+        <div
+          class="chatbot-text"
+          @mouseenter="speak(t('home.chatTitle') + '. ' + t('home.chatDesc'))"
+          @mouseleave="stop"
+        >
+          <h2>{{ t('home.chatTitle') }}</h2>
+          <p>{{ t('home.chatDesc') }}</p>
+          <button class="info-button">{{ t('home.chatBtn') }}</button>
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
-<script>
-import { ref, watch, onMounted } from 'vue';
+<script setup>
+import { ref, watch, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-export default {
-  name: 'HomeView',
-  props: {
-    selectedLang: {
-      type: String,
-      default: 'en-AU'
-    },
-    selectedVoice: {
-      type: String,
-      default: ''
-    },
-    isMuted: {
-      type: Boolean,
-      default: false
-    }
+const { t, locale } = useI18n()
+
+const props = defineProps({
+  selectedLang: {
+    type: String,
+    default: 'en-AU'
   },
-  setup(props) {
-    const voices = ref([]);
-
-    const loadVoices = () => {
-      const all = speechSynthesis.getVoices();
-      voices.value = all;
-    };
-
-    const speak = (text) => {
-      if (props.isMuted || !window.speechSynthesis) return;
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = props.selectedLang;
-
-      const voice = voices.value.find(v => v.name === props.selectedVoice || v.lang === props.selectedLang);
-      if (voice) utterance.voice = voice;
-
-      speechSynthesis.cancel();
-      speechSynthesis.speak(utterance);
-    };
-
-    const stop = () => {
-      speechSynthesis.cancel();
-    };
-
-    onMounted(() => {
-      loadVoices();
-      if (typeof speechSynthesis !== 'undefined') {
-        speechSynthesis.onvoiceschanged = loadVoices;
-      }
-    });
-
-    return {
-      speak,
-      stop
-    };
+  selectedVoice: {
+    type: String,
+    default: ''
+  },
+  isMuted: {
+    type: Boolean,
+    default: false
   }
-};
+})
+
+const voices = ref([])
+
+const loadVoices = () => {
+  voices.value = speechSynthesis.getVoices()
+}
+
+const speak = (text) => {
+  if (props.isMuted || !window.speechSynthesis) return
+
+  const utterance = new SpeechSynthesisUtterance(text)
+  utterance.lang = props.selectedLang
+
+  const voice = voices.value.find(v => v.name === props.selectedVoice || v.lang === props.selectedLang)
+  if (voice) utterance.voice = voice
+
+  speechSynthesis.cancel()
+  speechSynthesis.speak(utterance)
+}
+
+const stop = () => {
+  speechSynthesis.cancel()
+}
+
+onMounted(() => {
+  loadVoices()
+  if (typeof speechSynthesis !== 'undefined') {
+    speechSynthesis.onvoiceschanged = loadVoices
+  }
+})
 </script>
 
 <style scoped>
