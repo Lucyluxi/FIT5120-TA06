@@ -228,26 +228,26 @@ button.btn {
 }
 
 button.btn-outline-primary {
-  color: #fd7e14;
-  border-color: #fd7e14;
+  color: #162f8a;
+  border-color: #162f8a;
 }
 button.btn-outline-primary:hover,
 button.btn-outline-primary:active,
 button.btn-outline-primary:focus {
-  background-color: #fd7e14;
-  border-color: #fd7e14;
+  background-color: #162f8a;
+  border-color: #162f8a;
   color: white;
 }
 
 button.btn-primary {
-  background-color: #fd7e14;
-  border-color: #fd7e14;
+  background-color: #162f8a;
+  border-color: #162f8a;
 }
 button.btn-primary:hover,
 button.btn-primary:active,
 button.btn-primary:focus {
-  background-color: #fd7e14;
-  border-color: #fd7e14;
+  background-color: #162f8a;
+  border-color: #162f8a;
 }
 
 .border.rounded.bg-light {
@@ -261,16 +261,16 @@ button.btn-primary:focus {
 
 .page-link {
   font-size: 20px;
-  color: #fd7e14;
-  border: 1px solid #fd7e14;
+  color: #162f8a;
+  border: 1px solid #162f8a;
 }
 .page-link:hover {
-  background-color: #fd7e14;
+  background-color: #162f8a;
   color: white;
 }
 .page-item.active .page-link {
-  background-color: #fd7e14;
-  border-color: #fd7e14;
+  background-color: #162f8a;
+  border-color: #162f8a;
   color: white;
   font-weight: bold;
 }
