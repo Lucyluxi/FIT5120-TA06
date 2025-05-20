@@ -7,7 +7,7 @@
 
       <div class="border rounded p-3 mb-2 bg-light text-center">
         <p class="mb-4 fw-semibold" style="font-size: 22px;">
-          {{ $t("chooseCulturePrompt") }}
+          Please choose a cultural background to explore<!-- {{ $t("chooseCulturePrompt") }} -->
         </p>
         <div class="d-flex flex-wrap justify-content-center gap-2">
           <button
@@ -38,7 +38,7 @@
             @click="goToSuburbDetail(suburb)"
           >
             <strong>{{ suburb }}</strong>
-            <p class="text-muted mt-2" style="font-size: 18px;">{{ $t("clickToLearnMore") }}</p>
+            <p class="text-muted mt-2" style="font-size: 18px;">{{ $t("Click To Learn More") }}</p>
           </div>
         </div>
       </div>

@@ -8,7 +8,9 @@
     <div class="row">
       <!-- Left Column: Info + Features -->
       <div class="col-lg-6 mb-4">
-        <h4 class="fw-semibold mb-3">{{ translatedWelcomeMessage || `Welcome to ${suburbName}` }}</h4>
+        <h4 class="fw-semibold mb-3">
+          {{ translatedWelcomeMessage || `Welcome to ${suburbName}` }}
+        </h4>
 
         <!-- Features List -->
         <div class="mt-3 bg-light p-4 rounded shadow-sm">
@@ -29,7 +31,7 @@
 
           <!-- Data source -->
           <p class="mt-4" style="font-size: 0.9rem; color: black;">
-            Data source: © OpenStreetMap contributors, Google Map Geocode"
+            Data source: © OpenStreetMap contributors
           </p>
         </div>
 
@@ -43,7 +45,7 @@
       </div>
 
       <!-- Right Column: Map -->
-      <div class="col-lg-6">
+      <div id="map-section" class="col-lg-6">
         <h5 class="mb-3 fw-bold">{{ $t("locationMap") }}</h5>
         <iframe
           v-if="mapUrl"
@@ -75,17 +77,15 @@ const translatedWelcomeMessage = ref('');
 const translatedFeatures = ref([]);
 const mapUrl = ref('');
 
+// 初始加载数据
 async function loadSuburbData() {
   try {
-    // Fetch features from API
     const response = await axios.get(`/api/features?suburb=${encodeURIComponent(suburbName)}`);
     const features = response.data;
 
-    // Translate suburb name and welcome message
     translatedSuburbName.value = await translateText(suburbName, locale.value);
     translatedWelcomeMessage.value = await translateText(`Welcome to ${suburbName}`, locale.value);
 
-    // Translate each feature name
     const translatedItems = await Promise.all(
       features.map(async (item) => {
         const translatedName = await translateText(item.name, locale.value);
@@ -95,25 +95,38 @@ async function loadSuburbData() {
     );
     translatedFeatures.value = translatedItems;
 
-    // Set map URL
-    mapUrl.value = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBA5dCRAD-GhX21eItzO7aJ-0B92cOBqg8&q=${encodeURIComponent(suburbName + ', Melbourne, Australia')}`;
+    // 默认显示整个 suburb 的地图
+    mapUrl.value = getMapUrl(suburbName);
   } catch (error) {
     console.error('Failed to load suburb data:', error);
   }
 }
 
-onMounted(() => {
-  loadSuburbData();
-});
+// 点击地点时更新地图
+function showLocation(placeName) {
+  const fullAddress = `${placeName}, ${suburbName}, Melbourne, Australia`;
+  mapUrl.value = getMapUrl(fullAddress);
 
-// Re-translate when language changes
-watch(locale, () => {
-  loadSuburbData();
-});
+  // 可选：滚动地图部分
+  setTimeout(() => {
+    const mapSection = document.querySelector('#map-section');
+    if (mapSection) {
+      mapSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 200);
+}
+
+// 生成 Google 地图 URL
+function getMapUrl(query) {
+  return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBA5dCRAD-GhX21eItzO7aJ-0B92cOBqg8&q=${encodeURIComponent(query)}`;
+}
+
+// 初始化 & 响应语言变化
+onMounted(loadSuburbData);
+watch(locale, loadSuburbData);
 </script>
 
 <style scoped>
-/* Main container settings */
 .container {
   font-size: 20px;
   line-height: 1.8;
@@ -121,14 +134,12 @@ watch(locale, () => {
   color: #2c3e50;
 }
 
-/* Heading color settings */
 h1,
 h4,
 h5 {
   color: #2c3e50;
 }
 
-/* Background wrapper */
 .background-wrapper {
   background-color: rgba(252, 235, 213, 0.8);
   min-height: 100vh;
@@ -136,7 +147,6 @@ h5 {
   margin-top: 0;
 }
 
-/* Features list styling */
 .list-unstyled li {
   background-color: rgba(252, 235, 213, 0.8) !important;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -150,12 +160,10 @@ h5 {
   cursor: pointer;
 }
 
-/* Warm muted text color */
 .text-warm-muted {
   color: #2c3e50;
 }
 
-/* Warm color button */
 .btn-warm {
   background-color: #ee825f;
   border-color: #ee825f;
