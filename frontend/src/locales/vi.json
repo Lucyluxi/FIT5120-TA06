@@ -84,12 +84,13 @@
   "filters": {
     "whatsOn": "Sự kiện sắp diễn ra",
     "date": "Ngày",
-    "Search": "Tìm kiếm",
-    "Reset": "Đặt lại",
+    "search": "Tìm kiếm",
+    "reset": "Đặt lại",
     "refine": "Lọc",
     "hideRefine": "Ẩn lọc",
     "what": "Thể loại",
     "where": "Địa điểm",
+    "anytime": "Bất kỳ lúc nào",
     "anything": "Bất kỳ thể loại nào",
     "anywhere": "Bất kỳ địa điểm nào",
     "keywords": "Từ khóa",
@@ -104,7 +105,8 @@
     "previous": "Trước",
     "next": "Tiếp theo",
     "pageOf": "Trang {current} trong tổng số {total} trang",
-    "noImage": "Không có hình ảnh"
+    "noImage": "Không có hình ảnh",
+    "advancedFilter": "Bộ lọc nâng cao"
   },
   "suburb": {
     "chooseCulturePrompt": "Vui lòng chọn nền văn hóa để khám phá",

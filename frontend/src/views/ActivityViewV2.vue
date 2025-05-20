@@ -10,19 +10,19 @@
         :locale="locale.value"
         format="yyyy-MM-dd"
         :range="true"
-        :placeholder="$t('Anytime')"
+        :placeholder="$t('filters.anytime')"
         :disabled-dates="isDateDisabled"
         class="w-100"
         style="max-width: 300px;"
       />
-      <button class="btn btn-primary ms-3" @click="filterEvents">{{ $t('Search') }}</button>
-      <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('Reset') }}</button>
+      <button class="btn btn-primary ms-3" @click="filterEvents">{{ $t('filters.search') }}</button>
+      <button class="btn btn-outline-danger ms-2" @click="resetFilters">{{ $t('filters.reset') }}</button>
     </div>
 
     <!-- Advanced Filter Toggle Button -->
     <div class="d-flex justify-content-center mb-4" v-if="showAdvancedFilter">
       <button class="btn btn-outline-primary" @click="openAdvancedFilter">
-        {{ $t('Advanced Filter') }}
+        {{ $t('filters.advancedFilter') }}
       </button>
     </div>
 
@@ -31,19 +31,19 @@
       <div class="d-flex gap-3 w-100 flex-wrap" style="max-width: 800px;">
         <!-- Category Dropdown -->
         <select v-model="selectedCategory" class="form-select" style="flex: 1;">
-          <option value="">{{ $t("Any activity") }}</option>
-          <option value="Education">{{ $t("education") }}</option>
-          <option value="Exercise & Wellness">{{ $t("exercise") }}</option>
-          <option value="Hobbies & Creativity">{{ $t("hobbies") }}</option>
-          <option value="Social & Community">{{ $t("social") }}</option>
-          <option value="Entertainment & Culture">{{ $t("entertainment") }}</option>
+          <option value="">{{ $t("filters.anything") }}</option>
+          <option value="Education">{{ $t("filters.education") }}</option>
+          <option value="Exercise & Wellness">{{ $t("filters.exercise") }}</option>
+          <option value="Hobbies & Creativity">{{ $t("filters.hobbies") }}</option>
+          <option value="Social & Community">{{ $t("filters.social") }}</option>
+          <option value="Entertainment & Culture">{{ $t("filters.entertainment") }}</option>
         </select>
 
         <!-- Keyword Input -->
         <input
           type="text"
           v-model="searchKeyword"
-          :placeholder="$t('Keywords')"
+          :placeholder="$t('filters.keywords')"
           class="form-control"
           style="flex: 2;"
         />
@@ -198,7 +198,10 @@ function filterEvents() {
     }
 
     // Category filter
-    if (selectedCategory.value && event.translatedCategory !== selectedCategory.value) {
+    // if (selectedCategory.value && event.translatedCategory !== selectedCategory.value) {
+    //   match = false;
+    // }
+    if (selectedCategory.value && event.category !== selectedCategory.value) {
       match = false;
     }
 

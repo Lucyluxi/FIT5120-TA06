@@ -101,12 +101,13 @@
   "filters": {
     "whatsOn": "活动预告",
     "date": "日期",
-    "Search": "搜索",
-    "Reset": "重置",
+    "search": "搜索",
+    "reset": "重置",
     "refine": "筛选",
     "hideRefine": "隐藏筛选",
     "what": "类别",
     "where": "地点",
+    "anytime": "任何时间",
     "anything": "任何类别",
     "anywhere": "任何地点",
     "keywords": "关键字",
@@ -121,7 +122,8 @@
     "previous": "上一页",
     "next": "下一页",
     "pageOf": "第 {current} 页，共 {total} 页",
-    "noImage": "暂无图片"
+    "noImage": "暂无图片",
+    "advancedFilter": "高级筛选"
   },
 
   "suburb": {

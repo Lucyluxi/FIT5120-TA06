@@ -101,12 +101,13 @@
   "filters": {
     "whatsOn": "What's On",
     "date": "Date",
-    "Search": "Search",
-    "Reset": "Reset",
+    "search": "Search",
+    "reset": "Reset",
     "refine": "Refine",
     "hideRefine": "Hide Refine",
     "what": "What",
     "where": "Where",
+    "anytime": "Anytime",
     "anything": "Any activity",
     "anywhere": "Anywhere",
     "keywords": "Keywords",
@@ -121,7 +122,8 @@
     "previous": "Previous",
     "next": "Next",
     "pageOf": "Page {current} of {total}",
-    "noImage": "No Image Available"
+    "noImage": "No Image Available",
+    "advancedFilter": "Advanced Filter"
   },
 
   "suburb": {

@@ -94,12 +94,13 @@
   "filters": {
     "whatsOn": "क्या हो रहा है",
     "date": "दिनांक",
-    "Search": "खोजें",
-    "Reset": "रीसेट करें",
+    "search": "खोजें",
+    "reset": "रीसेट करें",
     "refine": "परिष्कृत करें",
     "hideRefine": "परिष्करण छिपाएँ",
     "what": "क्या",
     "where": "कहाँ",
+    "anytime": "किसी भी समय",
     "anything": "कोई भी चीज़",
     "anywhere": "कहीं भी",
     "keywords": "कीवर्ड",
@@ -114,7 +115,8 @@
     "previous": "पिछला",
     "next": "अगला",
     "pageOf": "पृष्ठ {current} में से {total}",
-    "noImage": "कोई छवि उपलब्ध नहीं"
+    "noImage": "कोई छवि उपलब्ध नहीं",
+    "advancedFilter": "उन्नत फ़िल्टर"
   },
   "suburb": {
     "chooseCulturePrompt": "अन्वेषण के लिए कृपया एक सांस्कृतिक पृष्ठभूमि चुनें",

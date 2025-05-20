@@ -7,7 +7,7 @@
 
       <div class="border rounded p-3 mb-2 bg-light text-center">
         <p class="mb-4 fw-semibold" style="font-size: 22px;">
-          Please choose a cultural background to explore<!-- {{ $t("chooseCulturePrompt") }} -->
+          {{ $t("suburb.chooseCulturePrompt") }}
         </p>
         <div class="d-flex flex-wrap justify-content-center gap-2">
           <button
@@ -38,7 +38,7 @@
             @click="goToSuburbDetail(suburb)"
           >
             <strong>{{ suburb }}</strong>
-            <p class="text-muted mt-2" style="font-size: 18px;">{{ $t("Click To Learn More") }}</p>
+            <p class="text-muted mt-2" style="font-size: 18px;">{{ $t("suburb.clickToLearnMore") }}</p>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <nav class="mt-4">
         <ul class="pagination justify-content-center">
           <li class="page-item" :class="{ disabled: currentPage === 1 }">
-            <button class="page-link" @click="currentPage--" :disabled="currentPage === 1">{{ $t("previous") }}</button>
+            <button class="page-link" @click="currentPage--" :disabled="currentPage === 1">{{ $t("filters.previous") }}</button>
           </li>
 
           <li class="page-item" :class="{ active: currentPage === 1 }">
@@ -70,7 +70,7 @@
           </li>
 
           <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-            <button class="page-link" @click="currentPage++" :disabled="currentPage === totalPages">{{ $t("next") }}</button>
+            <button class="page-link" @click="currentPage++" :disabled="currentPage === totalPages">{{ $t("filters.next") }}</button>
           </li>
         </ul>
       </nav>

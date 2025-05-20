@@ -14,7 +14,7 @@
 
         <!-- Features List -->
         <div class="mt-3 bg-light p-4 rounded shadow-sm">
-          <h5 class="fw-bold mb-3">{{ $t("placesToVisit") }}</h5>
+          <h5 class="fw-bold mb-3">{{ $t("suburb.placesToVisit") }}</h5>
           <ul v-if="translatedFeatures.length > 0" class="list-unstyled">
             <li
               v-for="(item, index) in translatedFeatures"
@@ -27,7 +27,7 @@
               <span>{{ item.name }} <span class="text-warm-muted">({{ item.type }})</span></span>
             </li>
           </ul>
-          <p v-else class="text-warm-muted">{{ $t("noFeatures") }}</p>
+          <p v-else class="text-warm-muted">{{ $t("suburb.noFeatures") }}</p>
 
           <!-- Data source -->
           <p class="mt-4" style="font-size: 0.9rem; color: black;">
@@ -40,13 +40,13 @@
           :to="{ path: '/suburb', query: { culture: $route.query.culture, page: $route.query.page } }"
           class="btn btn-warm mt-4 px-5 py-3 fs-5 fw-semibold"
         >
-          ← {{ $t("back") }}
+          ← {{ $t("suburb.back") }}
         </router-link>
       </div>
 
       <!-- Right Column: Map -->
       <div id="map-section" class="col-lg-6">
-        <h5 class="mb-3 fw-bold">{{ $t("locationMap") }}</h5>
+        <h5 class="mb-3 fw-bold">{{ $t("suburb.locationMap") }}</h5>
         <iframe
           v-if="mapUrl"
           class="w-100 rounded shadow-sm"
@@ -55,7 +55,7 @@
           allowfullscreen
           loading="lazy"
         ></iframe>
-        <div v-else class="text-warm-muted">{{ $t("mapNotAvailable") }}</div>
+        <div v-else class="text-warm-muted">{{ $t("suburb.mapNotAvailable") }}</div>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@ const translatedWelcomeMessage = ref('');
 const translatedFeatures = ref([]);
 const mapUrl = ref('');
 
-// 初始加载数据
+// initialise data
 async function loadSuburbData() {
   try {
     const response = await axios.get(`/api/features?suburb=${encodeURIComponent(suburbName)}`);
@@ -95,19 +95,16 @@ async function loadSuburbData() {
     );
     translatedFeatures.value = translatedItems;
 
-    // 默认显示整个 suburb 的地图
     mapUrl.value = getMapUrl(suburbName);
   } catch (error) {
     console.error('Failed to load suburb data:', error);
   }
 }
 
-// 点击地点时更新地图
 function showLocation(placeName) {
   const fullAddress = `${placeName}, ${suburbName}, Melbourne, Australia`;
   mapUrl.value = getMapUrl(fullAddress);
 
-  // 可选：滚动地图部分
   setTimeout(() => {
     const mapSection = document.querySelector('#map-section');
     if (mapSection) {
@@ -116,12 +113,10 @@ function showLocation(placeName) {
   }, 200);
 }
 
-// 生成 Google 地图 URL
 function getMapUrl(query) {
   return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBA5dCRAD-GhX21eItzO7aJ-0B92cOBqg8&q=${encodeURIComponent(query)}`;
 }
 
-// 初始化 & 响应语言变化
 onMounted(loadSuburbData);
 watch(locale, loadSuburbData);
 </script>
