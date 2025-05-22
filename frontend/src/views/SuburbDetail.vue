@@ -143,14 +143,14 @@ h5 {
 }
 
 .list-unstyled li {
-  background-color: rgba(252, 235, 213, 0.8) !important;
+  background-color: #eef9fd !important;
   transition: background-color 0.3s ease, transform 0.3s ease;
   border: none !important;
   box-shadow: none !important;
 }
 
 .list-unstyled li:hover {
-  background-color: rgba(255, 223, 197, 1);
+  background-color: #eef9fd;
   transform: translateY(-2px);
   cursor: pointer;
 }
