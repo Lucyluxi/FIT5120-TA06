@@ -160,8 +160,8 @@ h5 {
 }
 
 .btn-warm {
-  background-color: #ee825f;
-  border-color: #ee825f;
+  background-color: #ff9900;
+  border-color: #ff9900;
   color: white;
   transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -169,8 +169,8 @@ h5 {
 .btn-warm:hover,
 .btn-warm:focus,
 .btn-warm:active {
-  background-color: #e06d4d;
-  border-color: #e06d4d;
+  background-color: #ff9900;
+  border-color: #ff9900;
   color: white;
 }
 </style>
