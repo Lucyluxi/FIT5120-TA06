@@ -6,7 +6,7 @@
     "travel": "Travel Guide",
     "social": "Social Activities",
     "suburb": "Explore Suburbs",
-    "communityServices": "Community Services"
+    "communityServices": "Support Services"
   },
 
   "home": {
@@ -15,15 +15,15 @@
     "section1Title": "Social Activities",
     "section1Desc": "Take part in local events designed to bring older adults together — from hobby groups and wellness activities to information sessions and friendly meetups.",
     "section1Btn": "Learn More",
-    "section2Title": "Explore Culture",
+    "section2Title": "Explore Culture by suburb",
     "section2Desc": "Select a cultural identity and uncover the Australian suburbs where the community lives, connects, and celebrates.",
-    "section2Btn": "Explore by Culture",
+    "section2Btn": "Explore suburb",
     "section3Title": "Your Travel Guide",
     "section3Desc": "Step-by-step guides to help you use public transport with confidence.",
     "section3Btn": "Learn to Travel",
-    "section4Title": "Find Your Community",
-    "section4Desc": "Discover suburbs where people from your background live and connect. Feel at home, wherever you are.",
-    "section4Btn": "Explore Suburbs",
+    "section4Title": "Access Support Services",
+    "section4Desc": "Find help when you need it — from language support and tech assistance to aged care advice and community referrals. We’re here to make it easier for older adults of all backgrounds to get the right support.",
+    "section4Btn": "Find your services",
     "chatTitle": "Need a Hand? Chat with Uni",
     "chatDesc": "Meet Uni, your friendly guide. If you're not sure where to go, just ask!",
     "chatBtn": "Let's Talk"
